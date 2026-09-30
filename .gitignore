@@ -1,0 +1,10 @@
+node_modules/
+out/
+qa/
+.DS_Store
+film3d/build/
+film3d/assets/
+film3d/screens/node_modules/
+film3d/screens/public/film/
+__pycache__/
+*.blend1

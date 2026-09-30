@@ -1,0 +1,42 @@
+%% AKS Productions — Motion Engine: repo map and both production pipelines.
+%% Render with any Mermaid viewer (GitHub renders ```mermaid blocks; this file is raw Mermaid).
+flowchart TD
+    subgraph Guides["Read first (for humans + AI agents)"]
+        CL["CLAUDE.md<br/>director's playbook"] --> AG["AGENTS.md<br/>entry for any AI"]
+        SK[".claude/skills/motion-engine/SKILL.md<br/>portable skill"]
+        VOC["docs/VOCABULARY.md<br/>density D1–D5"]
+    end
+
+    subgraph ModeA["Mode A — motion-graphics promo (Remotion, 1920×1080, 60 s)"]
+        A1["scripts/scan_brand.js<br/>real copy, colours, fonts"] --> A2["scripts/bundle_assets.js → decode_bundle.py<br/>public/projects/&lt;client&gt;"]
+        A2 --> A3["docs/plans/NN-&lt;client&gt;.md<br/>beat sheet + density target"]
+        A3 --> A4["src/projects/&lt;client&gt;/<br/>brand.ts · assets.tsx · acts"]
+        E["src/engine/<br/>Scene · Text · Type · Wipe · Charts · three/*"] --> A4
+        A4 --> A5["scripts/stills.sh<br/>frame-check contact sheets"]
+        A5 --> A6["soundtrack.py (engine_mix)<br/>public/sfx"]
+        A6 --> A7["scripts/render.sh → out/&lt;client&gt;_60s.mp4"]
+    end
+
+    subgraph ModeB["Mode B — 3D short film (Blender, 9:16, 24 fps)"]
+        B0["film3d/blender/shotlist.md<br/>18 shots: lens · move · light · sound"]
+        B1["film3d/fetch_assets.sh<br/>Rocketbox actors+mocap · phone · laptop · chair"]
+        PH["public/projects/story3d/models<br/>Poly Haven furniture (CC0)"]
+        B2["film3d/screens (Remotion 2D)<br/>scr-* UI sequences"]
+        B3["film3d/blender/lib.py<br/>load_character · drive (mocap) · lights · render settings"]
+        B4["film3d/blender/sets.py<br/>dev room · props · screen materials · UV projection"]
+        B5["film3d/blender/shots.py<br/>S01…S18 builders (only what the camera sees)"]
+        B6["render_shot.py / render_all.sh<br/>Cycles CPU, resumable"]
+        B7["soundtrack60.py<br/>score + SFX cut to picture"]
+        B8["make_film.sh cut<br/>upscale + concat → Film60 (captions, end card, audio)"]
+        B0 --> B5
+        B1 --> B3
+        PH --> B4
+        B2 --> B5
+        B3 --> B5
+        B4 --> B5
+        B5 --> B6 --> B8
+        B7 --> B8
+    end
+
+    Guides --> ModeA
+    Guides --> ModeB
