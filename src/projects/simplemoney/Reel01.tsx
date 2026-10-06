@@ -6,8 +6,8 @@ import { Wipe } from "../../engine/Wipe";
 import { C, applyBrand } from "../../engine/util";
 import { Coins, End, Friends, HUD, Hook, Lesson, Race, Result } from "./scenes";
 
-/** Scene starts — on the 120 BPM beat grid (15 f/beat). Keep in sync with soundtrack.py. */
-export const S = { hook: 0, friends: 90, race: 210, result: 510, coins: 630, lesson: 750, end: 825, total: 900 };
+/** Scene starts — timed to the Kokoro voiceover and snapped to the music's 136 BPM grid (13.24 f/beat). Keep in sync with soundtrack.py. */
+export const S = { hook: 0, friends: 119, race: 252, result: 503, coins: 622, lesson: 728, end: 845, total: 900 };
 
 export const Reel01: React.FC<{ withAudio?: boolean }> = ({ withAudio = true }) => {
   applyBrand(brand);

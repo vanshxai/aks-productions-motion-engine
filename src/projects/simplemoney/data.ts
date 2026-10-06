@@ -1,11 +1,12 @@
 /**
  * Reel #01 data — COMPUTED, not invented.
- * ₹1,000 invested at the end of every month, 12% p.a. assumed (1% per month), until age 52.
- * Riya starts at 22 (360 months) → ₹34,94,964 · invested ₹3,60,000
- * Kabir starts at 32 (240 months) → ₹9,89,255  · invested ₹2,40,000
+ * $200 invested at the end of every month, 10% a year assumed (10/12 % per month), until age 52.
+ * Emma starts at 22 (360 months) → $452,098 · invested $72,000
+ * Jake starts at 32 (240 months) → $151,874 · invested $48,000
+ * Emma puts in $24,000 more and ends with $300,224 more (≈3×).
  */
-export const SIP = 1000;
-export const RATE_M = 0.01;
+export const SIP = 200;
+export const RATE_M = 0.1 / 12;
 
 /** Value after n monthly contributions (fractional n interpolates within the month). */
 export const fv = (n: number) => {
@@ -16,24 +17,16 @@ export const fv = (n: number) => {
   return v + (next - v) * (n - whole);
 };
 
-/** Riya / Kabir value at a (fractional) age. */
-export const riyaAt = (age: number) => fv((age - 22) * 12);
-export const kabirAt = (age: number) => fv((age - 32) * 12);
+/** Emma / Jake value at a (fractional) age. */
+export const emmaAt = (age: number) => fv((age - 22) * 12);
+export const jakeAt = (age: number) => fv((age - 32) * 12);
 
-export const FINAL = { riya: fv(360), kabir: fv(240), riyaIn: 360000, kabirIn: 240000 };
+export const FINAL = { emma: fv(360), jake: fv(240), emmaIn: 72000, jakeIn: 48000 };
 
-/** ₹ short format: ₹12K, ₹2.3L, ₹34.9L */
+/** $ short format: $850, $4.6K, $41K, $452K, $1.2M */
 export const short = (v: number) => {
-  if (v < 1000) return `₹${Math.round(v)}`;
-  if (v < 100000) return `₹${Math.round(v / 1000)}K`;
-  return `₹${(v / 100000).toFixed(1)}L`;
-};
-
-/** Indian digit grouping: 3494964 → 34,94,964 */
-export const inr = (v: number) => {
-  const s = Math.round(v).toString();
-  if (s.length <= 3) return s;
-  const last3 = s.slice(-3);
-  const rest = s.slice(0, -3).replace(/\B(?=(\d{2})+(?!\d))/g, ",");
-  return `${rest},${last3}`;
+  if (v < 1000) return `$${Math.round(v)}`;
+  if (v < 10000) return `$${(v / 1000).toFixed(1)}K`;
+  if (v < 1e6) return `$${Math.round(v / 1000)}K`;
+  return `$${(v / 1e6).toFixed(1)}M`;
 };

@@ -41,8 +41,8 @@ const Stack: React.FC<{ l: number; n: number; x: number; at: number; gap: number
 );
 
 export const CoinStacks3D: React.FC<{ l: number; w: number; h: number; at: number; gap: number; left: number; right: number }> = ({ l, w, h, at, gap, left, right }) => (
-  <ThreeCanvas width={w} height={h} camera={{ position: [0, 6.2, 17], fov: 30 }} gl={{ antialias: true, alpha: true }}>
-    <LookAt target={[0, 3.0, 0]} />
+  <ThreeCanvas width={w} height={h} camera={{ position: [0, 7.4, 19.5], fov: 30 }} gl={{ antialias: true, alpha: true }}>
+    <LookAt target={[0, 3.7, 0]} />
     <Studio intensity={1.15} />
     <directionalLight position={[-4, 9, 7]} intensity={1.4} />
     <Stack l={l} n={left} x={-1.75} at={at} gap={gap} tint="#E9B949" seed={1} />
