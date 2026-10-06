@@ -1,0 +1,45 @@
+{
+ "start": 0.12,
+ "beats": [
+  {
+   "id": "hook",
+   "text": "Your key is a code. Five pins, one key.",
+   "after": 0.25
+  },
+  {
+   "id": "pins",
+   "text": "Each hole holds two pins, pushed down by a spring.",
+   "after": 0.25
+  },
+  {
+   "id": "shear",
+   "text": "The lock only turns when every pair splits at the shear line.",
+   "after": 0.3
+  },
+  {
+   "id": "wrong",
+   "text": "A wrong key leaves pins crossing the line, and the plug jams.",
+   "after": 0.3
+  },
+  {
+   "id": "right",
+   "text": "The right key lifts every pair exactly to the line, and the plug turns.",
+   "after": 0.25
+  },
+  {
+   "id": "bolt",
+   "text": "That pulls back the bolt.",
+   "after": 0.25
+  },
+  {
+   "id": "hero",
+   "text": "Lift, align, turn, open.",
+   "after": 0.2
+  },
+  {
+   "id": "end",
+   "text": "Comment anything, and I'll send you the free PDF. Follow, so it can reach you.",
+   "after": 0.2
+  }
+ ]
+}

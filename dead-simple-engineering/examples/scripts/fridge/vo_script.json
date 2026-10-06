@@ -1,0 +1,10 @@
+{"start": 0.15, "beats": [
+ {"id": "hook", "text": "Your fridge doesn't make cold. It pumps heat out.", "after": 0.4},
+ {"id": "liquid", "text": "The trick is a liquid that boils below freezing.", "after": 0.35},
+ {"id": "evap", "text": "Inside, it boils in these coils, and soaks up heat from your food.", "after": 0.35},
+ {"id": "comp", "text": "A compressor squeezes the gas, and makes it hot.", "after": 0.35},
+ {"id": "cond", "text": "The coils at the back dump that heat into your kitchen, and it turns liquid again.", "after": 0.35},
+ {"id": "valve", "text": "A tiny valve drops the pressure, and it's ice cold again.", "after": 0.4},
+ {"id": "hero", "text": "Boil. Squeeze. Release. Expand. That's a fridge.", "after": 0.35},
+ {"id": "end", "text": "Which machine should we break down next?", "after": 0.2}
+]}
