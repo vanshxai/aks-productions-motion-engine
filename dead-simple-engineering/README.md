@@ -17,7 +17,7 @@ Instagram: **@dead.simple.engineering** · Owner: Vansh Patel · Produced with C
 | Voice | Generated, female Kokoro `af_heart`, ~1.1× speed, **with real punctuation pauses** (comma 0.26 s, full stop 0.55 s) via `vo_assemble.py`. Short sentences, plain words, ~75 words per video |
 | Sound | Soft music bed + synthesized SFX on every beat, sidechain-ducked under the voice; every phrase must stay clearly above the bed |
 | Truth | Animations come from real physics/geometry (solvers, kinematics), never decorative fakes. Never invent stats |
-| End card (since #9) | "Comment *anything*" → free PDF **How AI Works**; "Follow us to receive it"; AKS PRODUCTIONS. (#1–8 ended with "comment which machine next") |
+| End card (current) | "Follow for *more*"; amber tag "FOLLOW +"; AKS PRODUCTIONS; "HOW IT WORKS · @DEAD.SIMPLE.ENGINEERING"; VO "Follow for more, and see how everything works." (#1–8 ended with "comment which machine next"; #9 and #10 were first made with the comment-for-PDF CTA, then redone with Follow. The PDF CTA is the planned future version once the PDF and automation exist.) |
 
 ## Examples in this folder
 - `examples/videos/` — 4 reference videos (540p copies): #1 Gearbox, #5 4-stroke engine, #8 Refrigerator, #9 Lock and key.

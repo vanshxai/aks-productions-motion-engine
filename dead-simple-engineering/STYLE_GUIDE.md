@@ -21,4 +21,4 @@
 - Run the `--stems` check in the soundtrack script; a phrase under 6 dB above the bed is flagged LOW and must be fixed.
 
 ## End card
-Gear cluster, amber button tag "COMMENT ANYTHING ↓", "FOLLOW US TO RECEIVE IT", "AKS PRODUCTIONS".
+Gear cluster, headline "Follow for *more*", amber solid tag "FOLLOW  +", "AKS PRODUCTIONS", small label "HOW IT WORKS · @DEAD.SIMPLE.ENGINEERING". Last VO line: "Follow for more, and see how everything works." (Planned future version, once the PDF and comment automation exist: "Comment *anything*" → free PDF.)
