@@ -1,0 +1,219 @@
+{
+ "fps": 30,
+ "total": 29.338,
+ "beats": [
+  {
+   "id": "hook",
+   "text": "Your key is a code. Five pins, one key.",
+   "phrases": [
+    {
+     "text": "Your key is a code.",
+     "start": 0.12,
+     "end": 1.233,
+     "f0": 4,
+     "f1": 37
+    },
+    {
+     "text": "Five pins,",
+     "start": 1.783,
+     "end": 2.661,
+     "f0": 53,
+     "f1": 80
+    },
+    {
+     "text": "one key.",
+     "start": 2.921,
+     "end": 3.65,
+     "f0": 88,
+     "f1": 110
+    }
+   ],
+   "start": 0.12,
+   "end": 3.65,
+   "f0": 4,
+   "f1": 110
+  },
+  {
+   "id": "pins",
+   "text": "Each hole holds two pins, pushed down by a spring.",
+   "phrases": [
+    {
+     "text": "Each hole holds two pins,",
+     "start": 3.9,
+     "end": 5.355,
+     "f0": 117,
+     "f1": 161
+    },
+    {
+     "text": "pushed down by a spring.",
+     "start": 5.615,
+     "end": 6.834,
+     "f0": 168,
+     "f1": 205
+    }
+   ],
+   "start": 3.9,
+   "end": 6.834,
+   "f0": 117,
+   "f1": 205
+  },
+  {
+   "id": "shear",
+   "text": "The lock only turns when every pair splits at the shear line.",
+   "phrases": [
+    {
+     "text": "The lock only turns when every pair splits at the shear line.",
+     "start": 7.084,
+     "end": 10.267,
+     "f0": 213,
+     "f1": 308
+    }
+   ],
+   "start": 7.084,
+   "end": 10.267,
+   "f0": 213,
+   "f1": 308
+  },
+  {
+   "id": "wrong",
+   "text": "A wrong key leaves pins crossing the line, and the plug jams.",
+   "phrases": [
+    {
+     "text": "A wrong key leaves pins crossing the line,",
+     "start": 10.567,
+     "end": 12.725,
+     "f0": 317,
+     "f1": 382
+    },
+    {
+     "text": "and the plug jams.",
+     "start": 12.985,
+     "end": 14.034,
+     "f0": 390,
+     "f1": 421
+    }
+   ],
+   "start": 10.567,
+   "end": 14.034,
+   "f0": 317,
+   "f1": 421
+  },
+  {
+   "id": "right",
+   "text": "The right key lifts every pair exactly to the line, and the plug turns.",
+   "phrases": [
+    {
+     "text": "The right key lifts every pair exactly to the line,",
+     "start": 14.334,
+     "end": 17.154,
+     "f0": 430,
+     "f1": 515
+    },
+    {
+     "text": "and the plug turns.",
+     "start": 17.414,
+     "end": 18.484,
+     "f0": 522,
+     "f1": 555
+    }
+   ],
+   "start": 14.334,
+   "end": 18.484,
+   "f0": 430,
+   "f1": 555
+  },
+  {
+   "id": "bolt",
+   "text": "That pulls back the bolt.",
+   "phrases": [
+    {
+     "text": "That pulls back the bolt.",
+     "start": 18.734,
+     "end": 20.107,
+     "f0": 562,
+     "f1": 603
+    }
+   ],
+   "start": 18.734,
+   "end": 20.107,
+   "f0": 562,
+   "f1": 603
+  },
+  {
+   "id": "hero",
+   "text": "Lift, align, turn, open.",
+   "phrases": [
+    {
+     "text": "Lift,",
+     "start": 20.357,
+     "end": 20.915,
+     "f0": 611,
+     "f1": 627
+    },
+    {
+     "text": "align,",
+     "start": 21.175,
+     "end": 21.776,
+     "f0": 635,
+     "f1": 653
+    },
+    {
+     "text": "turn,",
+     "start": 22.036,
+     "end": 22.573,
+     "f0": 661,
+     "f1": 677
+    },
+    {
+     "text": "open.",
+     "start": 22.833,
+     "end": 23.455,
+     "f0": 685,
+     "f1": 704
+    }
+   ],
+   "start": 20.357,
+   "end": 23.455,
+   "f0": 611,
+   "f1": 704
+  },
+  {
+   "id": "end",
+   "text": "Comment anything, and I'll send you the free PDF. Follow, so it can reach you.",
+   "phrases": [
+    {
+     "text": "Comment anything,",
+     "start": 23.655,
+     "end": 24.619,
+     "f0": 710,
+     "f1": 739
+    },
+    {
+     "text": "and I'll send you the free PDF.",
+     "start": 24.879,
+     "end": 26.657,
+     "f0": 746,
+     "f1": 800
+    },
+    {
+     "text": "Follow,",
+     "start": 27.207,
+     "end": 27.808,
+     "f0": 816,
+     "f1": 834
+    },
+    {
+     "text": "so it can reach you.",
+     "start": 28.068,
+     "end": 29.138,
+     "f0": 842,
+     "f1": 874
+    }
+   ],
+   "start": 23.655,
+   "end": 29.138,
+   "f0": 710,
+   "f1": 874
+  }
+ ]
+}
