@@ -1,0 +1,198 @@
+{
+ "fps": 30,
+ "total": 29.041,
+ "beats": [
+  {
+   "id": "hook",
+   "text": "How does one hand lift a two-tonne car?",
+   "phrases": [
+    {
+     "text": "How does one hand lift a two-tonne car?",
+     "start": 0.15,
+     "end": 2.12,
+     "f0": 4,
+     "f1": 64
+    }
+   ],
+   "start": 0.15,
+   "end": 2.12,
+   "f0": 4,
+   "f1": 64
+  },
+  {
+   "id": "pascal",
+   "text": "Push on a sealed fluid, and the pressure spreads everywhere, equally.",
+   "phrases": [
+    {
+     "text": "Push on a sealed fluid,",
+     "start": 2.52,
+     "end": 3.761,
+     "f0": 76,
+     "f1": 113
+    },
+    {
+     "text": "and the pressure spreads everywhere,",
+     "start": 4.021,
+     "end": 5.561,
+     "f0": 121,
+     "f1": 167
+    },
+    {
+     "text": "equally.",
+     "start": 5.821,
+     "end": 6.4,
+     "f0": 175,
+     "f1": 192
+    }
+   ],
+   "start": 2.52,
+   "end": 6.4,
+   "f0": 76,
+   "f1": 192
+  },
+  {
+   "id": "formula",
+   "text": "Pressure is force, divided by area.",
+   "phrases": [
+    {
+     "text": "Pressure is force,",
+     "start": 6.75,
+     "end": 7.799,
+     "f0": 203,
+     "f1": 234
+    },
+    {
+     "text": "divided by area.",
+     "start": 8.059,
+     "end": 9.215,
+     "f0": 242,
+     "f1": 276
+    }
+   ],
+   "start": 6.75,
+   "end": 9.215,
+   "f0": 203,
+   "f1": 276
+  },
+  {
+   "id": "area",
+   "text": "So on a piston a hundred times bigger, the same pressure makes a hundred times the force.",
+   "phrases": [
+    {
+     "text": "So on a piston a hundred times bigger,",
+     "start": 9.565,
+     "end": 11.723,
+     "f0": 287,
+     "f1": 352
+    },
+    {
+     "text": "the same pressure makes a hundred times the force.",
+     "start": 11.983,
+     "end": 14.543,
+     "f0": 359,
+     "f1": 436
+    }
+   ],
+   "start": 9.565,
+   "end": 14.543,
+   "f0": 287,
+   "f1": 436
+  },
+  {
+   "id": "nums",
+   "text": "Twenty kilos of push. Two tonnes of lift.",
+   "phrases": [
+    {
+     "text": "Twenty kilos of push.",
+     "start": 14.893,
+     "end": 16.198,
+     "f0": 447,
+     "f1": 486
+    },
+    {
+     "text": "Two tonnes of lift.",
+     "start": 16.748,
+     "end": 17.776,
+     "f0": 502,
+     "f1": 533
+    }
+   ],
+   "start": 14.893,
+   "end": 17.776,
+   "f0": 447,
+   "f1": 533
+  },
+  {
+   "id": "catch",
+   "text": "The catch? The small piston moves a hundred times farther.",
+   "phrases": [
+    {
+     "text": "The catch?",
+     "start": 18.176,
+     "end": 18.841,
+     "f0": 545,
+     "f1": 565
+    },
+    {
+     "text": "The small piston moves a hundred times farther.",
+     "start": 19.441,
+     "end": 22.005,
+     "f0": 583,
+     "f1": 660
+    }
+   ],
+   "start": 18.176,
+   "end": 22.005,
+   "f0": 545,
+   "f1": 660
+  },
+  {
+   "id": "hero",
+   "text": "So a jack just pumps, a millimetre at a time. That's hydraulics.",
+   "phrases": [
+    {
+     "text": "So a jack just pumps,",
+     "start": 22.355,
+     "end": 23.596,
+     "f0": 671,
+     "f1": 708
+    },
+    {
+     "text": "a millimetre at a time.",
+     "start": 23.856,
+     "end": 25.097,
+     "f0": 716,
+     "f1": 753
+    },
+    {
+     "text": "That's hydraulics.",
+     "start": 25.647,
+     "end": 26.696,
+     "f0": 769,
+     "f1": 801
+    }
+   ],
+   "start": 22.355,
+   "end": 26.696,
+   "f0": 671,
+   "f1": 801
+  },
+  {
+   "id": "end",
+   "text": "Which machine should we break down next?",
+   "phrases": [
+    {
+     "text": "Which machine should we break down next?",
+     "start": 27.046,
+     "end": 28.841,
+     "f0": 811,
+     "f1": 865
+    }
+   ],
+   "start": 27.046,
+   "end": 28.841,
+   "f0": 811,
+   "f1": 865
+  }
+ ]
+}

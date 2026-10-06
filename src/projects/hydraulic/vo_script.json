@@ -1,0 +1,10 @@
+{"start": 0.15, "beats": [
+ {"id": "hook", "text": "How does one hand lift a two-tonne car?", "after": 0.4},
+ {"id": "pascal", "text": "Push on a sealed fluid, and the pressure spreads everywhere, equally.", "after": 0.35},
+ {"id": "formula", "text": "Pressure is force, divided by area.", "after": 0.35},
+ {"id": "area", "text": "So on a piston a hundred times bigger, the same pressure makes a hundred times the force.", "after": 0.35},
+ {"id": "nums", "text": "Twenty kilos of push. Two tonnes of lift.", "after": 0.4},
+ {"id": "catch", "text": "The catch? The small piston moves a hundred times farther.", "after": 0.35},
+ {"id": "hero", "text": "So a jack just pumps, a millimetre at a time. That's hydraulics.", "after": 0.35},
+ {"id": "end", "text": "Which machine should we break down next?", "after": 0.2}
+]}
