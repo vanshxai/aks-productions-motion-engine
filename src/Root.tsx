@@ -12,6 +12,7 @@ import { Motor30, MotorCover } from "./projects/motor/Motor30";
 import { Hydraulic30, HydraulicCover } from "./projects/hydraulic/Hydraulic30";
 import { Fridge30, FridgeCover } from "./projects/fridge/Fridge30";
 import { Lock30, LockCover } from "./projects/lock/Lock30";
+import { Gps30, GpsCover } from "./projects/gps/Gps30";
 
 /**
  * One <Composition> per video. Convention:
@@ -50,5 +51,8 @@ export const Root: React.FC = () => (
     <Composition id="Lock-30s" component={Lock30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: true }} />
     <Composition id="Lock-30s-silent" component={Lock30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: false }} />
     <Composition id="Lock-cover" component={LockCover} durationInFrames={1} fps={30} width={1080} height={1920} />
+    <Composition id="Gps-30s" component={Gps30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: true }} />
+    <Composition id="Gps-30s-silent" component={Gps30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: false }} />
+    <Composition id="Gps-cover" component={GpsCover} durationInFrames={1} fps={30} width={1080} height={1920} />
   </>
 );

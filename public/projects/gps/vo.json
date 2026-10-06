@@ -1,0 +1,242 @@
+{
+ "fps": 30,
+ "total": 29.072,
+ "beats": [
+  {
+   "id": "hook",
+   "text": "GPS doesn't track you. Your phone only listens.",
+   "phrases": [
+    {
+     "text": "GPS doesn't track you.",
+     "start": 0.12,
+     "end": 1.574,
+     "f0": 4,
+     "f1": 47
+    },
+    {
+     "text": "Your phone only listens.",
+     "start": 2.124,
+     "end": 3.426,
+     "f0": 64,
+     "f1": 103
+    }
+   ],
+   "start": 0.12,
+   "end": 3.426,
+   "f0": 4,
+   "f1": 103
+  },
+  {
+   "id": "sats",
+   "text": "Satellites broadcast the time they sent a signal.",
+   "phrases": [
+    {
+     "text": "Satellites broadcast the time they sent a signal.",
+     "start": 3.626,
+     "end": 6.019,
+     "f0": 109,
+     "f1": 181
+    }
+   ],
+   "start": 3.626,
+   "end": 6.019,
+   "f0": 109,
+   "f1": 181
+  },
+  {
+   "id": "light",
+   "text": "Light speed turns delay into distance.",
+   "phrases": [
+    {
+     "text": "Light speed turns delay into distance.",
+     "start": 6.219,
+     "end": 8.206,
+     "f0": 187,
+     "f1": 246
+    }
+   ],
+   "start": 6.219,
+   "end": 8.206,
+   "f0": 187,
+   "f1": 246
+  },
+  {
+   "id": "one",
+   "text": "One distance is a circle.",
+   "phrases": [
+    {
+     "text": "One distance is a circle.",
+     "start": 8.406,
+     "end": 9.925,
+     "f0": 252,
+     "f1": 298
+    }
+   ],
+   "start": 8.406,
+   "end": 9.925,
+   "f0": 252,
+   "f1": 298
+  },
+  {
+   "id": "two",
+   "text": "Two circles meet twice.",
+   "phrases": [
+    {
+     "text": "Two circles meet twice.",
+     "start": 10.075,
+     "end": 11.422,
+     "f0": 302,
+     "f1": 343
+    }
+   ],
+   "start": 10.075,
+   "end": 11.422,
+   "f0": 302,
+   "f1": 343
+  },
+  {
+   "id": "three",
+   "text": "Three meet once.",
+   "phrases": [
+    {
+     "text": "Three meet once.",
+     "start": 11.572,
+     "end": 12.454,
+     "f0": 347,
+     "f1": 374
+    }
+   ],
+   "start": 11.572,
+   "end": 12.454,
+   "f0": 347,
+   "f1": 374
+  },
+  {
+   "id": "catch",
+   "text": "Phone clocks are cheap. One microsecond off is about three hundred metres.",
+   "phrases": [
+    {
+     "text": "Phone clocks are cheap.",
+     "start": 12.654,
+     "end": 13.835,
+     "f0": 380,
+     "f1": 415
+    },
+    {
+     "text": "One microsecond off is about three hundred metres.",
+     "start": 14.385,
+     "end": 17.158,
+     "f0": 432,
+     "f1": 515
+    }
+   ],
+   "start": 12.654,
+   "end": 17.158,
+   "f0": 380,
+   "f1": 515
+  },
+  {
+   "id": "fourth",
+   "text": "A fourth satellite shrinks every circle equally.",
+   "phrases": [
+    {
+     "text": "A fourth satellite shrinks every circle equally.",
+     "start": 17.358,
+     "end": 19.837,
+     "f0": 521,
+     "f1": 595
+    }
+   ],
+   "start": 17.358,
+   "end": 19.837,
+   "f0": 521,
+   "f1": 595
+  },
+  {
+   "id": "hero",
+   "text": "Listen, measure, intersect.",
+   "phrases": [
+    {
+     "text": "Listen,",
+     "start": 20.037,
+     "end": 20.616,
+     "f0": 601,
+     "f1": 618
+    },
+    {
+     "text": "measure,",
+     "start": 20.876,
+     "end": 21.392,
+     "f0": 626,
+     "f1": 642
+    },
+    {
+     "text": "intersect.",
+     "start": 21.652,
+     "end": 22.36,
+     "f0": 650,
+     "f1": 671
+    }
+   ],
+   "start": 20.037,
+   "end": 22.36,
+   "f0": 601,
+   "f1": 671
+  },
+  {
+   "id": "fin",
+   "text": "That's GPS.",
+   "phrases": [
+    {
+     "text": "That's GPS.",
+     "start": 22.46,
+     "end": 23.487,
+     "f0": 674,
+     "f1": 705
+    }
+   ],
+   "start": 22.46,
+   "end": 23.487,
+   "f0": 674,
+   "f1": 705
+  },
+  {
+   "id": "end",
+   "text": "Comment anything, and I'll send you the free PDF. Follow, so it can reach you.",
+   "phrases": [
+    {
+     "text": "Comment anything,",
+     "start": 23.687,
+     "end": 24.544,
+     "f0": 711,
+     "f1": 736
+    },
+    {
+     "text": "and I'll send you the free PDF.",
+     "start": 24.804,
+     "end": 26.515,
+     "f0": 744,
+     "f1": 795
+    },
+    {
+     "text": "Follow,",
+     "start": 27.065,
+     "end": 27.627,
+     "f0": 812,
+     "f1": 829
+    },
+    {
+     "text": "so it can reach you.",
+     "start": 27.887,
+     "end": 28.872,
+     "f0": 837,
+     "f1": 866
+    }
+   ],
+   "start": 23.687,
+   "end": 28.872,
+   "f0": 711,
+   "f1": 866
+  }
+ ]
+}

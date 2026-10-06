@@ -1,0 +1,16 @@
+{
+ "start": 0.12,
+ "beats": [
+  { "id": "hook", "text": "GPS doesn't track you. Your phone only listens.", "after": 0.2 },
+  { "id": "sats", "text": "Satellites broadcast the time they sent a signal.", "after": 0.2 },
+  { "id": "light", "text": "Light speed turns delay into distance.", "after": 0.2 },
+  { "id": "one", "text": "One distance is a circle.", "after": 0.15 },
+  { "id": "two", "text": "Two circles meet twice.", "after": 0.15 },
+  { "id": "three", "text": "Three meet once.", "after": 0.2 },
+  { "id": "catch", "text": "Phone clocks are cheap. One microsecond off is about three hundred metres.", "after": 0.2 },
+  { "id": "fourth", "text": "A fourth satellite shrinks every circle equally.", "after": 0.2 },
+  { "id": "hero", "text": "Listen, measure, intersect.", "after": 0.1 },
+  { "id": "fin", "text": "That's GPS.", "after": 0.2 },
+  { "id": "end", "text": "Comment anything, and I'll send you the free PDF. Follow, so it can reach you.", "after": 0.2 }
+ ]
+}
