@@ -1,6 +1,6 @@
 {
  "fps": 30,
- "total": 29.338,
+ "total": 26.683,
  "beats": [
   {
    "id": "hook",
@@ -179,41 +179,27 @@
   },
   {
    "id": "end",
-   "text": "Comment anything, and I'll send you the free PDF. Follow, so it can reach you.",
+   "text": "Follow for more, and see how everything works.",
    "phrases": [
     {
-     "text": "Comment anything,",
+     "text": "Follow for more,",
      "start": 23.655,
-     "end": 24.619,
+     "end": 24.662,
      "f0": 710,
-     "f1": 739
+     "f1": 740
     },
     {
-     "text": "and I'll send you the free PDF.",
-     "start": 24.879,
-     "end": 26.657,
-     "f0": 746,
-     "f1": 800
-    },
-    {
-     "text": "Follow,",
-     "start": 27.207,
-     "end": 27.808,
-     "f0": 816,
-     "f1": 834
-    },
-    {
-     "text": "so it can reach you.",
-     "start": 28.068,
-     "end": 29.138,
-     "f0": 842,
-     "f1": 874
+     "text": "and see how everything works.",
+     "start": 24.922,
+     "end": 26.483,
+     "f0": 748,
+     "f1": 794
     }
    ],
    "start": 23.655,
-   "end": 29.138,
+   "end": 26.483,
    "f0": 710,
-   "f1": 874
+   "f1": 794
   }
  ]
 }
