@@ -1,0 +1,10 @@
+{"start": 0.15, "beats": [
+ {"id": "hook", "text": "Every cylinder in your engine fires twenty-five times a second.", "after": 0.4},
+ {"id": "four", "text": "Here's how, in four strokes.", "after": 0.35},
+ {"id": "intake", "text": "Intake. The piston drops, and sucks in air and fuel.", "after": 0.3},
+ {"id": "comp", "text": "Compression. The valves shut, and the mix is squeezed tight.", "after": 0.3},
+ {"id": "power", "text": "Power. A spark ignites it, and the blast drives the piston down.", "after": 0.3},
+ {"id": "exhaust", "text": "Exhaust. The piston rises, and pushes the burnt gas out.", "after": 0.4},
+ {"id": "hero", "text": "Four strokes. Two turns. That's your engine.", "after": 0.35},
+ {"id": "end", "text": "Which machine should we break down next?", "after": 0.2}
+]}
