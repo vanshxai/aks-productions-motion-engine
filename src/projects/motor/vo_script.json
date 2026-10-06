@@ -1,0 +1,40 @@
+{
+ "start": 0.15,
+ "beats": [
+  {
+   "id": "hook",
+   "text": "No fuel. No explosions. Just magnets and wire.",
+   "after": 0.4
+  },
+  {
+   "id": "force",
+   "text": "Run current through a wire between magnets, and it gets shoved sideways.",
+   "after": 0.35
+  },
+  {
+   "id": "coil",
+   "text": "Loop it, and one side goes up, the other goes down. A twist.",
+   "after": 0.35
+  },
+  {
+   "id": "stuck",
+   "text": "But after half a turn, the push reverses, and it gets stuck.",
+   "after": 0.35
+  },
+  {
+   "id": "flip",
+   "text": "So a split ring flips the current every half turn, and it never stops.",
+   "after": 0.4
+  },
+  {
+   "id": "hero",
+   "text": "Magnets. Current. Flip. That's an electric motor.",
+   "after": 0.35
+  },
+  {
+   "id": "end",
+   "text": "Which machine should we break down next?",
+   "after": 0.2
+  }
+ ]
+}

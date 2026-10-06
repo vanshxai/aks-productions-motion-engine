@@ -1,0 +1,209 @@
+{
+ "fps": 30,
+ "total": 29.794,
+ "beats": [
+  {
+   "id": "hook",
+   "text": "No fuel. No explosions. Just magnets and wire.",
+   "phrases": [
+    {
+     "text": "No fuel.",
+     "start": 0.15,
+     "end": 0.9,
+     "f0": 4,
+     "f1": 27
+    },
+    {
+     "text": "No explosions.",
+     "start": 1.45,
+     "end": 2.563,
+     "f0": 44,
+     "f1": 77
+    },
+    {
+     "text": "Just magnets and wire.",
+     "start": 3.113,
+     "end": 4.461,
+     "f0": 93,
+     "f1": 134
+    }
+   ],
+   "start": 0.15,
+   "end": 4.461,
+   "f0": 4,
+   "f1": 134
+  },
+  {
+   "id": "force",
+   "text": "Run current through a wire between magnets, and it gets shoved sideways.",
+   "phrases": [
+    {
+     "text": "Run current through a wire between magnets,",
+     "start": 4.861,
+     "end": 7.058,
+     "f0": 146,
+     "f1": 212
+    },
+    {
+     "text": "and it gets shoved sideways.",
+     "start": 7.318,
+     "end": 8.709,
+     "f0": 220,
+     "f1": 261
+    }
+   ],
+   "start": 4.861,
+   "end": 8.709,
+   "f0": 146,
+   "f1": 261
+  },
+  {
+   "id": "coil",
+   "text": "Loop it, and one side goes up, the other goes down. A twist.",
+   "phrases": [
+    {
+     "text": "Loop it,",
+     "start": 9.059,
+     "end": 9.681,
+     "f0": 272,
+     "f1": 290
+    },
+    {
+     "text": "and one side goes up,",
+     "start": 9.941,
+     "end": 11.203,
+     "f0": 298,
+     "f1": 336
+    },
+    {
+     "text": "the other goes down.",
+     "start": 11.463,
+     "end": 12.598,
+     "f0": 344,
+     "f1": 378
+    },
+    {
+     "text": "A twist.",
+     "start": 13.148,
+     "end": 13.813,
+     "f0": 394,
+     "f1": 414
+    }
+   ],
+   "start": 9.059,
+   "end": 13.813,
+   "f0": 272,
+   "f1": 414
+  },
+  {
+   "id": "stuck",
+   "text": "But after half a turn, the push reverses, and it gets stuck.",
+   "phrases": [
+    {
+     "text": "But after half a turn,",
+     "start": 14.163,
+     "end": 15.382,
+     "f0": 425,
+     "f1": 461
+    },
+    {
+     "text": "the push reverses,",
+     "start": 15.642,
+     "end": 16.691,
+     "f0": 469,
+     "f1": 501
+    },
+    {
+     "text": "and it gets stuck.",
+     "start": 16.951,
+     "end": 17.915,
+     "f0": 509,
+     "f1": 537
+    }
+   ],
+   "start": 14.163,
+   "end": 17.915,
+   "f0": 425,
+   "f1": 537
+  },
+  {
+   "id": "flip",
+   "text": "So a split ring flips the current every half turn, and it never stops.",
+   "phrases": [
+    {
+     "text": "So a split ring flips the current every half turn,",
+     "start": 18.265,
+     "end": 20.893,
+     "f0": 548,
+     "f1": 627
+    },
+    {
+     "text": "and it never stops.",
+     "start": 21.153,
+     "end": 22.248,
+     "f0": 635,
+     "f1": 667
+    }
+   ],
+   "start": 18.265,
+   "end": 22.248,
+   "f0": 548,
+   "f1": 667
+  },
+  {
+   "id": "hero",
+   "text": "Magnets. Current. Flip. That's an electric motor.",
+   "phrases": [
+    {
+     "text": "Magnets.",
+     "start": 22.648,
+     "end": 23.313,
+     "f0": 679,
+     "f1": 699
+    },
+    {
+     "text": "Current.",
+     "start": 23.863,
+     "end": 24.485,
+     "f0": 716,
+     "f1": 735
+    },
+    {
+     "text": "Flip.",
+     "start": 25.035,
+     "end": 25.572,
+     "f0": 751,
+     "f1": 767
+    },
+    {
+     "text": "That's an electric motor.",
+     "start": 26.122,
+     "end": 27.449,
+     "f0": 784,
+     "f1": 823
+    }
+   ],
+   "start": 22.648,
+   "end": 27.449,
+   "f0": 679,
+   "f1": 823
+  },
+  {
+   "id": "end",
+   "text": "Which machine should we break down next?",
+   "phrases": [
+    {
+     "text": "Which machine should we break down next?",
+     "start": 27.799,
+     "end": 29.594,
+     "f0": 834,
+     "f1": 888
+    }
+   ],
+   "start": 27.799,
+   "end": 29.594,
+   "f0": 834,
+   "f1": 888
+  }
+ ]
+}
