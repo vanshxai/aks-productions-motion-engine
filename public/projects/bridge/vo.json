@@ -1,0 +1,229 @@
+{
+ "fps": 30,
+ "total": 29.955,
+ "beats": [
+  {
+   "id": "hook",
+   "text": "Why are bridges full of triangles?",
+   "phrases": [
+    {
+     "text": "Why are bridges full of triangles?",
+     "start": 0.2,
+     "end": 1.953,
+     "f0": 6,
+     "f1": 59
+    }
+   ],
+   "start": 0.2,
+   "end": 1.953,
+   "f0": 6,
+   "f1": 59
+  },
+  {
+   "id": "square",
+   "text": "Push on a square, and it folds flat.",
+   "phrases": [
+    {
+     "text": "Push on a square,",
+     "start": 2.403,
+     "end": 3.281,
+     "f0": 72,
+     "f1": 98
+    },
+    {
+     "text": "and it folds flat.",
+     "start": 3.541,
+     "end": 4.569,
+     "f0": 106,
+     "f1": 137
+    }
+   ],
+   "start": 2.403,
+   "end": 4.569,
+   "f0": 72,
+   "f1": 137
+  },
+  {
+   "id": "tri",
+   "text": "Push on a triangle, and nothing happens.",
+   "phrases": [
+    {
+     "text": "Push on a triangle,",
+     "start": 4.869,
+     "end": 5.961,
+     "f0": 146,
+     "f1": 179
+    },
+    {
+     "text": "and nothing happens.",
+     "start": 6.221,
+     "end": 7.334,
+     "f0": 187,
+     "f1": 220
+    }
+   ],
+   "start": 4.869,
+   "end": 7.334,
+   "f0": 146,
+   "f1": 220
+  },
+  {
+   "id": "why",
+   "text": "A triangle can't change its shape, unless a side changes length.",
+   "phrases": [
+    {
+     "text": "A triangle can't change its shape,",
+     "start": 7.784,
+     "end": 9.473,
+     "f0": 234,
+     "f1": 284
+    },
+    {
+     "text": "unless a side changes length.",
+     "start": 9.733,
+     "end": 11.23,
+     "f0": 292,
+     "f1": 337
+    }
+   ],
+   "start": 7.784,
+   "end": 11.23,
+   "f0": 234,
+   "f1": 337
+  },
+  {
+   "id": "load",
+   "text": "So when a truck rolls across, the load flows through the triangles.",
+   "phrases": [
+    {
+     "text": "So when a truck rolls across,",
+     "start": 11.65,
+     "end": 13.061,
+     "f0": 349,
+     "f1": 392
+    },
+    {
+     "text": "the load flows through the triangles.",
+     "start": 13.321,
+     "end": 15.117,
+     "f0": 400,
+     "f1": 454
+    }
+   ],
+   "start": 11.65,
+   "end": 15.117,
+   "f0": 349,
+   "f1": 454
+  },
+  {
+   "id": "forces",
+   "text": "Some beams get squeezed. Others get stretched.",
+   "phrases": [
+    {
+     "text": "Some beams get squeezed.",
+     "start": 15.437,
+     "end": 16.806,
+     "f0": 463,
+     "f1": 504
+    },
+    {
+     "text": "Others get stretched.",
+     "start": 17.356,
+     "end": 18.448,
+     "f0": 521,
+     "f1": 553
+    }
+   ],
+   "start": 15.437,
+   "end": 18.448,
+   "f0": 463,
+   "f1": 553
+  },
+  {
+   "id": "bend",
+   "text": "Ideally, none of them bend, and steel is far stronger that way.",
+   "phrases": [
+    {
+     "text": "Ideally,",
+     "start": 18.798,
+     "end": 19.441,
+     "f0": 564,
+     "f1": 583
+    },
+    {
+     "text": "none of them bend,",
+     "start": 19.701,
+     "end": 20.686,
+     "f0": 591,
+     "f1": 621
+    },
+    {
+     "text": "and steel is far stronger that way.",
+     "start": 20.946,
+     "end": 22.742,
+     "f0": 628,
+     "f1": 682
+    }
+   ],
+   "start": 18.798,
+   "end": 22.742,
+   "f0": 564,
+   "f1": 682
+  },
+  {
+   "id": "hero",
+   "text": "Light. Strong. Rigid. That's a truss.",
+   "phrases": [
+    {
+     "text": "Light.",
+     "start": 23.242,
+     "end": 23.8,
+     "f0": 697,
+     "f1": 714
+    },
+    {
+     "text": "Strong.",
+     "start": 24.35,
+     "end": 24.994,
+     "f0": 731,
+     "f1": 750
+    },
+    {
+     "text": "Rigid.",
+     "start": 25.544,
+     "end": 26.145,
+     "f0": 766,
+     "f1": 784
+    },
+    {
+     "text": "That's a truss.",
+     "start": 26.695,
+     "end": 27.509,
+     "f0": 801,
+     "f1": 825
+    }
+   ],
+   "start": 23.242,
+   "end": 27.509,
+   "f0": 697,
+   "f1": 825
+  },
+  {
+   "id": "end",
+   "text": "Which machine should we break down next?",
+   "phrases": [
+    {
+     "text": "Which machine should we break down next?",
+     "start": 27.959,
+     "end": 29.755,
+     "f0": 839,
+     "f1": 893
+    }
+   ],
+   "start": 27.959,
+   "end": 29.755,
+   "f0": 839,
+   "f1": 893
+  }
+ ]
+}

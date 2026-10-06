@@ -6,6 +6,7 @@ import { DevAegis60 } from "./projects/devaegis/DevAegis60";
 import { Gearbox30 } from "./projects/gearbox/Gearbox30";
 import { Transistor30 } from "./projects/transistor/Transistor30";
 import { Jet30 } from "./projects/jet/Jet30";
+import { Bridge30 } from "./projects/bridge/Bridge30";
 
 /**
  * One <Composition> per video. Convention:
@@ -27,5 +28,7 @@ export const Root: React.FC = () => (
     <Composition id="Transistor-30s-silent" component={Transistor30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: false }} />
     <Composition id="Jet-30s" component={Jet30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: true }} />
     <Composition id="Jet-30s-silent" component={Jet30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: false }} />
+    <Composition id="Bridge-30s" component={Bridge30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: true }} />
+    <Composition id="Bridge-30s-silent" component={Bridge30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: false }} />
   </>
 );

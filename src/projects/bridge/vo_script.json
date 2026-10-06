@@ -1,0 +1,50 @@
+{
+ "start": 0.2,
+ "beats": [
+  {
+   "id": "hook",
+   "text": "Why are bridges full of triangles?",
+   "after": 0.45
+  },
+  {
+   "id": "square",
+   "text": "Push on a square, and it folds flat.",
+   "after": 0.3
+  },
+  {
+   "id": "tri",
+   "text": "Push on a triangle, and nothing happens.",
+   "after": 0.45
+  },
+  {
+   "id": "why",
+   "text": "A triangle can't change its shape, unless a side changes length.",
+   "after": 0.42
+  },
+  {
+   "id": "load",
+   "text": "So when a truck rolls across, the load flows through the triangles.",
+   "after": 0.32
+  },
+  {
+   "id": "forces",
+   "text": "Some beams get squeezed. Others get stretched.",
+   "after": 0.35
+  },
+  {
+   "id": "bend",
+   "text": "Ideally, none of them bend, and steel is far stronger that way.",
+   "after": 0.5
+  },
+  {
+   "id": "hero",
+   "text": "Light. Strong. Rigid. That's a truss.",
+   "after": 0.45
+  },
+  {
+   "id": "end",
+   "text": "Which machine should we break down next?",
+   "after": 0.2
+  }
+ ]
+}
