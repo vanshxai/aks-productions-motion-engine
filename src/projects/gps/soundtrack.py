@@ -88,7 +88,7 @@ fx.mono(fx.chime([81, 88, 93, 100], 2.0), 676, .09)
 # ── end card ──
 fx.sfx("swoosh1", 704, .24); fx.sfx("pop", 714, .28); fx.mono(fx.chime([81, 88], 1.0), 715, .08)
 fx.mono(fx.chime([76, 83], 1.0), 748, .05)
-fx.typing(816, 22, 1.0, .1); fx.typing(842, 24, 2.0, .09)
+fx.typing(842, 24, 1.0, .1); fx.typing(856, 30, 2.0, .08)
 fx.mono(fx.chime([69, 76, 81, 88], 2.2), 846, .08)
 
 # pull the music back under the one-word hero beats

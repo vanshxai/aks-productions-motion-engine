@@ -11,6 +11,6 @@
   { "id": "fourth", "text": "A fourth satellite shrinks every circle equally.", "after": 0.2 },
   { "id": "hero", "text": "Listen, measure, intersect.", "after": 0.1 },
   { "id": "fin", "text": "That's GPS.", "after": 0.2 },
-  { "id": "end", "text": "Comment anything, and I'll send you the free PDF. Follow, so it can reach you.", "after": 0.2 }
+  { "id": "end", "text": "Follow for more, and see how everything works.", "after": 0.2 }
  ]
 }

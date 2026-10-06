@@ -478,18 +478,15 @@ export const End: React.FC = () => {
   const m_ = 18, cd = (m_ * 23) / 2, cx = 540 - cd * 0.17, cy = 1085 + cd * 0.29, d3 = (-120 * Math.PI) / 180;
   return (
     <div style={{ position: "absolute", inset: 0 }}>
-      <Headline f={f} lines={["Comment", "*anything*"]} at={2} top={380} size={118} />
-      <div style={{ position: "absolute", left: 0, right: 0, top: 740, textAlign: "center", fontFamily: K.head, fontWeight: 600, fontSize: 40, letterSpacing: -0.5, color: K.text, opacity: io(f, [40, 52], [0, 1]) }}>
-        Get the free PDF: <span style={{ color: AMBER, fontFamily: K.serif, fontStyle: "italic", fontWeight: 400, fontSize: 48 }}>How AI Works</span>
-      </div>
+      <Headline f={f} lines={["Follow for", "*more*"]} at={2} top={380} size={118} />
       <div style={{ position: "absolute", inset: 0, transform: `scale(${0.6 + 0.4 * p})`, transformOrigin: "540px 1020px", opacity: clamp01(p) }}>
         <Gear N={14} m={m_} x={cx} y={cy} rot={a} glow={0.6} dashPitch={false} />
         <Gear N={9} m={m_} x={cx + cd} y={cy} rot={meshPhase(9, 0) - (a * 14) / 9} dashPitch={false} />
         <Gear N={9} m={m_} x={cx + cd * Math.cos(d3)} y={cy + cd * Math.sin(d3)} rot={meshPhase(9, d3) + (14 / 9) * d3 - (a * 14) / 9} dashPitch={false} />
       </div>
-      <Tag f={f} at={8} text="COMMENT ANYTHING  ↓" x={540} y={1330} color={AMBER} solid size={32} />
-      <Label f={f} at={110} text="FOLLOW US TO RECEIVE IT" x={540} y={1410} size={26} align="center" color={K.text} />
-      <Label f={f} at={136} text="AKS PRODUCTIONS" x={540} y={1466} size={30} align="center" color={K.muted} />
+      <Tag f={f} at={8} text="FOLLOW  +" x={540} y={1330} color={AMBER} solid size={32} />
+      <Label f={f} at={136} text="AKS PRODUCTIONS" x={540} y={1410} size={30} align="center" color={K.text} />
+      <Label f={f} at={150} text="HOW IT WORKS · @DEAD.SIMPLE.ENGINEERING" x={540} y={1466} size={20} align="center" color={K.muted} />
     </div>
   );
 };
