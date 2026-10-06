@@ -1,0 +1,14 @@
+{
+ "start": 0.12,
+ "beats": [
+  {"id": "hook", "text": "Minified code isn't hidden. It's just smaller.", "after": 0.25},
+  {"id": "strip", "text": "First, it strips comments and spaces.", "after": 0.2},
+  {"id": "rename", "text": "Then it renames everything.", "after": 0.2},
+  {"id": "squash", "text": "Then squashes it onto one line. Two hundred nine bytes, to ninety two.", "after": 0.25},
+  {"id": "restore", "text": "Paste it into a formatter, and the structure comes back.", "after": 0.2},
+  {"id": "survive", "text": "The names are gone. The logic, and your API routes, are not.", "after": 0.25},
+  {"id": "hero", "text": "Strip, rename, squash, restore.", "after": 0.2},
+  {"id": "lesson", "text": "Smaller, not secret.", "after": 0.25},
+  {"id": "end", "text": "Follow DevAegis, to protect your code.", "after": 0.2}
+ ]
+}

@@ -12,6 +12,7 @@ import { Motor30, MotorCover } from "./projects/motor/Motor30";
 import { Hydraulic30, HydraulicCover } from "./projects/hydraulic/Hydraulic30";
 import { Fridge30, FridgeCover } from "./projects/fridge/Fridge30";
 import { Lock30, LockCover } from "./projects/lock/Lock30";
+import { Minify30, MinifyCover } from "./projects/minify/Minify30";
 
 /**
  * One <Composition> per video. Convention:
@@ -50,5 +51,8 @@ export const Root: React.FC = () => (
     <Composition id="Lock-30s" component={Lock30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: true }} />
     <Composition id="Lock-30s-silent" component={Lock30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: false }} />
     <Composition id="Lock-cover" component={LockCover} durationInFrames={1} fps={30} width={1080} height={1920} />
+    <Composition id="Minify-30s" component={Minify30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: true }} />
+    <Composition id="Minify-30s-silent" component={Minify30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: false }} />
+    <Composition id="Minify-cover" component={MinifyCover} durationInFrames={1} fps={30} width={1080} height={1920} />
   </>
 );
