@@ -10,6 +10,7 @@ import { Bridge30 } from "./projects/bridge/Bridge30";
 import { Engine4_30, Engine4Cover } from "./projects/engine4/Engine4_30";
 import { Motor30, MotorCover } from "./projects/motor/Motor30";
 import { Hydraulic30, HydraulicCover } from "./projects/hydraulic/Hydraulic30";
+import { Fridge30, FridgeCover } from "./projects/fridge/Fridge30";
 
 /**
  * One <Composition> per video. Convention:
@@ -42,5 +43,8 @@ export const Root: React.FC = () => (
     <Composition id="Hydraulic-30s" component={Hydraulic30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: true }} />
     <Composition id="Hydraulic-30s-silent" component={Hydraulic30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: false }} />
     <Composition id="Hydraulic-cover" component={HydraulicCover} durationInFrames={1} fps={30} width={1080} height={1920} />
+    <Composition id="Fridge-30s" component={Fridge30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: true }} />
+    <Composition id="Fridge-30s-silent" component={Fridge30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: false }} />
+    <Composition id="Fridge-cover" component={FridgeCover} durationInFrames={1} fps={30} width={1080} height={1920} />
   </>
 );

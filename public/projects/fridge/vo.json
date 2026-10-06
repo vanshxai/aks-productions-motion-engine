@@ -1,0 +1,212 @@
+{
+ "fps": 30,
+ "total": 29.924,
+ "beats": [
+  {
+   "id": "hook",
+   "text": "Your fridge doesn't make cold. It pumps heat out.",
+   "phrases": [
+    {
+     "text": "Your fridge doesn't make cold.",
+     "start": 0.15,
+     "end": 1.647,
+     "f0": 4,
+     "f1": 49
+    },
+    {
+     "text": "It pumps heat out.",
+     "start": 2.197,
+     "end": 3.203,
+     "f0": 66,
+     "f1": 96
+    }
+   ],
+   "start": 0.15,
+   "end": 3.203,
+   "f0": 4,
+   "f1": 96
+  },
+  {
+   "id": "liquid",
+   "text": "The trick is a liquid that boils below freezing.",
+   "phrases": [
+    {
+     "text": "The trick is a liquid that boils below freezing.",
+     "start": 3.603,
+     "end": 6.188,
+     "f0": 108,
+     "f1": 186
+    }
+   ],
+   "start": 3.603,
+   "end": 6.188,
+   "f0": 108,
+   "f1": 186
+  },
+  {
+   "id": "evap",
+   "text": "Inside, it boils in these coils, and soaks up heat from your food.",
+   "phrases": [
+    {
+     "text": "Inside,",
+     "start": 6.538,
+     "end": 7.203,
+     "f0": 196,
+     "f1": 216
+    },
+    {
+     "text": "it boils in these coils,",
+     "start": 7.463,
+     "end": 8.747,
+     "f0": 224,
+     "f1": 262
+    },
+    {
+     "text": "and soaks up heat from your food.",
+     "start": 9.007,
+     "end": 10.568,
+     "f0": 270,
+     "f1": 317
+    }
+   ],
+   "start": 6.538,
+   "end": 10.568,
+   "f0": 196,
+   "f1": 317
+  },
+  {
+   "id": "comp",
+   "text": "A compressor squeezes the gas, and makes it hot.",
+   "phrases": [
+    {
+     "text": "A compressor squeezes the gas,",
+     "start": 10.918,
+     "end": 12.497,
+     "f0": 328,
+     "f1": 375
+    },
+    {
+     "text": "and makes it hot.",
+     "start": 12.757,
+     "end": 13.699,
+     "f0": 383,
+     "f1": 411
+    }
+   ],
+   "start": 10.918,
+   "end": 13.699,
+   "f0": 328,
+   "f1": 411
+  },
+  {
+   "id": "cond",
+   "text": "The coils at the back dump that heat into your kitchen, and it turns liquid again.",
+   "phrases": [
+    {
+     "text": "The coils at the back dump that heat into your kitchen,",
+     "start": 14.049,
+     "end": 16.485,
+     "f0": 421,
+     "f1": 495
+    },
+    {
+     "text": "and it turns liquid again.",
+     "start": 16.745,
+     "end": 18.071,
+     "f0": 502,
+     "f1": 542
+    }
+   ],
+   "start": 14.049,
+   "end": 18.071,
+   "f0": 421,
+   "f1": 542
+  },
+  {
+   "id": "valve",
+   "text": "A tiny valve drops the pressure, and it's ice cold again.",
+   "phrases": [
+    {
+     "text": "A tiny valve drops the pressure,",
+     "start": 18.421,
+     "end": 20.131,
+     "f0": 553,
+     "f1": 604
+    },
+    {
+     "text": "and it's ice cold again.",
+     "start": 20.391,
+     "end": 21.654,
+     "f0": 612,
+     "f1": 650
+    }
+   ],
+   "start": 18.421,
+   "end": 21.654,
+   "f0": 553,
+   "f1": 650
+  },
+  {
+   "id": "hero",
+   "text": "Boil. Squeeze. Release. Expand. That's a fridge.",
+   "phrases": [
+    {
+     "text": "Boil.",
+     "start": 22.054,
+     "end": 22.569,
+     "f0": 662,
+     "f1": 677
+    },
+    {
+     "text": "Squeeze.",
+     "start": 23.119,
+     "end": 23.742,
+     "f0": 694,
+     "f1": 712
+    },
+    {
+     "text": "Release.",
+     "start": 24.292,
+     "end": 24.935,
+     "f0": 729,
+     "f1": 748
+    },
+    {
+     "text": "Expand.",
+     "start": 25.485,
+     "end": 26.214,
+     "f0": 765,
+     "f1": 786
+    },
+    {
+     "text": "That's a fridge.",
+     "start": 26.764,
+     "end": 27.621,
+     "f0": 803,
+     "f1": 829
+    }
+   ],
+   "start": 22.054,
+   "end": 27.621,
+   "f0": 662,
+   "f1": 829
+  },
+  {
+   "id": "end",
+   "text": "Which machine should we break down next?",
+   "phrases": [
+    {
+     "text": "Which machine should we break down next?",
+     "start": 27.971,
+     "end": 29.724,
+     "f0": 839,
+     "f1": 892
+    }
+   ],
+   "start": 27.971,
+   "end": 29.724,
+   "f0": 839,
+   "f1": 892
+  }
+ ]
+}
