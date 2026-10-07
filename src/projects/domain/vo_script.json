@@ -1,0 +1,60 @@
+{
+ "start": 0.12,
+ "beats": [
+  {
+   "id": "hook",
+   "text": "Your code should know where it's allowed to run.",
+   "after": 0.55
+  },
+  {
+   "id": "read",
+   "text": "The page loads, and the code reads its own domain.",
+   "after": 0.25
+  },
+  {
+   "id": "check",
+   "text": "It checks an allow list.",
+   "after": 0.45
+  },
+  {
+   "id": "match",
+   "text": "Match, and it runs.",
+   "after": 0.25
+  },
+  {
+   "id": "block",
+   "text": "No match, and it's blocked.",
+   "after": 0.55
+  },
+  {
+   "id": "weak",
+   "text": "But a plain check can be deleted.",
+   "after": 0.45
+  },
+  {
+   "id": "strong",
+   "text": "So strong locks stay encrypted, until the domain checks out.",
+   "after": 0.4
+  },
+  {
+   "id": "copy",
+   "text": "Copy it to another site, and it won't run.",
+   "after": 0.5
+  },
+  {
+   "id": "hero",
+   "text": "Load, check, match, run.",
+   "after": 0.45
+  },
+  {
+   "id": "lesson",
+   "text": "Code that knows its home.",
+   "after": 0.4
+  },
+  {
+   "id": "end",
+   "text": "Follow DevAegis, to protect your code.",
+   "after": 0.25
+  }
+ ]
+}

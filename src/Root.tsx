@@ -15,6 +15,7 @@ import { Lock30, LockCover } from "./projects/lock/Lock30";
 import { Minify30, MinifyCover } from "./projects/minify/Minify30";
 import { Aes30, AesCover } from "./projects/aes/Aes30";
 import { Leak30, LeakCover } from "./projects/leak/Leak30";
+import { Domain30, DomainCover } from "./projects/domain/Domain30";
 import { Profile } from "./projects/minify/Profile";
 
 /**
@@ -63,6 +64,9 @@ export const Root: React.FC = () => (
     <Composition id="Leak-30s" component={Leak30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: true }} />
     <Composition id="Leak-30s-silent" component={Leak30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: false }} />
     <Composition id="Leak-cover" component={LeakCover} durationInFrames={1} fps={30} width={1080} height={1920} />
+    <Composition id="Domain-30s" component={Domain30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: true }} />
+    <Composition id="Domain-30s-silent" component={Domain30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: false }} />
+    <Composition id="Domain-cover" component={DomainCover} durationInFrames={1} fps={30} width={1080} height={1920} />
     <Composition id="Profile-wordmark" component={Profile} durationInFrames={1} fps={30} width={1080} height={1080} defaultProps={{ variant: "wordmark" as const }} />
     <Composition id="Profile-mark" component={Profile} durationInFrames={1} fps={30} width={1080} height={1080} defaultProps={{ variant: "mark" as const }} />
   </>

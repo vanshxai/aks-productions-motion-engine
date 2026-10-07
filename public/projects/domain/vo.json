@@ -1,0 +1,256 @@
+{
+ "fps": 30,
+ "total": 28.285,
+ "beats": [
+  {
+   "id": "hook",
+   "text": "Your code should know where it's allowed to run.",
+   "phrases": [
+    {
+     "text": "Your code should know where it's allowed to run.",
+     "start": 0.12,
+     "end": 2.065,
+     "f0": 4,
+     "f1": 62
+    }
+   ],
+   "start": 0.12,
+   "end": 2.065,
+   "f0": 4,
+   "f1": 62
+  },
+  {
+   "id": "read",
+   "text": "The page loads, and the code reads its own domain.",
+   "phrases": [
+    {
+     "text": "The page loads,",
+     "start": 2.615,
+     "end": 3.6,
+     "f0": 78,
+     "f1": 108
+    },
+    {
+     "text": "and the code reads its own domain.",
+     "start": 3.86,
+     "end": 5.528,
+     "f0": 116,
+     "f1": 166
+    }
+   ],
+   "start": 2.615,
+   "end": 5.528,
+   "f0": 78,
+   "f1": 166
+  },
+  {
+   "id": "check",
+   "text": "It checks an allow list.",
+   "phrases": [
+    {
+     "text": "It checks an allow list.",
+     "start": 5.778,
+     "end": 7.019,
+     "f0": 173,
+     "f1": 211
+    }
+   ],
+   "start": 5.778,
+   "end": 7.019,
+   "f0": 173,
+   "f1": 211
+  },
+  {
+   "id": "match",
+   "text": "Match, and it runs.",
+   "phrases": [
+    {
+     "text": "Match,",
+     "start": 7.469,
+     "end": 8.048,
+     "f0": 224,
+     "f1": 241
+    },
+    {
+     "text": "and it runs.",
+     "start": 8.308,
+     "end": 9.08,
+     "f0": 249,
+     "f1": 272
+    }
+   ],
+   "start": 7.469,
+   "end": 9.08,
+   "f0": 224,
+   "f1": 272
+  },
+  {
+   "id": "block",
+   "text": "No match, and it's blocked.",
+   "phrases": [
+    {
+     "text": "No match,",
+     "start": 9.33,
+     "end": 10.038,
+     "f0": 280,
+     "f1": 301
+    },
+    {
+     "text": "and it's blocked.",
+     "start": 10.298,
+     "end": 11.155,
+     "f0": 309,
+     "f1": 335
+    }
+   ],
+   "start": 9.33,
+   "end": 11.155,
+   "f0": 280,
+   "f1": 335
+  },
+  {
+   "id": "weak",
+   "text": "But a plain check can be deleted.",
+   "phrases": [
+    {
+     "text": "But a plain check can be deleted.",
+     "start": 11.705,
+     "end": 13.394,
+     "f0": 351,
+     "f1": 402
+    }
+   ],
+   "start": 11.705,
+   "end": 13.394,
+   "f0": 351,
+   "f1": 402
+  },
+  {
+   "id": "strong",
+   "text": "So strong locks stay encrypted, until the domain checks out.",
+   "phrases": [
+    {
+     "text": "So strong locks stay encrypted,",
+     "start": 13.844,
+     "end": 15.533,
+     "f0": 415,
+     "f1": 466
+    },
+    {
+     "text": "until the domain checks out.",
+     "start": 15.793,
+     "end": 17.226,
+     "f0": 474,
+     "f1": 517
+    }
+   ],
+   "start": 13.844,
+   "end": 17.226,
+   "f0": 415,
+   "f1": 517
+  },
+  {
+   "id": "copy",
+   "text": "Copy it to another site, and it won't run.",
+   "phrases": [
+    {
+     "text": "Copy it to another site,",
+     "start": 17.626,
+     "end": 18.888,
+     "f0": 529,
+     "f1": 567
+    },
+    {
+     "text": "and it won't run.",
+     "start": 19.148,
+     "end": 20.026,
+     "f0": 574,
+     "f1": 601
+    }
+   ],
+   "start": 17.626,
+   "end": 20.026,
+   "f0": 529,
+   "f1": 601
+  },
+  {
+   "id": "hero",
+   "text": "Load, check, match, run.",
+   "phrases": [
+    {
+     "text": "Load,",
+     "start": 20.526,
+     "end": 21.063,
+     "f0": 616,
+     "f1": 632
+    },
+    {
+     "text": "check,",
+     "start": 21.323,
+     "end": 21.839,
+     "f0": 640,
+     "f1": 655
+    },
+    {
+     "text": "match,",
+     "start": 22.099,
+     "end": 22.679,
+     "f0": 663,
+     "f1": 680
+    },
+    {
+     "text": "run.",
+     "start": 22.939,
+     "end": 23.433,
+     "f0": 688,
+     "f1": 703
+    }
+   ],
+   "start": 20.526,
+   "end": 23.433,
+   "f0": 616,
+   "f1": 703
+  },
+  {
+   "id": "lesson",
+   "text": "Code that knows its home.",
+   "phrases": [
+    {
+     "text": "Code that knows its home.",
+     "start": 23.883,
+     "end": 25.081,
+     "f0": 716,
+     "f1": 752
+    }
+   ],
+   "start": 23.883,
+   "end": 25.081,
+   "f0": 716,
+   "f1": 752
+  },
+  {
+   "id": "end",
+   "text": "Follow DevAegis, to protect your code.",
+   "phrases": [
+    {
+     "text": "Follow DevAegis,",
+     "start": 25.481,
+     "end": 26.662,
+     "f0": 764,
+     "f1": 800
+    },
+    {
+     "text": "to protect your code.",
+     "start": 26.922,
+     "end": 28.035,
+     "f0": 808,
+     "f1": 841
+    }
+   ],
+   "start": 25.481,
+   "end": 28.035,
+   "f0": 764,
+   "f1": 841
+  }
+ ]
+}
