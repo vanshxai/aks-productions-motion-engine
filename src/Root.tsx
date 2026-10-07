@@ -14,6 +14,7 @@ import { Fridge30, FridgeCover } from "./projects/fridge/Fridge30";
 import { Lock30, LockCover } from "./projects/lock/Lock30";
 import { Gps30, GpsCover } from "./projects/gps/Gps30";
 import { Ice30, IceCover } from "./projects/ice/Ice30";
+import { AcDc30, AcDcCover } from "./projects/acdc/AcDc30";
 
 /**
  * One <Composition> per video. Convention:
@@ -58,5 +59,8 @@ export const Root: React.FC = () => (
     <Composition id="Ice-30s" component={Ice30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: true }} />
     <Composition id="Ice-30s-silent" component={Ice30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: false }} />
     <Composition id="Ice-cover" component={IceCover} durationInFrames={1} fps={30} width={1080} height={1920} />
+    <Composition id="AcDc-30s" component={AcDc30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: true }} />
+    <Composition id="AcDc-30s-silent" component={AcDc30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: false }} />
+    <Composition id="AcDc-cover" component={AcDcCover} durationInFrames={1} fps={30} width={1080} height={1920} />
   </>
 );

@@ -1,0 +1,15 @@
+{
+ "start": 0.12,
+ "beats": [
+  {"id": "hook", "text": "Your socket is AC. Your phone is DC.", "after": 0.1},
+  {"id": "dc", "text": "DC flows one way.", "after": 0.1},
+  {"id": "ac", "text": "AC reverses a hundred times a second.", "after": 0.1},
+  {"id": "peak", "text": "Two thirty volts R M S, peaking at three twenty five.", "after": 0.1},
+  {"id": "why", "text": "Transformers need AC to step voltage up.", "after": 0.1},
+  {"id": "loss", "text": "Ten times the voltage, a hundredth of the loss.", "after": 0.1},
+  {"id": "line", "text": "So lines run at four hundred kilovolts, then step down to two thirty.", "after": 0.1},
+  {"id": "rect", "text": "Your charger's rectifier makes it DC.", "after": 0.1},
+  {"id": "hero", "text": "Grid is AC, phone is DC, charger translates.", "after": 0.1},
+  {"id": "end", "text": "Follow for more, and see how everything works.", "after": 0.2}
+ ]
+}

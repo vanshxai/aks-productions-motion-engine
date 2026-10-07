@@ -1,0 +1,225 @@
+{
+ "fps": 30,
+ "total": 29.423,
+ "beats": [
+  {
+   "id": "hook",
+   "text": "Your socket is AC. Your phone is DC.",
+   "phrases": [
+    {
+     "text": "Your socket is AC.",
+     "start": 0.12,
+     "end": 1.404,
+     "f0": 4,
+     "f1": 42
+    },
+    {
+     "text": "Your phone is DC.",
+     "start": 1.954,
+     "end": 3.216,
+     "f0": 59,
+     "f1": 96
+    }
+   ],
+   "start": 0.12,
+   "end": 3.216,
+   "f0": 4,
+   "f1": 96
+  },
+  {
+   "id": "dc",
+   "text": "DC flows one way.",
+   "phrases": [
+    {
+     "text": "DC flows one way.",
+     "start": 3.316,
+     "end": 4.685,
+     "f0": 99,
+     "f1": 141
+    }
+   ],
+   "start": 3.316,
+   "end": 4.685,
+   "f0": 99,
+   "f1": 141
+  },
+  {
+   "id": "ac",
+   "text": "AC reverses a hundred times a second.",
+   "phrases": [
+    {
+     "text": "AC reverses a hundred times a second.",
+     "start": 4.785,
+     "end": 7.157,
+     "f0": 144,
+     "f1": 215
+    }
+   ],
+   "start": 4.785,
+   "end": 7.157,
+   "f0": 144,
+   "f1": 215
+  },
+  {
+   "id": "peak",
+   "text": "Two thirty volts R M S, peaking at three twenty five.",
+   "phrases": [
+    {
+     "text": "Two thirty volts R M S,",
+     "start": 7.257,
+     "end": 8.818,
+     "f0": 218,
+     "f1": 265
+    },
+    {
+     "text": "peaking at three twenty five.",
+     "start": 9.078,
+     "end": 10.553,
+     "f0": 272,
+     "f1": 317
+    }
+   ],
+   "start": 7.257,
+   "end": 10.553,
+   "f0": 218,
+   "f1": 317
+  },
+  {
+   "id": "why",
+   "text": "Transformers need AC to step voltage up.",
+   "phrases": [
+    {
+     "text": "Transformers need AC to step voltage up.",
+     "start": 10.653,
+     "end": 13.174,
+     "f0": 320,
+     "f1": 395
+    }
+   ],
+   "start": 10.653,
+   "end": 13.174,
+   "f0": 320,
+   "f1": 395
+  },
+  {
+   "id": "loss",
+   "text": "Ten times the voltage, a hundredth of the loss.",
+   "phrases": [
+    {
+     "text": "Ten times the voltage,",
+     "start": 13.274,
+     "end": 14.601,
+     "f0": 398,
+     "f1": 438
+    },
+    {
+     "text": "a hundredth of the loss.",
+     "start": 14.861,
+     "end": 16.123,
+     "f0": 446,
+     "f1": 484
+    }
+   ],
+   "start": 13.274,
+   "end": 16.123,
+   "f0": 398,
+   "f1": 484
+  },
+  {
+   "id": "line",
+   "text": "So lines run at four hundred kilovolts, then step down to two thirty.",
+   "phrases": [
+    {
+     "text": "So lines run at four hundred kilovolts,",
+     "start": 16.223,
+     "end": 18.424,
+     "f0": 487,
+     "f1": 553
+    },
+    {
+     "text": "then step down to two thirty.",
+     "start": 18.684,
+     "end": 20.224,
+     "f0": 561,
+     "f1": 607
+    }
+   ],
+   "start": 16.223,
+   "end": 20.224,
+   "f0": 487,
+   "f1": 607
+  },
+  {
+   "id": "rect",
+   "text": "Your charger's rectifier makes it DC.",
+   "phrases": [
+    {
+     "text": "Your charger's rectifier makes it DC.",
+     "start": 20.324,
+     "end": 22.567,
+     "f0": 610,
+     "f1": 677
+    }
+   ],
+   "start": 20.324,
+   "end": 22.567,
+   "f0": 610,
+   "f1": 677
+  },
+  {
+   "id": "hero",
+   "text": "Grid is AC, phone is DC, charger translates.",
+   "phrases": [
+    {
+     "text": "Grid is AC,",
+     "start": 22.667,
+     "end": 23.567,
+     "f0": 680,
+     "f1": 707
+    },
+    {
+     "text": "phone is DC,",
+     "start": 23.827,
+     "end": 24.88,
+     "f0": 715,
+     "f1": 746
+    },
+    {
+     "text": "charger translates.",
+     "start": 25.14,
+     "end": 26.359,
+     "f0": 754,
+     "f1": 791
+    }
+   ],
+   "start": 22.667,
+   "end": 26.359,
+   "f0": 680,
+   "f1": 791
+  },
+  {
+   "id": "end",
+   "text": "Follow for more, and see how everything works.",
+   "phrases": [
+    {
+     "text": "Follow for more,",
+     "start": 26.459,
+     "end": 27.466,
+     "f0": 794,
+     "f1": 824
+    },
+    {
+     "text": "and see how everything works.",
+     "start": 27.726,
+     "end": 29.223,
+     "f0": 832,
+     "f1": 877
+    }
+   ],
+   "start": 26.459,
+   "end": 29.223,
+   "f0": 794,
+   "f1": 877
+  }
+ ]
+}
