@@ -1,0 +1,246 @@
+{
+ "fps": 30,
+ "total": 28.245,
+ "beats": [
+  {
+   "id": "hook",
+   "text": "AES-256 is just a grid, scrambled fourteen times.",
+   "phrases": [
+    {
+     "text": "AES-256 is just a grid,",
+     "start": 0.12,
+     "end": 2.62,
+     "f0": 4,
+     "f1": 79
+    },
+    {
+     "text": "scrambled fourteen times.",
+     "start": 2.88,
+     "end": 4.313,
+     "f0": 86,
+     "f1": 129
+    }
+   ],
+   "start": 0.12,
+   "end": 4.313,
+   "f0": 4,
+   "f1": 129
+  },
+  {
+   "id": "grid",
+   "text": "Your data becomes sixteen bytes, in a four by four grid.",
+   "phrases": [
+    {
+     "text": "Your data becomes sixteen bytes,",
+     "start": 4.563,
+     "end": 6.294,
+     "f0": 137,
+     "f1": 189
+    },
+    {
+     "text": "in a four by four grid.",
+     "start": 6.554,
+     "end": 7.945,
+     "f0": 197,
+     "f1": 238
+    }
+   ],
+   "start": 4.563,
+   "end": 7.945,
+   "f0": 137,
+   "f1": 238
+  },
+  {
+   "id": "sub",
+   "text": "Swap every byte, using a lookup table.",
+   "phrases": [
+    {
+     "text": "Swap every byte,",
+     "start": 8.145,
+     "end": 9.13,
+     "f0": 244,
+     "f1": 274
+    },
+    {
+     "text": "using a lookup table.",
+     "start": 9.39,
+     "end": 10.652,
+     "f0": 282,
+     "f1": 320
+    }
+   ],
+   "start": 8.145,
+   "end": 10.652,
+   "f0": 244,
+   "f1": 320
+  },
+  {
+   "id": "shift",
+   "text": "Shift each row, by a different amount.",
+   "phrases": [
+    {
+     "text": "Shift each row,",
+     "start": 10.852,
+     "end": 11.773,
+     "f0": 326,
+     "f1": 353
+    },
+    {
+     "text": "by a different amount.",
+     "start": 12.033,
+     "end": 13.086,
+     "f0": 361,
+     "f1": 393
+    }
+   ],
+   "start": 10.852,
+   "end": 13.086,
+   "f0": 326,
+   "f1": 393
+  },
+  {
+   "id": "mix",
+   "text": "Mix every column together.",
+   "phrases": [
+    {
+     "text": "Mix every column together.",
+     "start": 13.286,
+     "end": 14.761,
+     "f0": 399,
+     "f1": 443
+    }
+   ],
+   "start": 13.286,
+   "end": 14.761,
+   "f0": 399,
+   "f1": 443
+  },
+  {
+   "id": "key",
+   "text": "Then mix in the key.",
+   "phrases": [
+    {
+     "text": "Then mix in the key.",
+     "start": 14.961,
+     "end": 16.032,
+     "f0": 449,
+     "f1": 481
+    }
+   ],
+   "start": 14.961,
+   "end": 16.032,
+   "f0": 449,
+   "f1": 481
+  },
+  {
+   "id": "rounds",
+   "text": "That's one round. AES-256 runs fourteen.",
+   "phrases": [
+    {
+     "text": "That's one round.",
+     "start": 16.282,
+     "end": 17.181,
+     "f0": 488,
+     "f1": 515
+    },
+    {
+     "text": "AES-256 runs fourteen.",
+     "start": 17.731,
+     "end": 20.082,
+     "f0": 532,
+     "f1": 602
+    }
+   ],
+   "start": 16.282,
+   "end": 20.082,
+   "f0": 488,
+   "f1": 602
+  },
+  {
+   "id": "hero",
+   "text": "Swap, shift, mix, key.",
+   "phrases": [
+    {
+     "text": "Swap,",
+     "start": 20.332,
+     "end": 20.911,
+     "f0": 610,
+     "f1": 627
+    },
+    {
+     "text": "shift,",
+     "start": 21.171,
+     "end": 21.708,
+     "f0": 635,
+     "f1": 651
+    },
+    {
+     "text": "mix,",
+     "start": 21.968,
+     "end": 22.548,
+     "f0": 659,
+     "f1": 676
+    },
+    {
+     "text": "key.",
+     "start": 22.808,
+     "end": 23.302,
+     "f0": 684,
+     "f1": 699
+    }
+   ],
+   "start": 20.332,
+   "end": 23.302,
+   "f0": 610,
+   "f1": 699
+  },
+  {
+   "id": "lesson",
+   "text": "Without the key, it's noise.",
+   "phrases": [
+    {
+     "text": "Without the key,",
+     "start": 23.502,
+     "end": 24.317,
+     "f0": 705,
+     "f1": 730
+    },
+    {
+     "text": "it's noise.",
+     "start": 24.577,
+     "end": 25.306,
+     "f0": 737,
+     "f1": 759
+    }
+   ],
+   "start": 23.502,
+   "end": 25.306,
+   "f0": 705,
+   "f1": 759
+  },
+  {
+   "id": "end",
+   "text": "Follow DevAegis, to protect your code.",
+   "phrases": [
+    {
+     "text": "Follow DevAegis,",
+     "start": 25.556,
+     "end": 26.715,
+     "f0": 767,
+     "f1": 801
+    },
+    {
+     "text": "to protect your code.",
+     "start": 26.975,
+     "end": 28.045,
+     "f0": 809,
+     "f1": 841
+    }
+   ],
+   "start": 25.556,
+   "end": 28.045,
+   "f0": 767,
+   "f1": 841
+  }
+ ]
+}

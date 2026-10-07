@@ -13,6 +13,9 @@ import { Hydraulic30, HydraulicCover } from "./projects/hydraulic/Hydraulic30";
 import { Fridge30, FridgeCover } from "./projects/fridge/Fridge30";
 import { Lock30, LockCover } from "./projects/lock/Lock30";
 import { Minify30, MinifyCover } from "./projects/minify/Minify30";
+import { Aes30, AesCover } from "./projects/aes/Aes30";
+import { Leak30, LeakCover } from "./projects/leak/Leak30";
+import { Profile } from "./projects/minify/Profile";
 
 /**
  * One <Composition> per video. Convention:
@@ -54,5 +57,13 @@ export const Root: React.FC = () => (
     <Composition id="Minify-30s" component={Minify30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: true }} />
     <Composition id="Minify-30s-silent" component={Minify30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: false }} />
     <Composition id="Minify-cover" component={MinifyCover} durationInFrames={1} fps={30} width={1080} height={1920} />
+    <Composition id="Aes-30s" component={Aes30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: true }} />
+    <Composition id="Aes-30s-silent" component={Aes30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: false }} />
+    <Composition id="Aes-cover" component={AesCover} durationInFrames={1} fps={30} width={1080} height={1920} />
+    <Composition id="Leak-30s" component={Leak30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: true }} />
+    <Composition id="Leak-30s-silent" component={Leak30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: false }} />
+    <Composition id="Leak-cover" component={LeakCover} durationInFrames={1} fps={30} width={1080} height={1920} />
+    <Composition id="Profile-wordmark" component={Profile} durationInFrames={1} fps={30} width={1080} height={1080} defaultProps={{ variant: "wordmark" as const }} />
+    <Composition id="Profile-mark" component={Profile} durationInFrames={1} fps={30} width={1080} height={1080} defaultProps={{ variant: "mark" as const }} />
   </>
 );

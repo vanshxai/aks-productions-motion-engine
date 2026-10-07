@@ -1,0 +1,15 @@
+{
+ "start": 0.12,
+ "beats": [
+  {"id": "hook", "text": "AES-256 is just a grid, scrambled fourteen times.", "after": 0.25},
+  {"id": "grid", "text": "Your data becomes sixteen bytes, in a four by four grid.", "after": 0.2},
+  {"id": "sub", "text": "Swap every byte, using a lookup table.", "after": 0.2},
+  {"id": "shift", "text": "Shift each row, by a different amount.", "after": 0.2},
+  {"id": "mix", "text": "Mix every column together.", "after": 0.2},
+  {"id": "key", "text": "Then mix in the key.", "after": 0.25},
+  {"id": "rounds", "text": "That's one round. AES-256 runs fourteen.", "after": 0.25},
+  {"id": "hero", "text": "Swap, shift, mix, key.", "after": 0.2},
+  {"id": "lesson", "text": "Without the key, it's noise.", "after": 0.25},
+  {"id": "end", "text": "Follow DevAegis, to protect your code.", "after": 0.2}
+ ]
+}

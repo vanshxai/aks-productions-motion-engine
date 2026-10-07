@@ -1,0 +1,14 @@
+{
+ "start": 0.12,
+ "beats": [
+  {"id": "hook", "text": "If your API key is in your frontend, it's public.", "after": 0.2},
+  {"id": "env", "text": "Your dot env has a key, with a public prefix.", "after": 0.15},
+  {"id": "build", "text": "Build it, and the key is copied into the bundle.", "after": 0.15},
+  {"id": "found", "text": "Search in dev tools. There it is, in plain text.", "after": 0.15},
+  {"id": "why", "text": "Anyone can. Minifying doesn't hide it.", "after": 0.2},
+  {"id": "fix", "text": "Keep the key on your server. The browser asks your server, and your server calls the API.", "after": 0.2},
+  {"id": "hero", "text": "Build, bundle, ship, found.", "after": 0.15},
+  {"id": "lesson", "text": "Browser code is public code.", "after": 0.2},
+  {"id": "end", "text": "Follow DevAegis, to protect your code.", "after": 0.2}
+ ]
+}

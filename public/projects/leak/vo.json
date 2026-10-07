@@ -1,0 +1,243 @@
+{
+ "fps": 30,
+ "total": 28.65,
+ "beats": [
+  {
+   "id": "hook",
+   "text": "If your API key is in your frontend, it's public.",
+   "phrases": [
+    {
+     "text": "If your API key is in your frontend,",
+     "start": 0.12,
+     "end": 2.214,
+     "f0": 4,
+     "f1": 66
+    },
+    {
+     "text": "it's public.",
+     "start": 2.474,
+     "end": 3.225,
+     "f0": 74,
+     "f1": 97
+    }
+   ],
+   "start": 0.12,
+   "end": 3.225,
+   "f0": 4,
+   "f1": 97
+  },
+  {
+   "id": "env",
+   "text": "Your dot env has a key, with a public prefix.",
+   "phrases": [
+    {
+     "text": "Your dot env has a key,",
+     "start": 3.425,
+     "end": 4.648,
+     "f0": 103,
+     "f1": 139
+    },
+    {
+     "text": "with a public prefix.",
+     "start": 4.908,
+     "end": 6.149,
+     "f0": 147,
+     "f1": 184
+    }
+   ],
+   "start": 3.425,
+   "end": 6.149,
+   "f0": 103,
+   "f1": 184
+  },
+  {
+   "id": "build",
+   "text": "Build it, and the key is copied into the bundle.",
+   "phrases": [
+    {
+     "text": "Build it,",
+     "start": 6.299,
+     "end": 6.861,
+     "f0": 189,
+     "f1": 206
+    },
+    {
+     "text": "and the key is copied into the bundle.",
+     "start": 7.121,
+     "end": 8.874,
+     "f0": 214,
+     "f1": 266
+    }
+   ],
+   "start": 6.299,
+   "end": 8.874,
+   "f0": 189,
+   "f1": 266
+  },
+  {
+   "id": "found",
+   "text": "Search in dev tools. There it is, in plain text.",
+   "phrases": [
+    {
+     "text": "Search in dev tools.",
+     "start": 9.024,
+     "end": 10.201,
+     "f0": 271,
+     "f1": 306
+    },
+    {
+     "text": "There it is,",
+     "start": 10.751,
+     "end": 11.416,
+     "f0": 323,
+     "f1": 342
+    },
+    {
+     "text": "in plain text.",
+     "start": 11.676,
+     "end": 12.64,
+     "f0": 350,
+     "f1": 379
+    }
+   ],
+   "start": 9.024,
+   "end": 12.64,
+   "f0": 271,
+   "f1": 379
+  },
+  {
+   "id": "why",
+   "text": "Anyone can. Minifying doesn't hide it.",
+   "phrases": [
+    {
+     "text": "Anyone can.",
+     "start": 12.79,
+     "end": 13.561,
+     "f0": 384,
+     "f1": 407
+    },
+    {
+     "text": "Minifying doesn't hide it.",
+     "start": 14.111,
+     "end": 15.523,
+     "f0": 423,
+     "f1": 466
+    }
+   ],
+   "start": 12.79,
+   "end": 15.523,
+   "f0": 384,
+   "f1": 466
+  },
+  {
+   "id": "fix",
+   "text": "Keep the key on your server. The browser asks your server, and your server calls the API.",
+   "phrases": [
+    {
+     "text": "Keep the key on your server.",
+     "start": 15.723,
+     "end": 16.985,
+     "f0": 472,
+     "f1": 510
+    },
+    {
+     "text": "The browser asks your server,",
+     "start": 17.535,
+     "end": 18.968,
+     "f0": 526,
+     "f1": 569
+    },
+    {
+     "text": "and your server calls the API.",
+     "start": 19.228,
+     "end": 20.96,
+     "f0": 577,
+     "f1": 629
+    }
+   ],
+   "start": 15.723,
+   "end": 20.96,
+   "f0": 472,
+   "f1": 629
+  },
+  {
+   "id": "hero",
+   "text": "Build, bundle, ship, found.",
+   "phrases": [
+    {
+     "text": "Build,",
+     "start": 21.16,
+     "end": 21.654,
+     "f0": 635,
+     "f1": 650
+    },
+    {
+     "text": "bundle,",
+     "start": 21.914,
+     "end": 22.43,
+     "f0": 657,
+     "f1": 673
+    },
+    {
+     "text": "ship,",
+     "start": 22.69,
+     "end": 23.184,
+     "f0": 681,
+     "f1": 696
+    },
+    {
+     "text": "found.",
+     "start": 23.444,
+     "end": 23.985,
+     "f0": 703,
+     "f1": 720
+    }
+   ],
+   "start": 21.16,
+   "end": 23.985,
+   "f0": 635,
+   "f1": 720
+  },
+  {
+   "id": "lesson",
+   "text": "Browser code is public code.",
+   "phrases": [
+    {
+     "text": "Browser code is public code.",
+     "start": 24.135,
+     "end": 25.781,
+     "f0": 724,
+     "f1": 773
+    }
+   ],
+   "start": 24.135,
+   "end": 25.781,
+   "f0": 724,
+   "f1": 773
+  },
+  {
+   "id": "end",
+   "text": "Follow DevAegis, to protect your code.",
+   "phrases": [
+    {
+     "text": "Follow DevAegis,",
+     "start": 25.981,
+     "end": 27.141,
+     "f0": 779,
+     "f1": 814
+    },
+    {
+     "text": "to protect your code.",
+     "start": 27.401,
+     "end": 28.45,
+     "f0": 822,
+     "f1": 853
+    }
+   ],
+   "start": 25.981,
+   "end": 28.45,
+   "f0": 779,
+   "f1": 853
+  }
+ ]
+}
