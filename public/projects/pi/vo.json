@@ -1,0 +1,188 @@
+{
+ "fps": 30,
+ "total": 29.815,
+ "beats": [
+  {
+   "id": "hook",
+   "text": "OpenAI claims its AI just settled a famous question about pi.",
+   "phrases": [
+    {
+     "text": "OpenAI claims its AI just settled a famous question about pi.",
+     "start": 0.12,
+     "end": 4.241,
+     "f0": 4,
+     "f1": 127
+    }
+   ],
+   "start": 0.12,
+   "end": 4.241,
+   "f0": 4,
+   "f1": 127
+  },
+  {
+   "id": "fr",
+   "text": "Twenty-two sevenths is close. Three fifty-five over one thirteen is closer.",
+   "phrases": [
+    {
+     "text": "Twenty-two sevenths is close.",
+     "start": 4.291,
+     "end": 5.895,
+     "f0": 129,
+     "f1": 177
+    },
+    {
+     "text": "Three fifty-five over one thirteen is closer.",
+     "start": 6.445,
+     "end": 9.033,
+     "f0": 193,
+     "f1": 271
+    }
+   ],
+   "start": 4.291,
+   "end": 9.033,
+   "f0": 129,
+   "f1": 271
+  },
+  {
+   "id": "claim",
+   "text": "The claim: past some size, no fraction beats exponent two.",
+   "phrases": [
+    {
+     "text": "The claim:",
+     "start": 9.083,
+     "end": 9.727,
+     "f0": 272,
+     "f1": 292
+    },
+    {
+     "text": "past some size,",
+     "start": 10.087,
+     "end": 11.008,
+     "f0": 303,
+     "f1": 330
+    },
+    {
+     "text": "no fraction beats exponent two.",
+     "start": 11.268,
+     "end": 12.957,
+     "f0": 338,
+     "f1": 389
+    }
+   ],
+   "start": 9.083,
+   "end": 12.957,
+   "f0": 272,
+   "f1": 389
+  },
+  {
+   "id": "floor",
+   "text": "Two is the lowest possible, so pi is as hard to approximate as it gets.",
+   "phrases": [
+    {
+     "text": "Two is the lowest possible,",
+     "start": 13.007,
+     "end": 14.589,
+     "f0": 390,
+     "f1": 438
+    },
+    {
+     "text": "so pi is as hard to approximate as it gets.",
+     "start": 14.849,
+     "end": 17.37,
+     "f0": 445,
+     "f1": 521
+    }
+   ],
+   "start": 13.007,
+   "end": 17.37,
+   "f0": 390,
+   "f1": 521
+  },
+  {
+   "id": "fh",
+   "text": "It implies the Flint-Hills series converges.",
+   "phrases": [
+    {
+     "text": "It implies the Flint-Hills series converges.",
+     "start": 17.42,
+     "end": 19.724,
+     "f0": 523,
+     "f1": 592
+    }
+   ],
+   "start": 17.42,
+   "end": 19.724,
+   "f0": 523,
+   "f1": 592
+  },
+  {
+   "id": "status",
+   "text": "Status: an OpenAI claim, not peer reviewed. Lean files published, not checked by us.",
+   "phrases": [
+    {
+     "text": "Status:",
+     "start": 19.774,
+     "end": 20.439,
+     "f0": 593,
+     "f1": 613
+    },
+    {
+     "text": "an OpenAI claim,",
+     "start": 20.799,
+     "end": 22.168,
+     "f0": 624,
+     "f1": 665
+    },
+    {
+     "text": "not peer reviewed.",
+     "start": 22.428,
+     "end": 23.477,
+     "f0": 673,
+     "f1": 704
+    },
+    {
+     "text": "Lean files published,",
+     "start": 24.027,
+     "end": 25.332,
+     "f0": 721,
+     "f1": 760
+    },
+    {
+     "text": "not checked by us.",
+     "start": 25.592,
+     "end": 26.752,
+     "f0": 768,
+     "f1": 803
+    }
+   ],
+   "start": 19.774,
+   "end": 26.752,
+   "f0": 593,
+   "f1": 803
+  },
+  {
+   "id": "end",
+   "text": "Follow for more, and see how everything works.",
+   "phrases": [
+    {
+     "text": "Follow for more,",
+     "start": 26.852,
+     "end": 27.858,
+     "f0": 806,
+     "f1": 836
+    },
+    {
+     "text": "and see how everything works.",
+     "start": 28.118,
+     "end": 29.615,
+     "f0": 844,
+     "f1": 888
+    }
+   ],
+   "start": 26.852,
+   "end": 29.615,
+   "f0": 806,
+   "f1": 888
+  }
+ ]
+}

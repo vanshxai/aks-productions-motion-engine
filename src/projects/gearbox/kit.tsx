@@ -38,8 +38,8 @@ export const meshPhase = (N2: number, dir: number) => dir + Math.PI + Math.PI / 
  */
 export const Gear: React.FC<{
   N: number; m: number; x: number; y: number; rot: number; draw?: number; fill?: number; marker?: boolean;
-  glow?: number; color?: string; scale?: number; opacity?: number; spokes?: boolean; dashPitch?: boolean;
-}> = ({ N, m, x, y, rot, draw = 1, fill = 1, marker, glow = 0, color = K.line, scale = 1, opacity = 1, spokes = true, dashPitch = true }) => {
+  glow?: number; color?: string; scale?: number; opacity?: number; spokes?: boolean; dashPitch?: boolean; accent?: string;
+}> = ({ N, m, x, y, rot, draw = 1, fill = 1, marker, glow = 0, color = K.line, scale = 1, opacity = 1, spokes = true, dashPitch = true, accent = K.amber }) => {
   const rp = (m * N) / 2, ra = rp + m, rf = rp - 1.25 * m;
   const hub = Math.max(m * 1.4, rf * 0.28);
   const bore = hub * 0.45;
@@ -52,9 +52,9 @@ export const Gear: React.FC<{
   return (
     <svg width={pad * 2} height={pad * 2} viewBox={`${-pad} ${-pad} ${pad * 2} ${pad * 2}`}
       style={{ position: "absolute", left: x - pad, top: y - pad, overflow: "visible", opacity, transform: `scale(${scale})` }}>
-      {glow > 0.01 && <circle r={ra + 6} fill="none" stroke={K.amber} strokeWidth={10} opacity={glow * 0.35} style={{ filter: "blur(10px)" }} />}
+      {glow > 0.01 && <circle r={ra + 6} fill="none" stroke={accent} strokeWidth={10} opacity={glow * 0.35} style={{ filter: "blur(10px)" }} />}
       <g transform={`rotate(${deg})`}>
-        <path d={gearPath(N, m)} fill={color} fillOpacity={0.07 * fill * clamp01(draw * 2 - 1)} stroke={glow > 0.5 ? K.amber : color} strokeWidth={sw}
+        <path d={gearPath(N, m)} fill={color} fillOpacity={0.07 * fill * clamp01(draw * 2 - 1)} stroke={glow > 0.5 ? accent : color} strokeWidth={sw}
           strokeLinejoin="round" pathLength={1} strokeDasharray="1 1" strokeDashoffset={1 - draw} />
         {spokes && holes > 0 && Array.from({ length: holes }).map((_, i) => {
           const a = (i / holes) * TAU + 0.3;
@@ -64,7 +64,7 @@ export const Gear: React.FC<{
         <circle r={hub} fill="none" stroke={color} strokeWidth={sw * 0.9} pathLength={1} strokeDasharray="1 1" strokeDashoffset={1 - clamp01(draw * 1.3 - 0.3)} />
         <path d={`M ${-bore} 0 A ${bore} ${bore} 0 1 1 ${bore} 0 A ${bore} ${bore} 0 1 1 ${-bore} 0`} fill={K.bgDeep} stroke={color} strokeWidth={sw * 0.8} opacity={clamp01(draw * 2 - 1)} />
         <rect x={-bore * 0.25} y={-bore - bore * 0.3} width={bore * 0.5} height={bore * 0.45} fill={color} opacity={clamp01(draw * 2 - 1) * 0.9} />
-        {marker && <circle cx={rp + m * 0.35} cy={0} r={Math.max(7, m * 0.42)} fill={K.amber} opacity={clamp01(draw * 2 - 1)} />}
+        {marker && <circle cx={rp + m * 0.35} cy={0} r={Math.max(7, m * 0.42)} fill={accent} opacity={clamp01(draw * 2 - 1)} />}
       </g>
       {dashPitch && <circle r={rp} fill="none" stroke={color} strokeWidth={1.4 / scale} strokeDasharray="10 8" opacity={0.35 * clamp01(draw * 2 - 1)} />}
       <g opacity={0.5 * clamp01(draw * 2 - 1)} stroke={color} strokeWidth={1.4 / scale}>
@@ -97,7 +97,7 @@ export const Blueprint: React.FC<{ f: number; flash?: number }> = ({ f, flash = 
 };
 
 /** Corner registration marks + series label + progress line. Kept inside Reels safe zones. */
-export const HUD: React.FC<{ f: number; total: number; ep?: string; cuts?: number[] }> = ({ f, total, ep = "01", cuts = [0, 58, 112, 182, 234, 362, 446, 488, 578, 712, 828] }) => {
+export const HUD: React.FC<{ f: number; total: number; ep?: string; cuts?: number[]; label?: string; accent?: string }> = ({ f, total, ep = "01", label = "HOW IT WORKS", accent = K.amber, cuts = [0, 58, 112, 182, 234, 362, 446, 488, 578, 712, 828] }) => {
   const o = io(f, [6, 20], [0, 1]) * (1 - io(f, [total - 70, total - 58], [0, 1]));
   const mark = (x: number, y: number, sx: number, sy: number) => (
     <path d={`M ${x} ${y + sy * 36} L ${x} ${y} L ${x + sx * 36} ${y}`} stroke={K.lineDim} strokeWidth={2} fill="none" />
@@ -108,7 +108,7 @@ export const HUD: React.FC<{ f: number; total: number; ep?: string; cuts?: numbe
         {mark(48, 236, 1, 1)}{mark(W - 48, 236, -1, 1)}{mark(48, 1560, 1, -1)}{mark(W - 48, 1560, -1, -1)}
       </svg>
       <div style={{ position: "absolute", left: 96, top: 256, fontFamily: K.mono, fontSize: 22, letterSpacing: 4, color: K.muted, fontWeight: 500 }}>
-        HOW IT WORKS <span style={{ color: K.amber }}>/</span> {ep}
+        {label} <span style={{ color: accent }}>/</span> {ep}
       </div>
       <div style={{ position: "absolute", right: 96, top: 256, fontFamily: K.mono, fontSize: 22, letterSpacing: 4, color: K.muted }}>
         FIG.<span style={{ color: K.text }}>{String(cuts.filter((a) => f >= a).length).padStart(2, "0")}</span>

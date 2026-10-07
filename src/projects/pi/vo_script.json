@@ -1,0 +1,12 @@
+{
+ "start": 0.12,
+ "beats": [
+  {"id": "hook", "text": "OpenAI claims its AI just settled a famous question about pi.", "after": 0.05},
+  {"id": "fr", "text": "Twenty-two sevenths is close. Three fifty-five over one thirteen is closer.", "after": 0.05},
+  {"id": "claim", "text": "The claim: past some size, no fraction beats exponent two.", "after": 0.05},
+  {"id": "floor", "text": "Two is the lowest possible, so pi is as hard to approximate as it gets.", "after": 0.05},
+  {"id": "fh", "text": "It implies the Flint-Hills series converges.", "after": 0.05},
+  {"id": "status", "text": "Status: an OpenAI claim, not peer reviewed. Lean files published, not checked by us.", "after": 0.1},
+  {"id": "end", "text": "Follow for more, and see how everything works.", "after": 0.2}
+ ]
+}
