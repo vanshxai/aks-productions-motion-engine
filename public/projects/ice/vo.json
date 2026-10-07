@@ -1,0 +1,208 @@
+{
+ "fps": 30,
+ "total": 28.829,
+ "beats": [
+  {
+   "id": "hook",
+   "text": "Most things shrink when frozen. Water grows.",
+   "phrases": [
+    {
+     "text": "Most things shrink when frozen.",
+     "start": 0.12,
+     "end": 1.617,
+     "f0": 4,
+     "f1": 49
+    },
+    {
+     "text": "Water grows.",
+     "start": 2.167,
+     "end": 3.045,
+     "f0": 65,
+     "f1": 91
+    }
+   ],
+   "start": 0.12,
+   "end": 3.045,
+   "f0": 4,
+   "f1": 91
+  },
+  {
+   "id": "liquid",
+   "text": "In liquid water, molecules jostle and bonds keep breaking.",
+   "phrases": [
+    {
+     "text": "In liquid water,",
+     "start": 3.195,
+     "end": 4.18,
+     "f0": 96,
+     "f1": 125
+    },
+    {
+     "text": "molecules jostle and bonds keep breaking.",
+     "start": 4.44,
+     "end": 6.812,
+     "f0": 133,
+     "f1": 204
+    }
+   ],
+   "start": 3.195,
+   "end": 6.812,
+   "f0": 96,
+   "f1": 204
+  },
+  {
+   "id": "lock",
+   "text": "Cool it and each molecule locks onto four neighbours.",
+   "phrases": [
+    {
+     "text": "Cool it and each molecule locks onto four neighbours.",
+     "start": 6.962,
+     "end": 9.97,
+     "f0": 209,
+     "f1": 299
+    }
+   ],
+   "start": 6.962,
+   "end": 9.97,
+   "f0": 209,
+   "f1": 299
+  },
+  {
+   "id": "ring",
+   "text": "A hexagonal lattice with empty space inside.",
+   "phrases": [
+    {
+     "text": "A hexagonal lattice with empty space inside.",
+     "start": 10.12,
+     "end": 12.705,
+     "f0": 304,
+     "f1": 381
+    }
+   ],
+   "start": 10.12,
+   "end": 12.705,
+   "f0": 304,
+   "f1": 381
+  },
+  {
+   "id": "vol",
+   "text": "That's nine percent more room. One litre becomes one point oh nine.",
+   "phrases": [
+    {
+     "text": "That's nine percent more room.",
+     "start": 12.855,
+     "end": 14.309,
+     "f0": 386,
+     "f1": 429
+    },
+    {
+     "text": "One litre becomes one point oh nine.",
+     "start": 14.859,
+     "end": 16.911,
+     "f0": 446,
+     "f1": 507
+    }
+   ],
+   "start": 12.855,
+   "end": 16.911,
+   "f0": 386,
+   "f1": 507
+  },
+  {
+   "id": "float",
+   "text": "Less dense, so it floats.",
+   "phrases": [
+    {
+     "text": "Less dense,",
+     "start": 17.161,
+     "end": 17.933,
+     "f0": 515,
+     "f1": 538
+    },
+    {
+     "text": "so it floats.",
+     "start": 18.193,
+     "end": 19.007,
+     "f0": 546,
+     "f1": 570
+    }
+   ],
+   "start": 17.161,
+   "end": 19.007,
+   "f0": 515,
+   "f1": 570
+  },
+  {
+   "id": "lake",
+   "text": "So lakes freeze from the top and fish live below.",
+   "phrases": [
+    {
+     "text": "So lakes freeze from the top and fish live below.",
+     "start": 19.557,
+     "end": 22.227,
+     "f0": 587,
+     "f1": 667
+    }
+   ],
+   "start": 19.557,
+   "end": 22.227,
+   "f0": 587,
+   "f1": 667
+  },
+  {
+   "id": "hero",
+   "text": "Open rings, less density. Ice floats.",
+   "phrases": [
+    {
+     "text": "Open rings,",
+     "start": 22.377,
+     "end": 23.234,
+     "f0": 671,
+     "f1": 697
+    },
+    {
+     "text": "less density.",
+     "start": 23.494,
+     "end": 24.373,
+     "f0": 705,
+     "f1": 731
+    },
+    {
+     "text": "Ice floats.",
+     "start": 24.923,
+     "end": 25.716,
+     "f0": 748,
+     "f1": 771
+    }
+   ],
+   "start": 22.377,
+   "end": 25.716,
+   "f0": 671,
+   "f1": 771
+  },
+  {
+   "id": "end",
+   "text": "Follow for more, and see how everything works.",
+   "phrases": [
+    {
+     "text": "Follow for more,",
+     "start": 25.866,
+     "end": 26.872,
+     "f0": 776,
+     "f1": 806
+    },
+    {
+     "text": "and see how everything works.",
+     "start": 27.132,
+     "end": 28.629,
+     "f0": 814,
+     "f1": 859
+    }
+   ],
+   "start": 25.866,
+   "end": 28.629,
+   "f0": 776,
+   "f1": 859
+  }
+ ]
+}

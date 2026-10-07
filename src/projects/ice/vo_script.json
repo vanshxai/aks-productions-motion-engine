@@ -1,0 +1,50 @@
+{
+ "start": 0.12,
+ "beats": [
+  {
+   "id": "hook",
+   "text": "Most things shrink when frozen. Water grows.",
+   "after": 0.15
+  },
+  {
+   "id": "liquid",
+   "text": "In liquid water, molecules jostle and bonds keep breaking.",
+   "after": 0.15
+  },
+  {
+   "id": "lock",
+   "text": "Cool it and each molecule locks onto four neighbours.",
+   "after": 0.15
+  },
+  {
+   "id": "ring",
+   "text": "A hexagonal lattice with empty space inside.",
+   "after": 0.15
+  },
+  {
+   "id": "vol",
+   "text": "That's nine percent more room. One litre becomes one point oh nine.",
+   "after": 0.25
+  },
+  {
+   "id": "float",
+   "text": "Less dense, so it floats.",
+   "after": 0.55
+  },
+  {
+   "id": "lake",
+   "text": "So lakes freeze from the top and fish live below.",
+   "after": 0.15
+  },
+  {
+   "id": "hero",
+   "text": "Open rings, less density. Ice floats.",
+   "after": 0.15
+  },
+  {
+   "id": "end",
+   "text": "Follow for more, and see how everything works.",
+   "after": 0.2
+  }
+ ]
+}
