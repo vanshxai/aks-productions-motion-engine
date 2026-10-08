@@ -1,0 +1,218 @@
+{
+ "fps": 30,
+ "total": 29.792,
+ "beats": [
+  {
+   "id": "hook",
+   "text": "In 1940 ordinary wind tore a new bridge apart.",
+   "phrases": [
+    {
+     "text": "In 1940 ordinary wind tore a new bridge apart.",
+     "start": 0.12,
+     "end": 3.985,
+     "f0": 4,
+     "f1": 120
+    }
+   ],
+   "start": 0.12,
+   "end": 3.985,
+   "f0": 4,
+   "f1": 120
+  },
+  {
+   "id": "gertie",
+   "text": "It bounced in plain wind and was called Galloping Gertie.",
+   "phrases": [
+    {
+     "text": "It bounced in plain wind and was called Galloping Gertie.",
+     "start": 4.085,
+     "end": 7.246,
+     "f0": 123,
+     "f1": 217
+    }
+   ],
+   "start": 4.085,
+   "end": 7.246,
+   "f0": 123,
+   "f1": 217
+  },
+  {
+   "id": "slab",
+   "text": "Its road was a solid slab, so wind hit it like a sail.",
+   "phrases": [
+    {
+     "text": "Its road was a solid slab,",
+     "start": 7.346,
+     "end": 8.843,
+     "f0": 220,
+     "f1": 265
+    },
+    {
+     "text": "so wind hit it like a sail.",
+     "start": 9.103,
+     "end": 10.579,
+     "f0": 273,
+     "f1": 317
+    }
+   ],
+   "start": 7.346,
+   "end": 10.579,
+   "f0": 220,
+   "f1": 317
+  },
+  {
+   "id": "tilt",
+   "text": "Wind tilts the road, and a tilted road catches more.",
+   "phrases": [
+    {
+     "text": "Wind tilts the road,",
+     "start": 10.679,
+     "end": 11.834,
+     "f0": 320,
+     "f1": 355
+    },
+    {
+     "text": "and a tilted road catches more.",
+     "start": 12.094,
+     "end": 13.911,
+     "f0": 363,
+     "f1": 417
+    }
+   ],
+   "start": 10.679,
+   "end": 13.911,
+   "f0": 320,
+   "f1": 417
+  },
+  {
+   "id": "loop",
+   "text": "So every swing grows bigger.",
+   "phrases": [
+    {
+     "text": "So every swing grows bigger.",
+     "start": 14.011,
+     "end": 15.572,
+     "f0": 420,
+     "f1": 467
+    }
+   ],
+   "start": 14.011,
+   "end": 15.572,
+   "f0": 420,
+   "f1": 467
+  },
+  {
+   "id": "key",
+   "text": "Not just wind. The tilt made the wind push harder.",
+   "phrases": [
+    {
+     "text": "Not just wind.",
+     "start": 15.672,
+     "end": 16.7,
+     "f0": 470,
+     "f1": 501
+    },
+    {
+     "text": "The tilt made the wind push harder.",
+     "start": 17.25,
+     "end": 19.088,
+     "f0": 518,
+     "f1": 573
+    }
+   ],
+   "start": 15.672,
+   "end": 19.088,
+   "f0": 470,
+   "f1": 573
+  },
+  {
+   "id": "fail",
+   "text": "An hour later, it broke apart.",
+   "phrases": [
+    {
+     "text": "An hour later,",
+     "start": 19.188,
+     "end": 20.003,
+     "f0": 576,
+     "f1": 600
+    },
+    {
+     "text": "it broke apart.",
+     "start": 20.263,
+     "end": 21.226,
+     "f0": 608,
+     "f1": 637
+    }
+   ],
+   "start": 19.188,
+   "end": 21.226,
+   "f0": 576,
+   "f1": 637
+  },
+  {
+   "id": "tunnel",
+   "text": "Now engineers blow wind on tiny models.",
+   "phrases": [
+    {
+     "text": "Now engineers blow wind on tiny models.",
+     "start": 21.326,
+     "end": 23.78,
+     "f0": 640,
+     "f1": 713
+    }
+   ],
+   "start": 21.326,
+   "end": 23.78,
+   "f0": 640,
+   "f1": 713
+  },
+  {
+   "id": "truss",
+   "text": "The new bridge has gaps, so wind slips through.",
+   "phrases": [
+    {
+     "text": "The new bridge has gaps,",
+     "start": 23.88,
+     "end": 25.163,
+     "f0": 716,
+     "f1": 755
+    },
+    {
+     "text": "so wind slips through.",
+     "start": 25.423,
+     "end": 26.664,
+     "f0": 763,
+     "f1": 800
+    }
+   ],
+   "start": 23.88,
+   "end": 26.664,
+   "f0": 716,
+   "f1": 800
+  },
+  {
+   "id": "end",
+   "text": "Follow for more, and see how everything works.",
+   "phrases": [
+    {
+     "text": "Follow for more,",
+     "start": 26.764,
+     "end": 27.771,
+     "f0": 803,
+     "f1": 833
+    },
+    {
+     "text": "and see how everything works.",
+     "start": 28.031,
+     "end": 29.592,
+     "f0": 841,
+     "f1": 888
+    }
+   ],
+   "start": 26.764,
+   "end": 29.592,
+   "f0": 803,
+   "f1": 888
+  }
+ ]
+}

@@ -1,0 +1,55 @@
+{
+ "start": 0.12,
+ "beats": [
+  {
+   "id": "hook",
+   "text": "In 1940 ordinary wind tore a new bridge apart.",
+   "after": 0.1
+  },
+  {
+   "id": "gertie",
+   "text": "It bounced in plain wind and was called Galloping Gertie.",
+   "after": 0.1
+  },
+  {
+   "id": "slab",
+   "text": "Its road was a solid slab, so wind hit it like a sail.",
+   "after": 0.1
+  },
+  {
+   "id": "tilt",
+   "text": "Wind tilts the road, and a tilted road catches more.",
+   "after": 0.1
+  },
+  {
+   "id": "loop",
+   "text": "So every swing grows bigger.",
+   "after": 0.1
+  },
+  {
+   "id": "key",
+   "text": "Not just wind. The tilt made the wind push harder.",
+   "after": 0.1
+  },
+  {
+   "id": "fail",
+   "text": "An hour later, it broke apart.",
+   "after": 0.1
+  },
+  {
+   "id": "tunnel",
+   "text": "Now engineers blow wind on tiny models.",
+   "after": 0.1
+  },
+  {
+   "id": "truss",
+   "text": "The new bridge has gaps, so wind slips through.",
+   "after": 0.1
+  },
+  {
+   "id": "end",
+   "text": "Follow for more, and see how everything works.",
+   "after": 0.2
+  }
+ ]
+}
