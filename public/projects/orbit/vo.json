@@ -1,0 +1,204 @@
+{
+ "fps": 30,
+ "total": 29.537,
+ "beats": [
+  {
+   "id": "hook",
+   "text": "Orbit isn't about going up. It's about going sideways.",
+   "phrases": [
+    {
+     "text": "Orbit isn't about going up.",
+     "start": 0.12,
+     "end": 1.681,
+     "f0": 4,
+     "f1": 50
+    },
+    {
+     "text": "It's about going sideways.",
+     "start": 2.231,
+     "end": 3.643,
+     "f0": 67,
+     "f1": 109
+    }
+   ],
+   "start": 0.12,
+   "end": 3.643,
+   "f0": 4,
+   "f1": 109
+  },
+  {
+   "id": "up",
+   "text": "A ball thrown up just comes back down.",
+   "phrases": [
+    {
+     "text": "A ball thrown up just comes back down.",
+     "start": 3.743,
+     "end": 5.73,
+     "f0": 112,
+     "f1": 172
+    }
+   ],
+   "start": 3.743,
+   "end": 5.73,
+   "f0": 112,
+   "f1": 172
+  },
+  {
+   "id": "side",
+   "text": "Throw it sideways harder and it lands farther.",
+   "phrases": [
+    {
+     "text": "Throw it sideways harder and it lands farther.",
+     "start": 5.83,
+     "end": 8.184,
+     "f0": 175,
+     "f1": 246
+    }
+   ],
+   "start": 5.83,
+   "end": 8.184,
+   "f0": 175,
+   "f1": 246
+  },
+  {
+   "id": "orbit",
+   "text": "Fast enough and the Earth curves away as fast as it falls. That's an orbit.",
+   "phrases": [
+    {
+     "text": "Fast enough and the Earth curves away as fast as it falls.",
+     "start": 8.284,
+     "end": 11.424,
+     "f0": 249,
+     "f1": 343
+    },
+    {
+     "text": "That's an orbit.",
+     "start": 11.974,
+     "end": 12.938,
+     "f0": 359,
+     "f1": 388
+    }
+   ],
+   "start": 8.284,
+   "end": 12.938,
+   "f0": 249,
+   "f1": 388
+  },
+  {
+   "id": "speed",
+   "text": "That's about 28,000 kilometers an hour.",
+   "phrases": [
+    {
+     "text": "That's about 28,000 kilometers an hour.",
+     "start": 13.038,
+     "end": 15.559,
+     "f0": 391,
+     "f1": 467
+    }
+   ],
+   "start": 13.038,
+   "end": 15.559,
+   "f0": 391,
+   "f1": 467
+  },
+  {
+   "id": "turn",
+   "text": "So rockets climb out of the air then tip sideways.",
+   "phrases": [
+    {
+     "text": "So rockets climb out of the air then tip sideways.",
+     "start": 15.659,
+     "end": 18.325,
+     "f0": 470,
+     "f1": 550
+    }
+   ],
+   "start": 15.659,
+   "end": 18.325,
+   "f0": 470,
+   "f1": 550
+  },
+  {
+   "id": "fuel",
+   "text": "Nine tenths of a rocket's weight is fuel.",
+   "phrases": [
+    {
+     "text": "Nine tenths of a rocket's weight is fuel.",
+     "start": 18.425,
+     "end": 20.562,
+     "f0": 553,
+     "f1": 617
+    }
+   ],
+   "start": 18.425,
+   "end": 20.562,
+   "f0": 553,
+   "f1": 617
+  },
+  {
+   "id": "stage",
+   "text": "Empty tanks drop off so the rest speeds up.",
+   "phrases": [
+    {
+     "text": "Empty tanks drop off so the rest speeds up.",
+     "start": 20.662,
+     "end": 22.991,
+     "f0": 620,
+     "f1": 690
+    }
+   ],
+   "start": 20.662,
+   "end": 22.991,
+   "f0": 620,
+   "f1": 690
+  },
+  {
+   "id": "loop",
+   "text": "Engines off, it falls around Earth every ninety minutes.",
+   "phrases": [
+    {
+     "text": "Engines off,",
+     "start": 23.091,
+     "end": 23.97,
+     "f0": 693,
+     "f1": 719
+    },
+    {
+     "text": "it falls around Earth every ninety minutes.",
+     "start": 24.23,
+     "end": 26.409,
+     "f0": 727,
+     "f1": 792
+    }
+   ],
+   "start": 23.091,
+   "end": 26.409,
+   "f0": 693,
+   "f1": 792
+  },
+  {
+   "id": "end",
+   "text": "Follow for more, and see how everything works.",
+   "phrases": [
+    {
+     "text": "Follow for more,",
+     "start": 26.509,
+     "end": 27.516,
+     "f0": 795,
+     "f1": 825
+    },
+    {
+     "text": "and see how everything works.",
+     "start": 27.776,
+     "end": 29.337,
+     "f0": 833,
+     "f1": 880
+    }
+   ],
+   "start": 26.509,
+   "end": 29.337,
+   "f0": 795,
+   "f1": 880
+  }
+ ]
+}

@@ -1,0 +1,55 @@
+{
+ "start": 0.12,
+ "beats": [
+  {
+   "id": "hook",
+   "text": "Orbit isn't about going up. It's about going sideways.",
+   "after": 0.1
+  },
+  {
+   "id": "up",
+   "text": "A ball thrown up just comes back down.",
+   "after": 0.1
+  },
+  {
+   "id": "side",
+   "text": "Throw it sideways harder and it lands farther.",
+   "after": 0.1
+  },
+  {
+   "id": "orbit",
+   "text": "Fast enough and the Earth curves away as fast as it falls. That's an orbit.",
+   "after": 0.1
+  },
+  {
+   "id": "speed",
+   "text": "That's about 28,000 kilometers an hour.",
+   "after": 0.1
+  },
+  {
+   "id": "turn",
+   "text": "So rockets climb out of the air then tip sideways.",
+   "after": 0.1
+  },
+  {
+   "id": "fuel",
+   "text": "Nine tenths of a rocket's weight is fuel.",
+   "after": 0.1
+  },
+  {
+   "id": "stage",
+   "text": "Empty tanks drop off so the rest speeds up.",
+   "after": 0.1
+  },
+  {
+   "id": "loop",
+   "text": "Engines off, it falls around Earth every ninety minutes.",
+   "after": 0.1
+  },
+  {
+   "id": "end",
+   "text": "Follow for more, and see how everything works.",
+   "after": 0.2
+  }
+ ]
+}

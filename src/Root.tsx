@@ -17,6 +17,7 @@ import { Ice30, IceCover } from "./projects/ice/Ice30";
 import { AcDc30, AcDcCover } from "./projects/acdc/AcDc30";
 import { Tacoma30, TacomaCover } from "./projects/tacoma/Tacoma30";
 import { Phone30, PhoneCover } from "./projects/phone/Phone30";
+import { Orbit30, OrbitCover } from "./projects/orbit/Orbit30";
 
 /**
  * One <Composition> per video. Convention:
@@ -70,5 +71,8 @@ export const Root: React.FC = () => (
     <Composition id="Phone-30s" component={Phone30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: true }} />
     <Composition id="Phone-30s-silent" component={Phone30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: false }} />
     <Composition id="Phone-cover" component={PhoneCover} durationInFrames={1} fps={30} width={1080} height={1920} />
+    <Composition id="Orbit-30s" component={Orbit30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: true }} />
+    <Composition id="Orbit-30s-silent" component={Orbit30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: false }} />
+    <Composition id="Orbit-cover" component={OrbitCover} durationInFrames={1} fps={30} width={1080} height={1920} />
   </>
 );
