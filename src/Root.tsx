@@ -16,6 +16,7 @@ import { Gps30, GpsCover } from "./projects/gps/Gps30";
 import { Ice30, IceCover } from "./projects/ice/Ice30";
 import { AcDc30, AcDcCover } from "./projects/acdc/AcDc30";
 import { Pi30, PiCover } from "./projects/pi/Pi30";
+import { Pi60, Pi60Cover } from "./projects/pi60/Pi60";
 
 /**
  * One <Composition> per video. Convention:
@@ -66,5 +67,8 @@ export const Root: React.FC = () => (
     <Composition id="Pi-30s" component={Pi30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: true }} />
     <Composition id="Pi-30s-silent" component={Pi30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: false }} />
     <Composition id="Pi-cover" component={PiCover} durationInFrames={1} fps={30} width={1080} height={1920} />
+    <Composition id="Pi60-60s" component={Pi60} durationInFrames={1800} fps={30} width={1080} height={1920} defaultProps={{ withAudio: true }} />
+    <Composition id="Pi60-60s-silent" component={Pi60} durationInFrames={1800} fps={30} width={1080} height={1920} defaultProps={{ withAudio: false }} />
+    <Composition id="Pi60-cover" component={Pi60Cover} durationInFrames={1} fps={30} width={1080} height={1920} />
   </>
 );

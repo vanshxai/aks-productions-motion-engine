@@ -1,0 +1,347 @@
+{
+ "fps": 30,
+ "total": 57.606,
+ "beats": [
+  {
+   "id": "hook",
+   "text": "OpenAI claims its AI just settled an old question about pi.",
+   "phrases": [
+    {
+     "text": "OpenAI claims its AI just settled an old question about pi.",
+     "start": 0.15,
+     "end": 4.122,
+     "f0": 4,
+     "f1": 124
+    }
+   ],
+   "start": 0.15,
+   "end": 4.122,
+   "f0": 4,
+   "f1": 124
+  },
+  {
+   "id": "guess",
+   "text": "Pi never ends, so we guess it with a fraction. Twenty-two sevenths: close, not exact.",
+   "phrases": [
+    {
+     "text": "Pi never ends,",
+     "start": 4.242,
+     "end": 5.205,
+     "f0": 127,
+     "f1": 156
+    },
+    {
+     "text": "so we guess it with a fraction.",
+     "start": 5.367,
+     "end": 6.778,
+     "f0": 161,
+     "f1": 203
+    },
+    {
+     "text": "Twenty-two sevenths:",
+     "start": 7.119,
+     "end": 8.296,
+     "f0": 214,
+     "f1": 249
+    },
+    {
+     "text": "close,",
+     "start": 8.519,
+     "end": 9.078,
+     "f0": 256,
+     "f1": 272
+    },
+    {
+     "text": "not exact.",
+     "start": 9.239,
+     "end": 10.096,
+     "f0": 277,
+     "f1": 303
+    }
+   ],
+   "start": 4.242,
+   "end": 10.096,
+   "f0": 127,
+   "f1": 303
+  },
+  {
+   "id": "better",
+   "text": "Three fifty-five over one thirteen: six decimals right, from tiny numbers.",
+   "phrases": [
+    {
+     "text": "Three fifty-five over one thirteen:",
+     "start": 10.196,
+     "end": 12.098,
+     "f0": 306,
+     "f1": 363
+    },
+    {
+     "text": "six decimals right,",
+     "start": 12.321,
+     "end": 13.52,
+     "f0": 370,
+     "f1": 406
+    },
+    {
+     "text": "from tiny numbers.",
+     "start": 13.681,
+     "end": 14.773,
+     "f0": 410,
+     "f1": 443
+    }
+   ],
+   "start": 10.196,
+   "end": 14.773,
+   "f0": 306,
+   "f1": 443
+  },
+  {
+   "id": "question",
+   "text": "Is pi secretly almost a fraction? Do fractions keep landing this close, forever?",
+   "phrases": [
+    {
+     "text": "Is pi secretly almost a fraction?",
+     "start": 14.893,
+     "end": 16.923,
+     "f0": 447,
+     "f1": 508
+    },
+    {
+     "text": "Do fractions keep landing this close,",
+     "start": 17.295,
+     "end": 19.219,
+     "f0": 519,
+     "f1": 577
+    },
+    {
+     "text": "forever?",
+     "start": 19.38,
+     "end": 19.96,
+     "f0": 581,
+     "f1": 599
+    }
+   ],
+   "start": 14.893,
+   "end": 19.96,
+   "f0": 447,
+   "f1": 599
+  },
+  {
+   "id": "score",
+   "text": "Give each fraction a closeness score. Two is normal. Anything higher is luck.",
+   "phrases": [
+    {
+     "text": "Give each fraction a closeness score.",
+     "start": 20.08,
+     "end": 21.854,
+     "f0": 602,
+     "f1": 656
+    },
+    {
+     "text": "Two is normal.",
+     "start": 22.195,
+     "end": 23.031,
+     "f0": 666,
+     "f1": 691
+    },
+    {
+     "text": "Anything higher is luck.",
+     "start": 23.372,
+     "end": 24.655,
+     "f0": 701,
+     "f1": 740
+    }
+   ],
+   "start": 20.08,
+   "end": 24.655,
+   "f0": 602,
+   "f1": 740
+  },
+  {
+   "id": "lucky",
+   "text": "Twenty-two sevenths: three point four. Three fifty-five over one thirteen: three point two. After that: about two.",
+   "phrases": [
+    {
+     "text": "Twenty-two sevenths:",
+     "start": 24.775,
+     "end": 25.952,
+     "f0": 743,
+     "f1": 779
+    },
+    {
+     "text": "three point four.",
+     "start": 26.175,
+     "end": 27.143,
+     "f0": 785,
+     "f1": 814
+    },
+    {
+     "text": "Three fifty-five over one thirteen:",
+     "start": 27.484,
+     "end": 29.386,
+     "f0": 825,
+     "f1": 882
+    },
+    {
+     "text": "three point two.",
+     "start": 29.609,
+     "end": 30.555,
+     "f0": 888,
+     "f1": 917
+    },
+    {
+     "text": "After that:",
+     "start": 30.896,
+     "end": 31.668,
+     "f0": 927,
+     "f1": 950
+    },
+    {
+     "text": "about two.",
+     "start": 31.891,
+     "end": 32.62,
+     "f0": 957,
+     "f1": 979
+    }
+   ],
+   "start": 24.775,
+   "end": 32.62,
+   "f0": 743,
+   "f1": 979
+  },
+  {
+   "id": "fake",
+   "text": "Some numbers do hide behind fractions. This made-up one's score climbs forever.",
+   "phrases": [
+    {
+     "text": "Some numbers do hide behind fractions.",
+     "start": 32.74,
+     "end": 34.873,
+     "f0": 982,
+     "f1": 1046
+    },
+    {
+     "text": "This made-up one's score climbs forever.",
+     "start": 35.214,
+     "end": 37.181,
+     "f0": 1056,
+     "f1": 1115
+    }
+   ],
+   "start": 32.74,
+   "end": 37.181,
+   "f0": 982,
+   "f1": 1115
+  },
+  {
+   "id": "claim",
+   "text": "OpenAI claims pi isn't like that. Past some size, no fraction scores above two.",
+   "phrases": [
+    {
+     "text": "OpenAI claims pi isn't like that.",
+     "start": 37.301,
+     "end": 39.459,
+     "f0": 1119,
+     "f1": 1184
+    },
+    {
+     "text": "Past some size,",
+     "start": 39.8,
+     "end": 40.721,
+     "f0": 1194,
+     "f1": 1222
+    },
+    {
+     "text": "no fraction scores above two.",
+     "start": 40.882,
+     "end": 42.507,
+     "f0": 1226,
+     "f1": 1275
+    }
+   ],
+   "start": 37.301,
+   "end": 42.507,
+   "f0": 1119,
+   "f1": 1275
+  },
+  {
+   "id": "floor",
+   "text": "Two is the lowest score possible. So pi is as far from a fraction as it gets.",
+   "phrases": [
+    {
+     "text": "Two is the lowest score possible.",
+     "start": 42.627,
+     "end": 44.402,
+     "f0": 1279,
+     "f1": 1332
+    },
+    {
+     "text": "So pi is as far from a fraction as it gets.",
+     "start": 44.743,
+     "end": 47.114,
+     "f0": 1342,
+     "f1": 1413
+    }
+   ],
+   "start": 42.627,
+   "end": 47.114,
+   "f0": 1279,
+   "f1": 1413
+  },
+  {
+   "id": "honest",
+   "text": "Big if. Outside mathematicians haven't checked OpenAI's claim yet. Its computer-checkable proof files are public; we haven't checked those either.",
+   "phrases": [
+    {
+     "text": "Big if.",
+     "start": 47.234,
+     "end": 47.814,
+     "f0": 1417,
+     "f1": 1434
+    },
+    {
+     "text": "Outside mathematicians haven't checked OpenAI's claim yet.",
+     "start": 48.155,
+     "end": 51.657,
+     "f0": 1445,
+     "f1": 1550
+    },
+    {
+     "text": "Its computer-checkable proof files are public;",
+     "start": 51.998,
+     "end": 54.498,
+     "f0": 1560,
+     "f1": 1635
+    },
+    {
+     "text": "we haven't checked those either.",
+     "start": 54.696,
+     "end": 56.026,
+     "f0": 1641,
+     "f1": 1681
+    }
+   ],
+   "start": 47.234,
+   "end": 56.026,
+   "f0": 1417,
+   "f1": 1681
+  },
+  {
+   "id": "end",
+   "text": "Follow for more.",
+   "phrases": [
+    {
+     "text": "Follow for more.",
+     "start": 56.4,
+     "end": 57.406,
+     "f0": 1692,
+     "f1": 1722
+    }
+   ],
+   "start": 56.4,
+   "end": 57.406,
+   "f0": 1692,
+   "f1": 1722
+  }
+ ]
+}

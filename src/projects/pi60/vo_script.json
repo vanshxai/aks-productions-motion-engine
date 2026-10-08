@@ -1,0 +1,61 @@
+{
+ "start": 0.15,
+ "beats": [
+  {
+   "id": "hook",
+   "text": "OpenAI claims its AI just settled an old question about pi.",
+   "after": 0.12
+  },
+  {
+   "id": "guess",
+   "text": "Pi never ends, so we guess it with a fraction. Twenty-two sevenths: close, not exact.",
+   "after": 0.1
+  },
+  {
+   "id": "better",
+   "text": "Three fifty-five over one thirteen: six decimals right, from tiny numbers.",
+   "after": 0.12
+  },
+  {
+   "id": "question",
+   "text": "Is pi secretly almost a fraction? Do fractions keep landing this close, forever?",
+   "after": 0.12
+  },
+  {
+   "id": "score",
+   "text": "Give each fraction a closeness score. Two is normal. Anything higher is luck.",
+   "after": 0.12
+  },
+  {
+   "id": "lucky",
+   "text": "Twenty-two sevenths: three point four. Three fifty-five over one thirteen: three point two. After that: about two.",
+   "after": 0.12
+  },
+  {
+   "id": "fake",
+   "text": "Some numbers do hide behind fractions. This made-up one's score climbs forever.",
+   "after": 0.12
+  },
+  {
+   "id": "claim",
+   "text": "OpenAI claims pi isn't like that. Past some size, no fraction scores above two.",
+   "after": 0.12
+  },
+  {
+   "id": "floor",
+   "text": "Two is the lowest score possible. So pi is as far from a fraction as it gets.",
+   "after": 0.12
+  },
+  {
+   "id": "honest",
+   "text": "Big if. Outside mathematicians haven't checked OpenAI's claim yet. Its computer-checkable proof files are public; we haven't checked those either.",
+   "after": 0.1
+  },
+  {
+   "id": "end",
+   "text": "Follow for more.",
+   "after": 0.2,
+   "at": 56.4
+  }
+ ]
+}

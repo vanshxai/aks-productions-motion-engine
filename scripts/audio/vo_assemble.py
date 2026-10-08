@@ -5,7 +5,7 @@ This splits every beat at punctuation, renders each phrase on its own, trims the
 and joins them with real pauses. The output timing JSON drives the animation.
 
 usage:
-  python3 scripts/audio/vo_assemble.py <script.json> <out_dir> [--voice af_heart] [--speed 1.05]
+  python3 scripts/audio/vo_assemble.py <script.json> <out_dir> [--voice af_heart] [--speed 1.05] [--pause-scale 1.0]
 
 script.json:
   {"start": 0.25, "beats": [{"id": "hook", "text": "Why are bridges full of triangles?", "after": 0.7}, ...]}
@@ -40,6 +40,7 @@ def main():
     script, out_dir = args[0], args[1]
     voice = args[args.index("--voice") + 1] if "--voice" in args else "af_heart"
     speed = float(args[args.index("--speed") + 1]) if "--speed" in args else 1.05
+    ps = float(args[args.index("--pause-scale") + 1]) if "--pause-scale" in args else 1.0   # <1 tightens punctuation pauses
     from kokoro_onnx import Kokoro
     kd = os.environ.get("KOKORO_DIR", "/home/claude/tts")
     k = Kokoro(f"{kd}/kokoro-v1.0.onnx", f"{kd}/voices-v1.0.bin")
@@ -68,7 +69,7 @@ def main():
             b["phrases"].append({"text": p, "start": round(t, 3), "end": round(t + dur, 3), "f0": round(t * FPS), "f1": round((t + dur) * FPS)})
             t += dur
             last = i == len(ph) - 1
-            t += PAUSE.get(punct, 0.12) if not last else 0
+            t += PAUSE.get(punct, 0.12) * ps if not last else 0
         t += float(beat.get("after", PAUSE["beat"]))
         b["start"], b["end"] = b["phrases"][0]["start"], b["phrases"][-1]["end"]
         b["f0"], b["f1"] = b["phrases"][0]["f0"], b["phrases"][-1]["f1"]
