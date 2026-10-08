@@ -1,0 +1,15 @@
+{
+ "start": 0.12,
+ "beats": [
+  {"id": "hook", "text": "Let's open your phone up.", "after": 0.19},
+  {"id": "glass", "text": "Glass on top. Wires under it feel your finger.", "after": 0.19},
+  {"id": "battery", "text": "Next, the battery. It stores energy, and it's the biggest part.", "after": 0.19},
+  {"id": "share", "text": "In one very thin phone, it's two thirds of the inside.", "after": 0.19},
+  {"id": "brain", "text": "The brain is a tiny chip that does the thinking.", "after": 0.19},
+  {"id": "switch", "text": "One popular chip has 19 billion tiny on-off switches.", "after": 0.19},
+  {"id": "camera", "text": "The camera turns light into numbers.", "after": 0.19},
+  {"id": "radio", "text": "The radio talks to cell towers and Wi-Fi.", "after": 0.19},
+  {"id": "together", "text": "Put it back together, and that's your phone.", "after": 0.19},
+  {"id": "end", "text": "Follow for more, and see how everything works.", "after": 0.2}
+ ]
+}

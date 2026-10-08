@@ -1,0 +1,225 @@
+{
+ "fps": 30,
+ "total": 29.605,
+ "beats": [
+  {
+   "id": "hook",
+   "text": "Let's open your phone up.",
+   "phrases": [
+    {
+     "text": "Let's open your phone up.",
+     "start": 0.12,
+     "end": 1.429,
+     "f0": 4,
+     "f1": 43
+    }
+   ],
+   "start": 0.12,
+   "end": 1.429,
+   "f0": 4,
+   "f1": 43
+  },
+  {
+   "id": "glass",
+   "text": "Glass on top. Wires under it feel your finger.",
+   "phrases": [
+    {
+     "text": "Glass on top.",
+     "start": 1.619,
+     "end": 2.582,
+     "f0": 49,
+     "f1": 77
+    },
+    {
+     "text": "Wires under it feel your finger.",
+     "start": 3.132,
+     "end": 4.736,
+     "f0": 94,
+     "f1": 142
+    }
+   ],
+   "start": 1.619,
+   "end": 4.736,
+   "f0": 49,
+   "f1": 142
+  },
+  {
+   "id": "battery",
+   "text": "Next, the battery. It stores energy, and it's the biggest part.",
+   "phrases": [
+    {
+     "text": "Next,",
+     "start": 4.926,
+     "end": 5.527,
+     "f0": 148,
+     "f1": 166
+    },
+    {
+     "text": "the battery.",
+     "start": 5.787,
+     "end": 6.495,
+     "f0": 174,
+     "f1": 195
+    },
+    {
+     "text": "It stores energy,",
+     "start": 7.045,
+     "end": 8.136,
+     "f0": 211,
+     "f1": 244
+    },
+    {
+     "text": "and it's the biggest part.",
+     "start": 8.396,
+     "end": 9.641,
+     "f0": 252,
+     "f1": 289
+    }
+   ],
+   "start": 4.926,
+   "end": 9.641,
+   "f0": 148,
+   "f1": 289
+  },
+  {
+   "id": "share",
+   "text": "In one very thin phone, it's two thirds of the inside.",
+   "phrases": [
+    {
+     "text": "In one very thin phone,",
+     "start": 9.831,
+     "end": 11.2,
+     "f0": 295,
+     "f1": 336
+    },
+    {
+     "text": "it's two thirds of the inside.",
+     "start": 11.46,
+     "end": 12.978,
+     "f0": 344,
+     "f1": 389
+    }
+   ],
+   "start": 9.831,
+   "end": 12.978,
+   "f0": 295,
+   "f1": 389
+  },
+  {
+   "id": "brain",
+   "text": "The brain is a tiny chip that does the thinking.",
+   "phrases": [
+    {
+     "text": "The brain is a tiny chip that does the thinking.",
+     "start": 13.168,
+     "end": 15.497,
+     "f0": 395,
+     "f1": 465
+    }
+   ],
+   "start": 13.168,
+   "end": 15.497,
+   "f0": 395,
+   "f1": 465
+  },
+  {
+   "id": "switch",
+   "text": "One popular chip has 19 billion tiny on-off switches.",
+   "phrases": [
+    {
+     "text": "One popular chip has 19 billion tiny on-off switches.",
+     "start": 15.687,
+     "end": 19.207,
+     "f0": 471,
+     "f1": 576
+    }
+   ],
+   "start": 15.687,
+   "end": 19.207,
+   "f0": 471,
+   "f1": 576
+  },
+  {
+   "id": "camera",
+   "text": "The camera turns light into numbers.",
+   "phrases": [
+    {
+     "text": "The camera turns light into numbers.",
+     "start": 19.397,
+     "end": 21.278,
+     "f0": 582,
+     "f1": 638
+    }
+   ],
+   "start": 19.397,
+   "end": 21.278,
+   "f0": 582,
+   "f1": 638
+  },
+  {
+   "id": "radio",
+   "text": "The radio talks to cell towers and Wi-Fi.",
+   "phrases": [
+    {
+     "text": "The radio talks to cell towers and Wi-Fi.",
+     "start": 21.468,
+     "end": 23.883,
+     "f0": 644,
+     "f1": 716
+    }
+   ],
+   "start": 21.468,
+   "end": 23.883,
+   "f0": 644,
+   "f1": 716
+  },
+  {
+   "id": "together",
+   "text": "Put it back together, and that's your phone.",
+   "phrases": [
+    {
+     "text": "Put it back together,",
+     "start": 24.073,
+     "end": 25.143,
+     "f0": 722,
+     "f1": 754
+    },
+    {
+     "text": "and that's your phone.",
+     "start": 25.403,
+     "end": 26.388,
+     "f0": 762,
+     "f1": 792
+    }
+   ],
+   "start": 24.073,
+   "end": 26.388,
+   "f0": 722,
+   "f1": 792
+  },
+  {
+   "id": "end",
+   "text": "Follow for more, and see how everything works.",
+   "phrases": [
+    {
+     "text": "Follow for more,",
+     "start": 26.578,
+     "end": 27.584,
+     "f0": 797,
+     "f1": 828
+    },
+    {
+     "text": "and see how everything works.",
+     "start": 27.844,
+     "end": 29.405,
+     "f0": 835,
+     "f1": 882
+    }
+   ],
+   "start": 26.578,
+   "end": 29.405,
+   "f0": 797,
+   "f1": 882
+  }
+ ]
+}
