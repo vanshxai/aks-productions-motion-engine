@@ -18,6 +18,7 @@ import { AcDc30, AcDcCover } from "./projects/acdc/AcDc30";
 import { Tacoma30, TacomaCover } from "./projects/tacoma/Tacoma30";
 import { Phone30, PhoneCover } from "./projects/phone/Phone30";
 import { Orbit30, OrbitCover } from "./projects/orbit/Orbit30";
+import { Saturn30, SaturnCover } from "./projects/saturn/Saturn30";
 
 /**
  * One <Composition> per video. Convention:
@@ -73,6 +74,9 @@ export const Root: React.FC = () => (
     <Composition id="Phone-cover" component={PhoneCover} durationInFrames={1} fps={30} width={1080} height={1920} />
     <Composition id="Orbit-30s" component={Orbit30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: true }} />
     <Composition id="Orbit-30s-silent" component={Orbit30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: false }} />
+    <Composition id="Saturn-30s" component={Saturn30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: true }} />
+    <Composition id="Saturn-30s-silent" component={Saturn30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: false }} />
+    <Composition id="Saturn-cover" component={SaturnCover} durationInFrames={1} fps={30} width={1080} height={1920} />
     <Composition id="Orbit-cover" component={OrbitCover} durationInFrames={1} fps={30} width={1080} height={1920} />
   </>
 );

@@ -1,0 +1,184 @@
+{
+ "fps": 30,
+ "total": 27.939,
+ "beats": [
+  {
+   "id": "hook",
+   "text": "This is the Saturn V. The rocket that took people to the Moon.",
+   "phrases": [
+    {
+     "text": "This is the Saturn V.",
+     "start": 0.12,
+     "end": 1.468,
+     "f0": 4,
+     "f1": 44
+    },
+    {
+     "text": "The rocket that took people to the Moon.",
+     "start": 2.018,
+     "end": 3.941,
+     "f0": 61,
+     "f1": 118
+    }
+   ],
+   "start": 0.12,
+   "end": 3.941,
+   "f0": 4,
+   "f1": 118
+  },
+  {
+   "id": "size",
+   "text": "It's 111 meters tall. Nine tenths of its weight is fuel.",
+   "phrases": [
+    {
+     "text": "It's 111 meters tall.",
+     "start": 4.041,
+     "end": 5.752,
+     "f0": 121,
+     "f1": 173
+    },
+    {
+     "text": "Nine tenths of its weight is fuel.",
+     "start": 6.302,
+     "end": 8.033,
+     "f0": 189,
+     "f1": 241
+    }
+   ],
+   "start": 4.041,
+   "end": 8.033,
+   "f0": 121,
+   "f1": 241
+  },
+  {
+   "id": "stages",
+   "text": "It's built in three stages.",
+   "phrases": [
+    {
+     "text": "It's built in three stages.",
+     "start": 8.133,
+     "end": 9.673,
+     "f0": 244,
+     "f1": 290
+    }
+   ],
+   "start": 8.133,
+   "end": 9.673,
+   "f0": 244,
+   "f1": 290
+  },
+  {
+   "id": "sic",
+   "text": "Stage one has five giant engines. It burns for two and a half minutes, then drops away.",
+   "phrases": [
+    {
+     "text": "Stage one has five giant engines.",
+     "start": 9.773,
+     "end": 12.056,
+     "f0": 293,
+     "f1": 362
+    },
+    {
+     "text": "It burns for two and a half minutes,",
+     "start": 12.606,
+     "end": 14.273,
+     "f0": 378,
+     "f1": 428
+    },
+    {
+     "text": "then drops away.",
+     "start": 14.533,
+     "end": 15.561,
+     "f0": 436,
+     "f1": 467
+    }
+   ],
+   "start": 9.773,
+   "end": 15.561,
+   "f0": 293,
+   "f1": 467
+  },
+  {
+   "id": "sii",
+   "text": "Stage two takes over and carries it almost to orbit.",
+   "phrases": [
+    {
+     "text": "Stage two takes over and carries it almost to orbit.",
+     "start": 15.661,
+     "end": 18.587,
+     "f0": 470,
+     "f1": 558
+    }
+   ],
+   "start": 15.661,
+   "end": 18.587,
+   "f0": 470,
+   "f1": 558
+  },
+  {
+   "id": "sivb",
+   "text": "Stage three reaches orbit, then fires again to go to the Moon.",
+   "phrases": [
+    {
+     "text": "Stage three reaches orbit,",
+     "start": 18.687,
+     "end": 20.291,
+     "f0": 561,
+     "f1": 609
+    },
+    {
+     "text": "then fires again to go to the Moon.",
+     "start": 20.551,
+     "end": 22.325,
+     "f0": 617,
+     "f1": 670
+    }
+   ],
+   "start": 18.687,
+   "end": 22.325,
+   "f0": 561,
+   "f1": 670
+  },
+  {
+   "id": "cap",
+   "text": "Only the tiny capsule at the top came home.",
+   "phrases": [
+    {
+     "text": "Only the tiny capsule at the top came home.",
+     "start": 22.425,
+     "end": 24.754,
+     "f0": 673,
+     "f1": 743
+    }
+   ],
+   "start": 22.425,
+   "end": 24.754,
+   "f0": 673,
+   "f1": 743
+  },
+  {
+   "id": "end",
+   "text": "Follow for more, and see how everything works.",
+   "phrases": [
+    {
+     "text": "Follow for more,",
+     "start": 24.954,
+     "end": 25.961,
+     "f0": 749,
+     "f1": 779
+    },
+    {
+     "text": "and see how everything works.",
+     "start": 26.221,
+     "end": 27.739,
+     "f0": 787,
+     "f1": 832
+    }
+   ],
+   "start": 24.954,
+   "end": 27.739,
+   "f0": 749,
+   "f1": 832
+  }
+ ]
+}

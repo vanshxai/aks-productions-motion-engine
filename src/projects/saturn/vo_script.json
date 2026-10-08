@@ -1,0 +1,13 @@
+{
+ "start": 0.12,
+ "beats": [
+  { "id": "hook", "text": "This is the Saturn V. The rocket that took people to the Moon.", "after": 0.1 },
+  { "id": "size", "text": "It's 111 meters tall. Nine tenths of its weight is fuel.", "after": 0.1 },
+  { "id": "stages", "text": "It's built in three stages.", "after": 0.1 },
+  { "id": "sic", "text": "Stage one has five giant engines. It burns for two and a half minutes, then drops away.", "after": 0.1 },
+  { "id": "sii", "text": "Stage two takes over and carries it almost to orbit.", "after": 0.1 },
+  { "id": "sivb", "text": "Stage three reaches orbit, then fires again to go to the Moon.", "after": 0.1 },
+  { "id": "cap", "text": "Only the tiny capsule at the top came home.", "after": 0.2 },
+  { "id": "end", "text": "Follow for more, and see how everything works.", "after": 0.2 }
+ ]
+}

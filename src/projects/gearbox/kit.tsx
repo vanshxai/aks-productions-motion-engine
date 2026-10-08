@@ -97,7 +97,7 @@ export const Blueprint: React.FC<{ f: number; flash?: number }> = ({ f, flash = 
 };
 
 /** Corner registration marks + series label + progress line. Kept inside Reels safe zones. */
-export const HUD: React.FC<{ f: number; total: number; ep?: string; cuts?: number[] }> = ({ f, total, ep = "01", cuts = [0, 58, 112, 182, 234, 362, 446, 488, 578, 712, 828] }) => {
+export const HUD: React.FC<{ f: number; total: number; ep?: string; cuts?: number[]; label?: string; accent?: string }> = ({ f, total, ep = "01", label = "HOW IT WORKS", accent = K.amber, cuts = [0, 58, 112, 182, 234, 362, 446, 488, 578, 712, 828] }) => {
   const o = io(f, [6, 20], [0, 1]) * (1 - io(f, [total - 70, total - 58], [0, 1]));
   const mark = (x: number, y: number, sx: number, sy: number) => (
     <path d={`M ${x} ${y + sy * 36} L ${x} ${y} L ${x + sx * 36} ${y}`} stroke={K.lineDim} strokeWidth={2} fill="none" />
@@ -108,7 +108,7 @@ export const HUD: React.FC<{ f: number; total: number; ep?: string; cuts?: numbe
         {mark(48, 236, 1, 1)}{mark(W - 48, 236, -1, 1)}{mark(48, 1560, 1, -1)}{mark(W - 48, 1560, -1, -1)}
       </svg>
       <div style={{ position: "absolute", left: 96, top: 256, fontFamily: K.mono, fontSize: 22, letterSpacing: 4, color: K.muted, fontWeight: 500 }}>
-        HOW IT WORKS <span style={{ color: K.amber }}>/</span> {ep}
+        {label} <span style={{ color: accent }}>/</span> {ep}
       </div>
       <div style={{ position: "absolute", right: 96, top: 256, fontFamily: K.mono, fontSize: 22, letterSpacing: 4, color: K.muted }}>
         FIG.<span style={{ color: K.text }}>{String(cuts.filter((a) => f >= a).length).padStart(2, "0")}</span>
