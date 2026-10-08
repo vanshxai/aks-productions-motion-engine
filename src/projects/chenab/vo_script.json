@@ -1,0 +1,50 @@
+{
+ "start": 0.12,
+ "beats": [
+  {
+   "id": "hook",
+   "text": "This railway bridge is taller than the Eiffel Tower.",
+   "after": 0.05
+  },
+  {
+   "id": "gorge",
+   "text": "It spans a deep gorge with no road at the bottom.",
+   "after": 0.05
+  },
+  {
+   "id": "risk",
+   "text": "It's earthquake country, with strong winds.",
+   "after": 0.05
+  },
+  {
+   "id": "crane",
+   "text": "So builders cut roads, then hung a cable crane across.",
+   "after": 0.05
+  },
+  {
+   "id": "arch",
+   "text": "The steel arch grew outward from both sides, held back by cables.",
+   "after": 0.05
+  },
+  {
+   "id": "meet",
+   "text": "They met in the middle, four hundred sixty-seven meters across.",
+   "after": 0.05
+  },
+  {
+   "id": "deck",
+   "text": "Piers on the arch carry the track deck.",
+   "after": 0.05
+  },
+  {
+   "id": "design",
+   "text": "Designed for two hundred sixty-six kilometer an hour winds and the top earthquake zone.",
+   "after": 0.05
+  },
+  {
+   "id": "end",
+   "text": "Trains began crossing in June twenty twenty-five.",
+   "after": 0.2
+  }
+ ]
+}

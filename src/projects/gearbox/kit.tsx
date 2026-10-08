@@ -97,8 +97,9 @@ export const Blueprint: React.FC<{ f: number; flash?: number }> = ({ f, flash = 
 };
 
 /** Corner registration marks + series label + progress line. Kept inside Reels safe zones. */
-export const HUD: React.FC<{ f: number; total: number; ep?: string; cuts?: number[] }> = ({ f, total, ep = "01", cuts = [0, 58, 112, 182, 234, 362, 446, 488, 578, 712, 828] }) => {
-  const o = io(f, [6, 20], [0, 1]) * (1 - io(f, [total - 70, total - 58], [0, 1]));
+export const HUD: React.FC<{ f: number; total: number; ep?: string; cuts?: number[]; hold?: boolean }> = ({ f, total, ep = "01", cuts = [0, 58, 112, 182, 234, 362, 446, 488, 578, 712, 828], hold = false }) => {
+  // hold: keep the HUD on to the last frame (episodes without an end card)
+  const o = io(f, [6, 20], [0, 1]) * (hold ? 1 : 1 - io(f, [total - 70, total - 58], [0, 1]));
   const mark = (x: number, y: number, sx: number, sy: number) => (
     <path d={`M ${x} ${y + sy * 36} L ${x} ${y} L ${x + sx * 36} ${y}`} stroke={K.lineDim} strokeWidth={2} fill="none" />
   );
@@ -311,6 +312,23 @@ export const Scan: React.FC<{ f: number; at: number; dur?: number }> = ({ f, at,
   return (
     <div style={{ position: "absolute", left: 0, right: 0, top: y - 120, height: 120, background: `linear-gradient(180deg, transparent, ${K.line}22 70%, ${K.line}aa 100%)`, filter: blurF(1) }}>
       <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 2, background: K.line, boxShadow: `0 0 18px ${K.line}` }} />
+    </div>
+  );
+};
+
+/**
+ * House end tag (from #16 on): NO end card. A small "AKS PRODUCTIONS" wordmark that fades in over the last ~1 s of the final picture,
+ * low and centred, above the Reels UI zone. Old episodes keep their own end cards and do not use this.
+ */
+export const EndTag: React.FC<{ f: number; total: number; y?: number; fadeFrames?: number; lead?: number }> = ({ f, total, y = 1650, fadeFrames = 14, lead = 32 }) => {
+  const a = total - lead;
+  const o = io(f, [a, a + fadeFrames], [0, 1], easeOut);
+  if (o <= 0.001) return null;
+  return (
+    <div style={{ position: "absolute", left: 0, right: 0, top: y, display: "flex", justifyContent: "center", alignItems: "center", gap: 18, opacity: o, transform: `translateY(${(1 - o) * 8}px)`, pointerEvents: "none" }}>
+      <div style={{ width: 44 * o, height: 2, background: K.lineDim }} />
+      <div style={{ fontFamily: K.mono, fontSize: 24, fontWeight: 600, letterSpacing: 9, color: K.text, whiteSpace: "nowrap" }}>AKS PRODUCTIONS</div>
+      <div style={{ width: 44 * o, height: 2, background: K.lineDim }} />
     </div>
   );
 };
