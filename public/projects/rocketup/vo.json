@@ -1,0 +1,188 @@
+{
+ "fps": 30,
+ "total": 28.18,
+ "beats": [
+  {
+   "id": "hook",
+   "text": "A rocket that only goes up falls straight back down.",
+   "phrases": [
+    {
+     "text": "A rocket that only goes up falls straight back down.",
+     "start": 0.1,
+     "end": 2.706,
+     "f0": 3,
+     "f1": 81
+    }
+   ],
+   "start": 0.1,
+   "end": 2.706,
+   "f0": 3,
+   "f1": 81
+  },
+  {
+   "id": "side",
+   "text": "To stay in orbit, you need sideways speed. About seven point seven kilometers a second.",
+   "phrases": [
+    {
+     "text": "To stay in orbit,",
+     "start": 2.756,
+     "end": 3.784,
+     "f0": 83,
+     "f1": 114
+    },
+    {
+     "text": "you need sideways speed.",
+     "start": 4.044,
+     "end": 5.306,
+     "f0": 121,
+     "f1": 159
+    },
+    {
+     "text": "About seven point seven kilometers a second.",
+     "start": 5.856,
+     "end": 8.335,
+     "f0": 176,
+     "f1": 250
+    }
+   ],
+   "start": 2.756,
+   "end": 8.335,
+   "f0": 83,
+   "f1": 250
+  },
+  {
+   "id": "grav",
+   "text": "Straight up just fights gravity and wastes fuel.",
+   "phrases": [
+    {
+     "text": "Straight up just fights gravity and wastes fuel.",
+     "start": 8.385,
+     "end": 10.799,
+     "f0": 252,
+     "f1": 324
+    }
+   ],
+   "start": 8.385,
+   "end": 10.799,
+   "f0": 252,
+   "f1": 324
+  },
+  {
+   "id": "tilt",
+   "text": "So it climbs through the thick air first, then tips over, little by little.",
+   "phrases": [
+    {
+     "text": "So it climbs through the thick air first,",
+     "start": 10.849,
+     "end": 12.73,
+     "f0": 325,
+     "f1": 382
+    },
+    {
+     "text": "then tips over,",
+     "start": 12.99,
+     "end": 13.954,
+     "f0": 390,
+     "f1": 419
+    },
+    {
+     "text": "little by little.",
+     "start": 14.214,
+     "end": 15.135,
+     "f0": 426,
+     "f1": 454
+    }
+   ],
+   "start": 10.849,
+   "end": 15.135,
+   "f0": 325,
+   "f1": 454
+  },
+  {
+   "id": "turn",
+   "text": "Gravity itself helps bend the path. It's called a gravity turn.",
+   "phrases": [
+    {
+     "text": "Gravity itself helps bend the path.",
+     "start": 15.185,
+     "end": 17.002,
+     "f0": 456,
+     "f1": 510
+    },
+    {
+     "text": "It's called a gravity turn.",
+     "start": 17.552,
+     "end": 18.963,
+     "f0": 527,
+     "f1": 569
+    }
+   ],
+   "start": 15.185,
+   "end": 18.963,
+   "f0": 456,
+   "f1": 569
+  },
+  {
+   "id": "flat",
+   "text": "Near the top, the path is almost flat. Sideways, above the air.",
+   "phrases": [
+    {
+     "text": "Near the top,",
+     "start": 19.013,
+     "end": 19.87,
+     "f0": 570,
+     "f1": 596
+    },
+    {
+     "text": "the path is almost flat.",
+     "start": 20.13,
+     "end": 21.499,
+     "f0": 604,
+     "f1": 645
+    },
+    {
+     "text": "Sideways,",
+     "start": 22.049,
+     "end": 22.778,
+     "f0": 661,
+     "f1": 683
+    },
+    {
+     "text": "above the air.",
+     "start": 23.038,
+     "end": 23.895,
+     "f0": 691,
+     "f1": 717
+    }
+   ],
+   "start": 19.013,
+   "end": 23.895,
+   "f0": 570,
+   "f1": 717
+  },
+  {
+   "id": "end",
+   "text": "A rocket doesn't go up to reach space. It goes sideways to stay there.",
+   "phrases": [
+    {
+     "text": "A rocket doesn't go up to reach space.",
+     "start": 23.945,
+     "end": 25.869,
+     "f0": 718,
+     "f1": 776
+    },
+    {
+     "text": "It goes sideways to stay there.",
+     "start": 26.419,
+     "end": 27.98,
+     "f0": 793,
+     "f1": 839
+    }
+   ],
+   "start": 23.945,
+   "end": 27.98,
+   "f0": 718,
+   "f1": 839
+  }
+ ]
+}

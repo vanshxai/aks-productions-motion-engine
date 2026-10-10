@@ -22,6 +22,8 @@ import { Chenab30, ChenabCover } from "./projects/chenab/Chenab30";
 import { Contrails30, ContrailsCover } from "./projects/contrails/Contrails30";
 import { WindowHole30, WindowHoleCover } from "./projects/windowhole/Window30";
 import { FlyHigh30, FlyHighCover } from "./projects/flyhigh/FlyHigh30";
+// ── HOW IT WORKS #20 (additive block; branch howitworks-20-rocket-up) ──
+import { RocketUp30, RocketUpCover } from "./projects/rocketup/RocketUp30";
 
 /**
  * One <Composition> per video. Convention:
@@ -90,5 +92,9 @@ export const Root: React.FC = () => (
     <Composition id="FlyHigh-30s" component={FlyHigh30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: true }} />
     <Composition id="FlyHigh-30s-silent" component={FlyHigh30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: false }} />
     <Composition id="FlyHigh-cover" component={FlyHighCover} durationInFrames={1} fps={30} width={1080} height={1920} />
+    {/* ── HOW IT WORKS #20 — Why don't rockets go straight up? (additive block; remove/merge with sibling branches) ── */}
+    <Composition id="RocketUp-30s" component={RocketUp30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: true }} />
+    <Composition id="RocketUp-30s-silent" component={RocketUp30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: false }} />
+    <Composition id="RocketUp-cover" component={RocketUpCover} durationInFrames={1} fps={30} width={1080} height={1920} />
   </>
 );

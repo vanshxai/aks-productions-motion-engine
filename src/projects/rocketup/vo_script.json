@@ -1,0 +1,12 @@
+{
+ "start": 0.1,
+ "beats": [
+  {"id": "hook", "text": "A rocket that only goes up falls straight back down.", "after": 0.05},
+  {"id": "side", "text": "To stay in orbit, you need sideways speed. About seven point seven kilometers a second.", "after": 0.05},
+  {"id": "grav", "text": "Straight up just fights gravity and wastes fuel.", "after": 0.05},
+  {"id": "tilt", "text": "So it climbs through the thick air first, then tips over, little by little.", "after": 0.05},
+  {"id": "turn", "text": "Gravity itself helps bend the path. It's called a gravity turn.", "after": 0.05},
+  {"id": "flat", "text": "Near the top, the path is almost flat. Sideways, above the air.", "after": 0.05},
+  {"id": "end", "text": "A rocket doesn't go up to reach space. It goes sideways to stay there.", "after": 0.2}
+ ]
+}
