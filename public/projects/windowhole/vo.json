@@ -1,0 +1,195 @@
+{
+ "fps": 30,
+ "total": 28.051,
+ "beats": [
+  {
+   "id": "hook",
+   "text": "That tiny hole in your window isn't a defect. It's keeping you safe.",
+   "phrases": [
+    {
+     "text": "That tiny hole in your window isn't a defect.",
+     "start": 0.1,
+     "end": 2.575,
+     "f0": 3,
+     "f1": 77
+    },
+    {
+     "text": "It's keeping you safe.",
+     "start": 3.125,
+     "end": 4.302,
+     "f0": 94,
+     "f1": 129
+    }
+   ],
+   "start": 0.1,
+   "end": 4.302,
+   "f0": 3,
+   "f1": 129
+  },
+  {
+   "id": "layers",
+   "text": "Your window is three layers, not one.",
+   "phrases": [
+    {
+     "text": "Your window is three layers,",
+     "start": 4.352,
+     "end": 5.767,
+     "f0": 131,
+     "f1": 173
+    },
+    {
+     "text": "not one.",
+     "start": 6.027,
+     "end": 6.713,
+     "f0": 181,
+     "f1": 201
+    }
+   ],
+   "start": 4.352,
+   "end": 6.713,
+   "f0": 131,
+   "f1": 201
+  },
+  {
+   "id": "push",
+   "text": "Outside air is thin. The cabin is pressurized. So the window gets pushed outward, hard.",
+   "phrases": [
+    {
+     "text": "Outside air is thin.",
+     "start": 6.763,
+     "end": 7.919,
+     "f0": 203,
+     "f1": 238
+    },
+    {
+     "text": "The cabin is pressurized.",
+     "start": 8.469,
+     "end": 9.902,
+     "f0": 254,
+     "f1": 297
+    },
+    {
+     "text": "So the window gets pushed outward,",
+     "start": 10.452,
+     "end": 12.12,
+     "f0": 314,
+     "f1": 364
+    },
+    {
+     "text": "hard.",
+     "start": 12.38,
+     "end": 12.938,
+     "f0": 371,
+     "f1": 388
+    }
+   ],
+   "start": 6.763,
+   "end": 12.938,
+   "f0": 203,
+   "f1": 388
+  },
+  {
+   "id": "outer",
+   "text": "The outer layer takes that push.",
+   "phrases": [
+    {
+     "text": "The outer layer takes that push.",
+     "start": 12.988,
+     "end": 14.613,
+     "f0": 390,
+     "f1": 438
+    }
+   ],
+   "start": 12.988,
+   "end": 14.613,
+   "f0": 390,
+   "f1": 438
+  },
+  {
+   "id": "hole",
+   "text": "The tiny hole lets cabin air into the gap, so the middle layer feels no push. It's the spare.",
+   "phrases": [
+    {
+     "text": "The tiny hole lets cabin air into the gap,",
+     "start": 14.663,
+     "end": 16.992,
+     "f0": 440,
+     "f1": 510
+    },
+    {
+     "text": "so the middle layer feels no push.",
+     "start": 17.252,
+     "end": 19.023,
+     "f0": 518,
+     "f1": 571
+    },
+    {
+     "text": "It's the spare.",
+     "start": 19.573,
+     "end": 20.387,
+     "f0": 587,
+     "f1": 612
+    }
+   ],
+   "start": 14.663,
+   "end": 20.387,
+   "f0": 440,
+   "f1": 612
+  },
+  {
+   "id": "fog",
+   "text": "It also lets moisture escape, so the window doesn't fog up.",
+   "phrases": [
+    {
+     "text": "It also lets moisture escape,",
+     "start": 20.437,
+     "end": 22.062,
+     "f0": 613,
+     "f1": 662
+    },
+    {
+     "text": "so the window doesn't fog up.",
+     "start": 22.322,
+     "end": 23.798,
+     "f0": 670,
+     "f1": 714
+    }
+   ],
+   "start": 20.437,
+   "end": 23.798,
+   "f0": 613,
+   "f1": 714
+  },
+  {
+   "id": "end",
+   "text": "If the outer layer failed, the middle one would hold. Now you know.",
+   "phrases": [
+    {
+     "text": "If the outer layer failed,",
+     "start": 23.848,
+     "end": 25.174,
+     "f0": 715,
+     "f1": 755
+    },
+    {
+     "text": "the middle one would hold.",
+     "start": 25.434,
+     "end": 26.529,
+     "f0": 763,
+     "f1": 796
+    },
+    {
+     "text": "Now you know.",
+     "start": 27.079,
+     "end": 27.851,
+     "f0": 812,
+     "f1": 836
+    }
+   ],
+   "start": 23.848,
+   "end": 27.851,
+   "f0": 715,
+   "f1": 836
+  }
+ ]
+}

@@ -1,0 +1,12 @@
+{
+ "start": 0.1,
+ "beats": [
+  {"id": "hook", "text": "That tiny hole in your window isn't a defect. It's keeping you safe.", "after": 0.05},
+  {"id": "layers", "text": "Your window is three layers, not one.", "after": 0.05},
+  {"id": "push", "text": "Outside air is thin. The cabin is pressurized. So the window gets pushed outward, hard.", "after": 0.05},
+  {"id": "outer", "text": "The outer layer takes that push.", "after": 0.05},
+  {"id": "hole", "text": "The tiny hole lets cabin air into the gap, so the middle layer feels no push. It's the spare.", "after": 0.05},
+  {"id": "fog", "text": "It also lets moisture escape, so the window doesn't fog up.", "after": 0.05},
+  {"id": "end", "text": "If the outer layer failed, the middle one would hold. Now you know.", "after": 0.2}
+ ]
+}
