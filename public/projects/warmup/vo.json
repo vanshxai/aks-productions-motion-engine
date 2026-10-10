@@ -1,0 +1,174 @@
+{
+ "fps": 30,
+ "total": 26.804,
+ "beats": [
+  {
+   "id": "hook",
+   "text": "You don't need to warm up your car for five minutes.",
+   "phrases": [
+    {
+     "text": "You don't need to warm up your car for five minutes.",
+     "start": 0.1,
+     "end": 2.429,
+     "f0": 3,
+     "f1": 73
+    }
+   ],
+   "start": 0.1,
+   "end": 2.429,
+   "f0": 3,
+   "f1": 73
+  },
+  {
+   "id": "old",
+   "text": "That advice comes from old carburetor cars. Cold fuel didn't turn to vapor well, so they ran rough.",
+   "phrases": [
+    {
+     "text": "That advice comes from old carburetor cars.",
+     "start": 2.479,
+     "end": 4.954,
+     "f0": 74,
+     "f1": 149
+    },
+    {
+     "text": "Cold fuel didn't turn to vapor well,",
+     "start": 5.504,
+     "end": 7.342,
+     "f0": 165,
+     "f1": 220
+    },
+    {
+     "text": "so they ran rough.",
+     "start": 7.602,
+     "end": 8.608,
+     "f0": 228,
+     "f1": 258
+    }
+   ],
+   "start": 2.479,
+   "end": 8.608,
+   "f0": 74,
+   "f1": 258
+  },
+  {
+   "id": "modern",
+   "text": "Modern engines use sensors to meter the fuel, so they run fine right away.",
+   "phrases": [
+    {
+     "text": "Modern engines use sensors to meter the fuel,",
+     "start": 8.658,
+     "end": 11.073,
+     "f0": 260,
+     "f1": 332
+    },
+    {
+     "text": "so they run fine right away.",
+     "start": 11.333,
+     "end": 12.851,
+     "f0": 340,
+     "f1": 386
+    }
+   ],
+   "start": 8.658,
+   "end": 12.851,
+   "f0": 260,
+   "f1": 386
+  },
+  {
+   "id": "oil",
+   "text": "Oil reaches the engine parts in seconds.",
+   "phrases": [
+    {
+     "text": "Oil reaches the engine parts in seconds.",
+     "start": 12.901,
+     "end": 15.102,
+     "f0": 387,
+     "f1": 453
+    }
+   ],
+   "start": 12.901,
+   "end": 15.102,
+   "f0": 387,
+   "f1": 453
+  },
+  {
+   "id": "thirty",
+   "text": "About thirty seconds is plenty. Then drive gently.",
+   "phrases": [
+    {
+     "text": "About thirty seconds is plenty.",
+     "start": 15.152,
+     "end": 16.798,
+     "f0": 455,
+     "f1": 504
+    },
+    {
+     "text": "Then drive gently.",
+     "start": 17.348,
+     "end": 18.547,
+     "f0": 520,
+     "f1": 556
+    }
+   ],
+   "start": 15.152,
+   "end": 18.547,
+   "f0": 455,
+   "f1": 556
+  },
+  {
+   "id": "zero",
+   "text": "Idling gets zero miles per gallon, and the engine warms up slower than when you drive.",
+   "phrases": [
+    {
+     "text": "Idling gets zero miles per gallon,",
+     "start": 18.597,
+     "end": 20.627,
+     "f0": 558,
+     "f1": 619
+    },
+    {
+     "text": "and the engine warms up slower than when you drive.",
+     "start": 20.887,
+     "end": 23.344,
+     "f0": 627,
+     "f1": 700
+    }
+   ],
+   "start": 18.597,
+   "end": 23.344,
+   "f0": 558,
+   "f1": 700
+  },
+  {
+   "id": "end",
+   "text": "So skip the wait. Just go, gently.",
+   "phrases": [
+    {
+     "text": "So skip the wait.",
+     "start": 23.394,
+     "end": 24.443,
+     "f0": 702,
+     "f1": 733
+    },
+    {
+     "text": "Just go,",
+     "start": 24.993,
+     "end": 25.722,
+     "f0": 750,
+     "f1": 772
+    },
+    {
+     "text": "gently.",
+     "start": 25.982,
+     "end": 26.604,
+     "f0": 779,
+     "f1": 798
+    }
+   ],
+   "start": 23.394,
+   "end": 26.604,
+   "f0": 702,
+   "f1": 798
+  }
+ ]
+}

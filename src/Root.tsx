@@ -24,6 +24,7 @@ import { WindowHole30, WindowHoleCover } from "./projects/windowhole/Window30";
 import { FlyHigh30, FlyHighCover } from "./projects/flyhigh/FlyHigh30";
 // ── HOW IT WORKS #20 (additive block; branch howitworks-20-rocket-up) ──
 import { RocketUp30, RocketUpCover } from "./projects/rocketup/RocketUp30";
+import { WarmUp30, WarmUpCover } from "./projects/warmup/WarmUp30"; // HOW IT WORKS #21 (additive block)
 
 /**
  * One <Composition> per video. Convention:
@@ -96,5 +97,10 @@ export const Root: React.FC = () => (
     <Composition id="RocketUp-30s" component={RocketUp30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: true }} />
     <Composition id="RocketUp-30s-silent" component={RocketUp30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: false }} />
     <Composition id="RocketUp-cover" component={RocketUpCover} durationInFrames={1} fps={30} width={1080} height={1920} />
+    {/* ── HOW IT WORKS #21 — Do you really need to warm up your car? (additive block, branch howitworks-21-warm-up) ── */}
+    <Composition id="WarmUp-30s" component={WarmUp30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: true }} />
+    <Composition id="WarmUp-30s-silent" component={WarmUp30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: false }} />
+    <Composition id="WarmUp-cover" component={WarmUpCover} durationInFrames={1} fps={30} width={1080} height={1920} />
+    {/* ── end #21 ── */}
   </>
 );
