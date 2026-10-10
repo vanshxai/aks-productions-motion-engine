@@ -1,0 +1,188 @@
+{
+ "fps": 30,
+ "total": 29.519,
+ "beats": [
+  {
+   "id": "hook",
+   "text": "Birds sit on power lines all day and never get zapped. Why?",
+   "phrases": [
+    {
+     "text": "Birds sit on power lines all day and never get zapped.",
+     "start": 0.1,
+     "end": 3.133,
+     "f0": 3,
+     "f1": 94
+    },
+    {
+     "text": "Why?",
+     "start": 3.683,
+     "end": 4.177,
+     "f0": 110,
+     "f1": 125
+    }
+   ],
+   "start": 0.1,
+   "end": 4.177,
+   "f0": 3,
+   "f1": 125
+  },
+  {
+   "id": "diff",
+   "text": "Electricity only flows when there's a voltage difference. Like water, it needs a slope.",
+   "phrases": [
+    {
+     "text": "Electricity only flows when there's a voltage difference.",
+     "start": 4.227,
+     "end": 7.278,
+     "f0": 127,
+     "f1": 218
+    },
+    {
+     "text": "Like water,",
+     "start": 7.828,
+     "end": 8.621,
+     "f0": 235,
+     "f1": 259
+    },
+    {
+     "text": "it needs a slope.",
+     "start": 8.881,
+     "end": 9.887,
+     "f0": 266,
+     "f1": 297
+    }
+   ],
+   "start": 4.227,
+   "end": 9.887,
+   "f0": 127,
+   "f1": 297
+  },
+  {
+   "id": "same",
+   "text": "A bird on one wire touches just one voltage. Both feet are at the same level.",
+   "phrases": [
+    {
+     "text": "A bird on one wire touches just one voltage.",
+     "start": 9.937,
+     "end": 12.711,
+     "f0": 298,
+     "f1": 381
+    },
+    {
+     "text": "Both feet are at the same level.",
+     "start": 13.261,
+     "end": 14.889,
+     "f0": 398,
+     "f1": 447
+    }
+   ],
+   "start": 9.937,
+   "end": 14.889,
+   "f0": 298,
+   "f1": 447
+  },
+  {
+   "id": "stay",
+   "text": "So the current stays in the wire. The wire is the easy path.",
+   "phrases": [
+    {
+     "text": "So the current stays in the wire.",
+     "start": 14.939,
+     "end": 16.5,
+     "f0": 448,
+     "f1": 495
+    },
+    {
+     "text": "The wire is the easy path.",
+     "start": 17.05,
+     "end": 18.569,
+     "f0": 512,
+     "f1": 557
+    }
+   ],
+   "start": 14.939,
+   "end": 18.569,
+   "f0": 448,
+   "f1": 557
+  },
+  {
+   "id": "two",
+   "text": "But touch two wires, or a wire and the pole, and it's a different story.",
+   "phrases": [
+    {
+     "text": "But touch two wires,",
+     "start": 18.619,
+     "end": 19.838,
+     "f0": 559,
+     "f1": 595
+    },
+    {
+     "text": "or a wire and the pole,",
+     "start": 20.098,
+     "end": 21.322,
+     "f0": 603,
+     "f1": 640
+    },
+    {
+     "text": "and it's a different story.",
+     "start": 21.582,
+     "end": 22.805,
+     "f0": 647,
+     "f1": 684
+    }
+   ],
+   "start": 18.619,
+   "end": 22.805,
+   "f0": 559,
+   "f1": 684
+  },
+  {
+   "id": "big",
+   "text": "That's why big birds are most at risk, and why crews fit covers.",
+   "phrases": [
+    {
+     "text": "That's why big birds are most at risk,",
+     "start": 22.855,
+     "end": 24.757,
+     "f0": 686,
+     "f1": 743
+    },
+    {
+     "text": "and why crews fit covers.",
+     "start": 25.017,
+     "end": 26.408,
+     "f0": 751,
+     "f1": 792
+    }
+   ],
+   "start": 22.855,
+   "end": 26.408,
+   "f0": 686,
+   "f1": 792
+  },
+  {
+   "id": "end",
+   "text": "It's not about the bird. It's about the difference.",
+   "phrases": [
+    {
+     "text": "It's not about the bird.",
+     "start": 26.458,
+     "end": 27.635,
+     "f0": 794,
+     "f1": 829
+    },
+    {
+     "text": "It's about the difference.",
+     "start": 28.185,
+     "end": 29.319,
+     "f0": 846,
+     "f1": 880
+    }
+   ],
+   "start": 26.458,
+   "end": 29.319,
+   "f0": 794,
+   "f1": 880
+  }
+ ]
+}

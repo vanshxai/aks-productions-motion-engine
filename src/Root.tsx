@@ -22,6 +22,8 @@ import { Chenab30, ChenabCover } from "./projects/chenab/Chenab30";
 import { Contrails30, ContrailsCover } from "./projects/contrails/Contrails30";
 import { WindowHole30, WindowHoleCover } from "./projects/windowhole/Window30";
 import { FlyHigh30, FlyHighCover } from "./projects/flyhigh/FlyHigh30";
+// HOW IT WORKS #22 (birds on power lines) — additive block (imports + compositions), safe to merge
+import { Birds30, BirdsCover } from "./projects/birds/Birds30";
 
 /**
  * One <Composition> per video. Convention:
@@ -90,5 +92,9 @@ export const Root: React.FC = () => (
     <Composition id="FlyHigh-30s" component={FlyHigh30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: true }} />
     <Composition id="FlyHigh-30s-silent" component={FlyHigh30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: false }} />
     <Composition id="FlyHigh-cover" component={FlyHighCover} durationInFrames={1} fps={30} width={1080} height={1920} />
+    {/* HOW IT WORKS #22 — Why don't birds get electrocuted on power lines? (additive block) */}
+    <Composition id="Birds-30s" component={Birds30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: true }} />
+    <Composition id="Birds-30s-silent" component={Birds30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: false }} />
+    <Composition id="Birds-cover" component={BirdsCover} durationInFrames={1} fps={30} width={1080} height={1920} />
   </>
 );
