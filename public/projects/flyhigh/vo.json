@@ -1,0 +1,205 @@
+{
+ "fps": 30,
+ "total": 28.235,
+ "beats": [
+  {
+   "id": "hook",
+   "text": "Planes fly about ten kilometers up. Why? Because the air gets thin.",
+   "phrases": [
+    {
+     "text": "Planes fly about ten kilometers up.",
+     "start": 0.1,
+     "end": 2.13,
+     "f0": 3,
+     "f1": 64
+    },
+    {
+     "text": "Why?",
+     "start": 2.68,
+     "end": 3.175,
+     "f0": 80,
+     "f1": 95
+    },
+    {
+     "text": "Because the air gets thin.",
+     "start": 3.775,
+     "end": 5.08,
+     "f0": 113,
+     "f1": 152
+    }
+   ],
+   "start": 0.1,
+   "end": 5.08,
+   "f0": 3,
+   "f1": 152
+  },
+  {
+   "id": "third",
+   "text": "Near the ground, air is packed tight. Up there, there's only about a third as much.",
+   "phrases": [
+    {
+     "text": "Near the ground,",
+     "start": 5.13,
+     "end": 6.029,
+     "f0": 154,
+     "f1": 181
+    },
+    {
+     "text": "air is packed tight.",
+     "start": 6.289,
+     "end": 7.381,
+     "f0": 189,
+     "f1": 221
+    },
+    {
+     "text": "Up there,",
+     "start": 7.931,
+     "end": 8.553,
+     "f0": 238,
+     "f1": 257
+    },
+    {
+     "text": "there's only about a third as much.",
+     "start": 8.813,
+     "end": 10.627,
+     "f0": 264,
+     "f1": 319
+    }
+   ],
+   "start": 5.13,
+   "end": 10.627,
+   "f0": 154,
+   "f1": 319
+  },
+  {
+   "id": "drag",
+   "text": "Less air means less drag. Less drag means less fuel.",
+   "phrases": [
+    {
+     "text": "Less air means less drag.",
+     "start": 10.677,
+     "end": 11.964,
+     "f0": 320,
+     "f1": 359
+    },
+    {
+     "text": "Less drag means less fuel.",
+     "start": 12.514,
+     "end": 14.011,
+     "f0": 375,
+     "f1": 420
+    }
+   ],
+   "start": 10.677,
+   "end": 14.011,
+   "f0": 320,
+   "f1": 420
+  },
+  {
+   "id": "cold",
+   "text": "The cold air helps the engines too.",
+   "phrases": [
+    {
+     "text": "The cold air helps the engines too.",
+     "start": 14.061,
+     "end": 15.835,
+     "f0": 422,
+     "f1": 475
+    }
+   ],
+   "start": 14.061,
+   "end": 15.835,
+   "f0": 422,
+   "f1": 475
+  },
+  {
+   "id": "weather",
+   "text": "And it's above most of the weather.",
+   "phrases": [
+    {
+     "text": "And it's above most of the weather.",
+     "start": 15.885,
+     "end": 17.489,
+     "f0": 477,
+     "f1": 525
+    }
+   ],
+   "start": 15.885,
+   "end": 17.489,
+   "f0": 477,
+   "f1": 525
+  },
+  {
+   "id": "higher",
+   "text": "Why not higher? Wings and engines need air too.",
+   "phrases": [
+    {
+     "text": "Why not higher?",
+     "start": 17.539,
+     "end": 18.417,
+     "f0": 526,
+     "f1": 553
+    },
+    {
+     "text": "Wings and engines need air too.",
+     "start": 19.017,
+     "end": 20.77,
+     "f0": 571,
+     "f1": 623
+    }
+   ],
+   "start": 17.539,
+   "end": 20.77,
+   "f0": 526,
+   "f1": 623
+  },
+  {
+   "id": "sweet",
+   "text": "So pilots pick the sweet spot. As fuel burns off, the plane gets lighter and climbs a little.",
+   "phrases": [
+    {
+     "text": "So pilots pick the sweet spot.",
+     "start": 20.82,
+     "end": 22.445,
+     "f0": 625,
+     "f1": 673
+    },
+    {
+     "text": "As fuel burns off,",
+     "start": 22.995,
+     "end": 24.215,
+     "f0": 690,
+     "f1": 726
+    },
+    {
+     "text": "the plane gets lighter and climbs a little.",
+     "start": 24.475,
+     "end": 26.612,
+     "f0": 734,
+     "f1": 798
+    }
+   ],
+   "start": 20.82,
+   "end": 26.612,
+   "f0": 625,
+   "f1": 798
+  },
+  {
+   "id": "end",
+   "text": "Thin air is the cheat code.",
+   "phrases": [
+    {
+     "text": "Thin air is the cheat code.",
+     "start": 26.662,
+     "end": 28.035,
+     "f0": 800,
+     "f1": 841
+    }
+   ],
+   "start": 26.662,
+   "end": 28.035,
+   "f0": 800,
+   "f1": 841
+  }
+ ]
+}

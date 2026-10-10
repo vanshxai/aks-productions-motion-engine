@@ -1,0 +1,45 @@
+{
+ "start": 0.1,
+ "beats": [
+  {
+   "id": "hook",
+   "text": "Planes fly about ten kilometers up. Why? Because the air gets thin.",
+   "after": 0.05
+  },
+  {
+   "id": "third",
+   "text": "Near the ground, air is packed tight. Up there, there's only about a third as much.",
+   "after": 0.05
+  },
+  {
+   "id": "drag",
+   "text": "Less air means less drag. Less drag means less fuel.",
+   "after": 0.05
+  },
+  {
+   "id": "cold",
+   "text": "The cold air helps the engines too.",
+   "after": 0.05
+  },
+  {
+   "id": "weather",
+   "text": "And it's above most of the weather.",
+   "after": 0.05
+  },
+  {
+   "id": "higher",
+   "text": "Why not higher? Wings and engines need air too.",
+   "after": 0.05
+  },
+  {
+   "id": "sweet",
+   "text": "So pilots pick the sweet spot. As fuel burns off, the plane gets lighter and climbs a little.",
+   "after": 0.05
+  },
+  {
+   "id": "end",
+   "text": "Thin air is the cheat code.",
+   "after": 0.2
+  }
+ ]
+}

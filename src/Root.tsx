@@ -21,6 +21,7 @@ import { Orbit30, OrbitCover } from "./projects/orbit/Orbit30";
 import { Chenab30, ChenabCover } from "./projects/chenab/Chenab30";
 import { Contrails30, ContrailsCover } from "./projects/contrails/Contrails30";
 import { WindowHole30, WindowHoleCover } from "./projects/windowhole/Window30";
+import { FlyHigh30, FlyHighCover } from "./projects/flyhigh/FlyHigh30";
 
 /**
  * One <Composition> per video. Convention:
@@ -86,5 +87,8 @@ export const Root: React.FC = () => (
     <Composition id="WindowHole-30s" component={WindowHole30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: true }} />
     <Composition id="WindowHole-30s-silent" component={WindowHole30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: false }} />
     <Composition id="WindowHole-cover" component={WindowHoleCover} durationInFrames={1} fps={30} width={1080} height={1920} />
+    <Composition id="FlyHigh-30s" component={FlyHigh30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: true }} />
+    <Composition id="FlyHigh-30s-silent" component={FlyHigh30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: false }} />
+    <Composition id="FlyHigh-cover" component={FlyHighCover} durationInFrames={1} fps={30} width={1080} height={1920} />
   </>
 );
