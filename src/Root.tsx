@@ -22,6 +22,7 @@ import { Chenab30, ChenabCover } from "./projects/chenab/Chenab30";
 import { Contrails30, ContrailsCover } from "./projects/contrails/Contrails30";
 import { WindowHole30, WindowHoleCover } from "./projects/windowhole/Window30";
 import { FlyHigh30, FlyHighCover } from "./projects/flyhigh/FlyHigh30";
+import { WarmUp30, WarmUpCover } from "./projects/warmup/WarmUp30"; // HOW IT WORKS #21 (additive block)
 
 /**
  * One <Composition> per video. Convention:
@@ -90,5 +91,10 @@ export const Root: React.FC = () => (
     <Composition id="FlyHigh-30s" component={FlyHigh30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: true }} />
     <Composition id="FlyHigh-30s-silent" component={FlyHigh30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: false }} />
     <Composition id="FlyHigh-cover" component={FlyHighCover} durationInFrames={1} fps={30} width={1080} height={1920} />
+    {/* ── HOW IT WORKS #21 — Do you really need to warm up your car? (additive block, branch howitworks-21-warm-up) ── */}
+    <Composition id="WarmUp-30s" component={WarmUp30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: true }} />
+    <Composition id="WarmUp-30s-silent" component={WarmUp30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: false }} />
+    <Composition id="WarmUp-cover" component={WarmUpCover} durationInFrames={1} fps={30} width={1080} height={1920} />
+    {/* ── end #21 ── */}
   </>
 );

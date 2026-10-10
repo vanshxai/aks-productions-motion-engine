@@ -1,0 +1,12 @@
+{
+ "start": 0.1,
+ "beats": [
+  {"id": "hook", "text": "You don't need to warm up your car for five minutes.", "after": 0.05},
+  {"id": "old", "text": "That advice comes from old carburetor cars. Cold fuel didn't turn to vapor well, so they ran rough.", "after": 0.05},
+  {"id": "modern", "text": "Modern engines use sensors to meter the fuel, so they run fine right away.", "after": 0.05},
+  {"id": "oil", "text": "Oil reaches the engine parts in seconds.", "after": 0.05},
+  {"id": "thirty", "text": "About thirty seconds is plenty. Then drive gently.", "after": 0.05},
+  {"id": "zero", "text": "Idling gets zero miles per gallon, and the engine warms up slower than when you drive.", "after": 0.05},
+  {"id": "end", "text": "So skip the wait. Just go, gently.", "after": 0.2}
+ ]
+}
