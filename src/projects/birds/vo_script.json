@@ -1,0 +1,40 @@
+{
+ "start": 0.1,
+ "beats": [
+  {
+   "id": "hook",
+   "text": "Birds sit on power lines all day and never get zapped. Why?",
+   "after": 0.05
+  },
+  {
+   "id": "diff",
+   "text": "Electricity only flows when there's a voltage difference. Like water, it needs a slope.",
+   "after": 0.05
+  },
+  {
+   "id": "same",
+   "text": "A bird on one wire touches just one voltage. Both feet are at the same level.",
+   "after": 0.05
+  },
+  {
+   "id": "stay",
+   "text": "So the current stays in the wire. The wire is the easy path.",
+   "after": 0.05
+  },
+  {
+   "id": "two",
+   "text": "But touch two wires, or a wire and the pole, and it's a different story.",
+   "after": 0.05
+  },
+  {
+   "id": "big",
+   "text": "That's why big birds are most at risk, and why crews fit covers.",
+   "after": 0.05
+  },
+  {
+   "id": "end",
+   "text": "It's not about the bird. It's about the difference.",
+   "after": 0.2
+  }
+ ]
+}
