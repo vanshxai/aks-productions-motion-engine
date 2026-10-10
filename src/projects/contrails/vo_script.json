@@ -1,0 +1,12 @@
+{
+ "start": 0.1,
+ "beats": [
+  {"id": "hook", "text": "Planes don't leave smoke. They leave clouds.", "after": 0.05},
+  {"id": "fuel", "text": "Burning fuel makes water. Hot steam, blasting out the back.", "after": 0.05},
+  {"id": "cold", "text": "Up there, the air is minus fifty.", "after": 0.05},
+  {"id": "ice", "text": "The steam hits that cold and freezes into tiny ice crystals, like your breath on a cold day.", "after": 0.05},
+  {"id": "line", "text": "That's the white line you see. A thin cloud of ice, not smoke.", "after": 0.05},
+  {"id": "air", "text": "If the air is dry, it fades fast. If it's humid, it stays and spreads.", "after": 0.05},
+  {"id": "end", "text": "Fly low, and there's no trail. The air is too warm.", "after": 0.2}
+ ]
+}
