@@ -1,0 +1,65 @@
+{
+ "series": "The Adventures of Kimu",
+ "season": 1,
+ "episode": 2,
+ "title": "The Whistle",
+ "duration_s": 60,
+ "fps": 30,
+ "size": [
+  1080,
+  1920
+ ],
+ "lesson": "In a sealed pressure cooker, trapped steam raises the pressure, which raises the boiling point of water (about 120 C at typical 1 bar gauge pressure), so food cooks faster. The weight lifts when the target pressure is reached and the steam escaping makes the whistle. No whistle usually means steam is escaping elsewhere, often a dirty or worn sealing ring.",
+ "claim_status": "Well established. Always switch off the heat and let pressure drop fully before opening.",
+ "hook": {
+  "text": "DINNER IS LATE. NO WHISTLE.",
+  "t0": 0.0,
+  "t1": 2.6
+ },
+ "shots": [
+  {
+   "id": "S1",
+   "t0": 0,
+   "t1": 19,
+   "set": "kitchen_evening",
+   "cast": [
+    "mom",
+    "dad",
+    "kimu"
+   ],
+   "mood": "worried"
+  },
+  {
+   "id": "S2",
+   "t0": 19,
+   "t1": 28,
+   "set": "kitchen_evening",
+   "cast": [
+    "kimu"
+   ],
+   "mood": "faith"
+  },
+  {
+   "id": "S3",
+   "t0": 28,
+   "t1": 46,
+   "set": "kitchen_evening",
+   "cast": [
+    "kimu"
+   ],
+   "mood": "curious"
+  },
+  {
+   "id": "S4",
+   "t0": 46,
+   "t1": 60,
+   "set": "kitchen_evening",
+   "cast": [
+    "kimu",
+    "mom",
+    "dad"
+   ],
+   "mood": "warm"
+  }
+ ]
+}

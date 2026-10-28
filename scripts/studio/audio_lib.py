@@ -640,3 +640,56 @@ def place_st(buf2, x, t, p=0.0, gain=1.0):
         return
     a = max(0, -i); n = min(len(s) - a, len(buf2) - max(i, 0))
     buf2[max(i, 0):max(i, 0) + n] += s[a:a + n]
+
+
+# ---------------------------------------------------------------- v5 kitchen sounds
+def steam_hiss(dur=2.0, vel=0.2, bright=1.0):
+    """Escaping steam: broadband hiss, strongest in the highs, gently surging."""
+    n = _n(dur); t = np.arange(n) / SR
+    y = bp(rng.standard_normal(n), 2500, 9500) * (0.75 + 0.25 * np.sin(2 * np.pi * 0.9 * t + 1.0)) * bright
+    return (y * np.clip(t / 0.1, 0, 1) * np.clip((dur - t) / 0.2, 0, 1) * vel).astype(np.float32)
+
+
+def gas_hiss(dur=3.0, vel=0.08):
+    """A gas burner: a soft, steady rush of air (noise, not a tone)."""
+    n = _n(dur); t = np.arange(n) / SR
+    y = bp(rng.standard_normal(n), 700, 3200) * (0.85 + 0.15 * np.sin(2 * np.pi * 2.3 * t))
+    return (y * np.clip(t / 0.3, 0, 1) * np.clip((dur - t) / 0.3, 0, 1) * vel).astype(np.float32)
+
+
+def whoomp(vel=0.4):
+    """Gas catching: a low soft thump of air."""
+    n = _n(0.45); t = np.arange(n) / SR
+    y = lp(rng.standard_normal(n), 380) * np.exp(-t / 0.12) * 3.0 + np.sin(2 * np.pi * 62 * t) * np.exp(-t / 0.1)
+    return (y * vel * 0.5).astype(np.float32)
+
+
+def cooker_whistle(dur=1.2, vel=0.3, f=2950):
+    """The pressure-cooker whistle: a bright pitched tone with a steam hiss around it and a slight warble."""
+    n = _n(dur); t = np.arange(n) / SR
+    fr = f * (1 + 0.012 * np.sin(2 * np.pi * 7.5 * t) + 0.02 * np.exp(-t / 0.05))
+    ph = 2 * np.pi * np.cumsum(fr) / SR
+    y = np.sin(ph) + 0.35 * np.sin(2 * ph) + 0.12 * np.sin(3 * ph)
+    y = y * (0.9 + 0.1 * np.sin(2 * np.pi * 11 * t)) + bp(rng.standard_normal(n), 2500, 8000) * 0.45
+    e = np.clip(t / 0.05, 0, 1) * np.clip((dur - t) / 0.12, 0, 1)
+    return (lp(y, 7000) * e * vel * 0.6).astype(np.float32)
+
+
+def lid_clank(vel=0.4):
+    """A steel lid set down on a steel pot."""
+    n = _n(0.5); t = np.arange(n) / SR
+    y = sum(np.sin(2 * np.pi * f * t) * a for f, a in ((820, 1), (1330, 0.7), (2150, 0.5), (3300, 0.3))) * np.exp(-t / 0.09)
+    return (hp(y, 400) * vel * 0.5).astype(np.float32)
+
+
+def spoon_clink(vel=0.3):
+    n = _n(0.3); t = np.arange(n) / SR
+    y = (np.sin(2 * np.pi * 2900 * t) + 0.5 * np.sin(2 * np.pi * 4700 * t)) * np.exp(-t / 0.05)
+    return (y * vel * 0.5).astype(np.float32)
+
+
+def rub(dur=1.0, vel=0.3):
+    """Cloth wiping a metal rim: rhythmic soft scrubs."""
+    n = _n(dur); t = np.arange(n) / SR
+    y = bp(rng.standard_normal(n), 900, 4200) * (0.5 + 0.5 * np.abs(np.sin(2 * np.pi * 3.2 * t)))
+    return (y * np.clip(t / 0.05, 0, 1) * np.clip((dur - t) / 0.08, 0, 1) * vel).astype(np.float32)

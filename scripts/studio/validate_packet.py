@@ -11,7 +11,7 @@ p = json.load(open(sys.argv[1]))
 root = os.path.dirname(os.path.abspath(__file__)) + "/../.."
 man = json.load(open(f"{root}/src/studio/manifest.json"))
 sc = json.load(open(os.path.join(os.path.dirname(sys.argv[1]), "script.json")))
-tl = json.load(open(f"{root}/public/studio/s1e01/timeline.json"))
+tl = json.load(open(f"{root}/public/studio/{os.path.basename(os.path.dirname(os.path.abspath(sys.argv[1])))}/timeline.json"))
 errs = []
 shots = tl["shots"]
 if abs(shots[0]["t0"]) > 1e-6: errs.append("first shot must start at 0")

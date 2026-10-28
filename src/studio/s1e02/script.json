@@ -1,0 +1,169 @@
+{
+ "episode": "S1E02 The Whistle",
+ "language": "en",
+ "timeline": [
+  {
+   "id": "S1",
+   "t0": 0.0,
+   "t1": 19.0,
+   "src0": 0.0,
+   "src1": 19.0
+  },
+  {
+   "id": "S2",
+   "t0": 19.0,
+   "t1": 28.0,
+   "src0": 19.0,
+   "src1": 28.0
+  },
+  {
+   "id": "S3",
+   "t0": 28.0,
+   "t1": 46.0,
+   "src0": 28.0,
+   "src1": 46.0
+  },
+  {
+   "id": "S4",
+   "t0": 46.0,
+   "t1": 60.0,
+   "src0": 46.0,
+   "src1": 60.0
+  }
+ ],
+ "lines": [
+  {
+   "id": "m0",
+   "char": "mom",
+   "emo": "worried",
+   "text": "Come on... *whistle*.",
+   "t": 1.2
+  },
+  {
+   "id": "d1",
+   "char": "dad",
+   "emo": "stern",
+   "text": "Dinner?",
+   "gap": 0.9
+  },
+  {
+   "id": "m1",
+   "char": "mom",
+   "emo": "calm",
+   "text": "Almost. It's just... slow today.",
+   "gap": 0.35
+  },
+  {
+   "id": "d2",
+   "char": "dad",
+   "emo": "annoyed",
+   "text": "Slow.",
+   "gap": 0.5
+  },
+  {
+   "id": "k0",
+   "char": "kimu",
+   "emo": "worried",
+   "text": "Mom... that *hiss*.",
+   "gap": 0.5
+  },
+  {
+   "id": "m2",
+   "char": "mom",
+   "emo": "sad",
+   "text": "Fifteen years. Never *slow*.",
+   "gap": 0.4
+  },
+  {
+   "id": "d3",
+   "char": "dad",
+   "emo": "stern",
+   "text": "Buy a new one.",
+   "gap": 0.6
+  },
+  {
+   "id": "m3",
+   "char": "mom",
+   "emo": "sad",
+   "text": "My mother gave me *this* one.",
+   "gap": 0.5
+  },
+  {
+   "id": "k1",
+   "char": "kimu",
+   "emo": "warm",
+   "text": "Give me five minutes.",
+   "gap": 0.6
+  },
+  {
+   "id": "n2",
+   "char": "kimu",
+   "emo": "whisper",
+   "text": "Please... help me see it.",
+   "t": 20.4
+  },
+  {
+   "id": "n3",
+   "char": "narrator",
+   "emo": "narrate",
+   "text": "Inside a sealed pot, steam can't escape. So the pressure builds.",
+   "t": 28.3
+  },
+  {
+   "id": "n4",
+   "char": "narrator",
+   "emo": "narrate",
+   "text": "More pressure means hotter water. That's why a cooker is so fast.",
+   "t": 33.0
+  },
+  {
+   "id": "n5",
+   "char": "narrator",
+   "emo": "narrate",
+   "text": "The whistle? That's the steam finally lifting the weight.",
+   "t": 37.8
+  },
+  {
+   "id": "n6",
+   "char": "narrator",
+   "emo": "narrate",
+   "text": "No whistle means the steam is leaking somewhere else.",
+   "t": 42.0
+  },
+  {
+   "id": "n7",
+   "char": "narrator",
+   "emo": "narrate",
+   "text": "First, flame off. Let the pressure drop. Always.",
+   "t": 46.3
+  },
+  {
+   "id": "n8",
+   "char": "narrator",
+   "emo": "narrate",
+   "text": "Dried starch on the rim. The seal couldn't seal.",
+   "t": 50.0
+  },
+  {
+   "id": "m4",
+   "char": "mom",
+   "emo": "relieved",
+   "text": "There it is.",
+   "t": 54.2
+  },
+  {
+   "id": "d4",
+   "char": "dad",
+   "emo": "warm",
+   "text": "Sit. Eat.",
+   "t": 55.6
+  },
+  {
+   "id": "n9",
+   "char": "narrator",
+   "emo": "narrate",
+   "text": "Small fix. Big dinner.",
+   "t": 57.2
+  }
+ ]
+}
