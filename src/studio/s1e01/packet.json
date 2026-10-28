@@ -1,0 +1,23 @@
+{
+  "series": "The Adventures of Kimu",
+  "season": 1, "episode": 1,
+  "title": "The Bird on the Wire",
+  "duration_s": 60, "fps": 30, "size": [1080, 1920],
+  "lesson": "A bird on one wire has no voltage difference across its body, so no current flows through it. Two wires, or a wire and the ground, is a different story.",
+  "claim_status": "Well established physics. Large birds whose wings span two lines can be electrocuted, which the episode states.",
+  "shots": [
+    {"id": "S1", "t0": 0.0,  "t1": 12.6, "set": "kimu_room_night",  "cast": ["kimu", "dad", "mom"], "mood": "sad",     "music": "S1 sad piano, A minor"},
+    {"id": "S2", "t0": 12.6, "t1": 24.0, "set": "terrace_night",    "cast": ["kimu", "bird"],       "mood": "faith",   "music": "S2 warm pad + harp, C major"},
+    {"id": "S3", "t0": 24.0, "t1": 46.6, "set": "terrace_wire_zoom","cast": ["bird"], "infographic": ["A", "B", "C", "D"], "mood": "curious", "music": "S3 pizzicato + marimba"},
+    {"id": "S4", "t0": 46.6, "t1": 60.0, "set": "street_morning",   "cast": ["kimu", "uncle", "mom"], "mood": "happy", "music": "S4 bright piano + strings"}
+  ],
+  "dialogue": [
+    {"id": "dad1",   "who": "dad",   "t": 3.3,  "lines": ["Still playing with wires?", "Study your syllabus!"]},
+    {"id": "kimu1",  "who": "kimu",  "t": 6.2,  "lines": ["Okay, Papa."]},
+    {"id": "uncle1", "who": "uncle", "t": 55.2, "lines": ["Shabash, beta!", "Well done!"]}
+  ],
+  "hook": {"text": "POWER CUT. LAPTOP AT 3%.", "t0": 0.0, "t1": 3.4},
+  "narration_file": "vo.json",
+  "sfx_file": "scripts/studio/build_s1e01_audio.py",
+  "new_assets": ["kimu_y1", "dad", "mom", "uncle", "bird", "laptop", "kimu_room_night", "terrace_night", "street_morning", "meter_board", "power_pole_wires", "tea_cup", "rupee_note", "tool_bag", "infographic_card"]
+}

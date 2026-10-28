@@ -1,0 +1,250 @@
+{
+ "fps": 30,
+ "total": 59.722,
+ "beats": [
+  {
+   "id": "n1",
+   "text": "They don't see it yet. But I do.",
+   "phrases": [
+    {
+     "text": "They don't see it yet.",
+     "start": 9.3,
+     "end": 10.306,
+     "f0": 279,
+     "f1": 309
+    },
+    {
+     "text": "But I do.",
+     "start": 10.856,
+     "end": 11.649,
+     "f0": 326,
+     "f1": 349
+    }
+   ],
+   "start": 9.3,
+   "end": 11.649,
+   "f0": 279,
+   "f1": 349
+  },
+  {
+   "id": "n2",
+   "text": "God, I just want to build something real. Show me where to start.",
+   "phrases": [
+    {
+     "text": "God,",
+     "start": 15.0,
+     "end": 15.58,
+     "f0": 450,
+     "f1": 467
+    },
+    {
+     "text": "I just want to build something real.",
+     "start": 15.84,
+     "end": 17.507,
+     "f0": 475,
+     "f1": 525
+    },
+    {
+     "text": "Show me where to start.",
+     "start": 18.057,
+     "end": 19.192,
+     "f0": 542,
+     "f1": 576
+    }
+   ],
+   "start": 15.0,
+   "end": 19.192,
+   "f0": 450,
+   "f1": 576
+  },
+  {
+   "id": "n3",
+   "text": "A bird on a wire carrying thousands of volts. And it's fine.",
+   "phrases": [
+    {
+     "text": "A bird on a wire carrying thousands of volts.",
+     "start": 24.3,
+     "end": 26.501,
+     "f0": 729,
+     "f1": 795
+    },
+    {
+     "text": "And it's fine.",
+     "start": 27.051,
+     "end": 27.844,
+     "f0": 812,
+     "f1": 835
+    }
+   ],
+   "start": 24.3,
+   "end": 27.844,
+   "f0": 729,
+   "f1": 835
+  },
+  {
+   "id": "n4",
+   "text": "Electricity flows only when there's a voltage difference. A push from high to low.",
+   "phrases": [
+    {
+     "text": "Electricity flows only when there's a voltage difference.",
+     "start": 29.8,
+     "end": 32.705,
+     "f0": 894,
+     "f1": 981
+    },
+    {
+     "text": "A push from high to low.",
+     "start": 33.255,
+     "end": 34.393,
+     "f0": 998,
+     "f1": 1032
+    }
+   ],
+   "start": 29.8,
+   "end": 34.393,
+   "f0": 894,
+   "f1": 1032
+  },
+  {
+   "id": "n5",
+   "text": "One wire, so both feet share one voltage. No difference, no current.",
+   "phrases": [
+    {
+     "text": "One wire,",
+     "start": 35.6,
+     "end": 36.35,
+     "f0": 1068,
+     "f1": 1091
+    },
+    {
+     "text": "so both feet share one voltage.",
+     "start": 36.61,
+     "end": 38.214,
+     "f0": 1098,
+     "f1": 1146
+    },
+    {
+     "text": "No difference,",
+     "start": 38.764,
+     "end": 39.621,
+     "f0": 1163,
+     "f1": 1189
+    },
+    {
+     "text": "no current.",
+     "start": 39.881,
+     "end": 40.653,
+     "f0": 1196,
+     "f1": 1220
+    }
+   ],
+   "start": 35.6,
+   "end": 40.653,
+   "f0": 1068,
+   "f1": 1220
+  },
+  {
+   "id": "n6",
+   "text": "Touch two wires, or the ground, and it's a different story.",
+   "phrases": [
+    {
+     "text": "Touch two wires,",
+     "start": 41.103,
+     "end": 42.066,
+     "f0": 1233,
+     "f1": 1262
+    },
+    {
+     "text": "or the ground,",
+     "start": 42.326,
+     "end": 43.141,
+     "f0": 1270,
+     "f1": 1294
+    },
+    {
+     "text": "and it's a different story.",
+     "start": 43.401,
+     "end": 44.599,
+     "f0": 1302,
+     "f1": 1338
+    }
+   ],
+   "start": 41.103,
+   "end": 44.599,
+   "f0": 1233,
+   "f1": 1338
+  },
+  {
+   "id": "n7",
+   "text": "Morning. Uncle's power keeps tripping.",
+   "phrases": [
+    {
+     "text": "Morning.",
+     "start": 47.0,
+     "end": 47.622,
+     "f0": 1410,
+     "f1": 1429
+    },
+    {
+     "text": "Uncle's power keeps tripping.",
+     "start": 48.172,
+     "end": 49.541,
+     "f0": 1445,
+     "f1": 1486
+    }
+   ],
+   "start": 47.0,
+   "end": 49.541,
+   "f0": 1410,
+   "f1": 1486
+  },
+  {
+   "id": "n8",
+   "text": "Two bare wires touching. Exactly what the bird avoids.",
+   "phrases": [
+    {
+     "text": "Two bare wires touching.",
+     "start": 50.0,
+     "end": 51.262,
+     "f0": 1500,
+     "f1": 1538
+    },
+    {
+     "text": "Exactly what the bird avoids.",
+     "start": 51.812,
+     "end": 53.309,
+     "f0": 1554,
+     "f1": 1599
+    }
+   ],
+   "start": 50.0,
+   "end": 53.309,
+   "f0": 1500,
+   "f1": 1599
+  },
+  {
+   "id": "n9",
+   "text": "Small proof. Big start.",
+   "phrases": [
+    {
+     "text": "Small proof.",
+     "start": 57.2,
+     "end": 57.972,
+     "f0": 1716,
+     "f1": 1739
+    },
+    {
+     "text": "Big start.",
+     "start": 58.522,
+     "end": 59.272,
+     "f0": 1756,
+     "f1": 1778
+    }
+   ],
+   "start": 57.2,
+   "end": 59.272,
+   "f0": 1716,
+   "f1": 1778
+  }
+ ]
+}

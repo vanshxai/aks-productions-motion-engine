@@ -1,0 +1,33 @@
+{
+  "style": {"canvas": [1080, 1920], "fps": 30, "look": "flat 2D shapes, top-left light, soft shadow, white shine spots; fonts Fredoka (headings) + Nunito (captions)"},
+  "characters": {
+    "kimu":  {"file": "src/studio/Person.tsx", "export": "KIMU",  "stage": "year1", "tested_in": ["S1E01"], "note": "Stages 3-4 and Later are drawn in the Kimu Character Sheet artifact; port to Spec when needed"},
+    "dad":   {"file": "src/studio/Person.tsx", "export": "DAD",   "tested_in": ["S1E01"]},
+    "mom":   {"file": "src/studio/Person.tsx", "export": "MOM",   "tested_in": ["S1E01"]},
+    "uncle": {"file": "src/studio/Person.tsx", "export": "UNCLE", "tested_in": ["S1E01"], "note": "neighbour"}
+  },
+  "poses": {"params": ["lean","bob","headRot","headDx","armL","armR","foreL","foreR","legL","legR","mouth","open","brow","browTilt","eyes","lookX","sweat","glow","blink"],
+            "moves_tested": ["type","walk","talk(mumble)","point","pray","worried","grin","hold_object","wave_arm"]},
+  "sets": {
+    "kimu_room_night": {"file": "src/studio/sets.tsx", "parts": ["RoomBack","RoomChair","RoomDesk","RoomDark","HallLight"], "tested_in": ["S1E01"]},
+    "terrace_night":   {"file": "src/studio/sets.tsx", "parts": ["TerraceBack","TerraceParapet"], "tested_in": ["S1E01"]},
+    "street_morning":  {"file": "src/studio/sets.tsx", "parts": ["StreetBack","MeterBoard"], "tested_in": ["S1E01"]}
+  },
+  "props": {
+    "laptop":  {"file": "src/studio/props.tsx", "parts": ["LaptopClosed","LaptopBack"], "note": "generic, unbranded"},
+    "bird": {"file": "src/studio/props.tsx", "parts": ["Bird"]},
+    "power_pole_wires": {"file": "src/studio/props.tsx", "parts": ["Pole","quad","wireY"]},
+    "tea_cup": {"file": "src/studio/props.tsx", "parts": ["TeaCup"]},
+    "rupee_note": {"file": "src/studio/props.tsx", "parts": ["Note"]},
+    "tool_bag": {"file": "src/studio/props.tsx", "parts": ["ToolBag"]},
+    "spark": {"file": "src/studio/props.tsx", "parts": ["Spark"]}
+  },
+  "graphics": {"infographic_cards": {"file": "src/studio/info.tsx", "parts": ["Card","PanelA","PanelB","PanelC","PanelD","Tag"]}},
+  "audio": {
+    "toolkit": "scripts/studio/audio_lib.py",
+    "music": "original synthesised cues (sad piano, prayer pad, playful pizzicato, uplift strings)",
+    "sfx": "original synthesised + Kenney CC0/MIT clips in public/studio/audio/kenney",
+    "voices": {"narrator_kimu": "Kokoro am_puck speed 1.05", "cartoon_speech": "mumble() in audio_lib.py, per-character base pitch"}
+  },
+  "rule": "Re-watch a video only when something NEW is added (new prop, set, move). Reused assets are trusted."
+}

@@ -27,6 +27,7 @@ import { RocketUp30, RocketUpCover } from "./projects/rocketup/RocketUp30";
 import { WarmUp30, WarmUpCover } from "./projects/warmup/WarmUp30"; // HOW IT WORKS #21 (additive block)
 // HOW IT WORKS #22 (birds on power lines) — additive block (imports + compositions), safe to merge
 import { Birds30, BirdsCover } from "./projects/birds/Birds30";
+import { KimuS1E01, TOTAL as KIMU_S1E01_TOTAL } from "./projects/kimu/S1E01";
 
 /**
  * One <Composition> per video. Convention:
@@ -108,5 +109,7 @@ export const Root: React.FC = () => (
     <Composition id="Birds-30s" component={Birds30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: true }} />
     <Composition id="Birds-30s-silent" component={Birds30} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{ withAudio: false }} />
     <Composition id="Birds-cover" component={BirdsCover} durationInFrames={1} fps={30} width={1080} height={1920} />
+    <Composition id="Kimu-S1E01" component={KimuS1E01} durationInFrames={KIMU_S1E01_TOTAL} fps={30} width={1080} height={1920} defaultProps={{ withAudio: true }} />
+    <Composition id="Kimu-S1E01-silent" component={KimuS1E01} durationInFrames={KIMU_S1E01_TOTAL} fps={30} width={1080} height={1920} defaultProps={{ withAudio: false }} />
   </>
 );
