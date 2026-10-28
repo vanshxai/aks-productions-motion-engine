@@ -23,7 +23,7 @@ MODEL = os.path.join(ROOT, "models", "kimu_voice", "kokoro-v1.0.int8.onnx")
 VOICES = os.path.join(ROOT, "models", "kimu_voice", "voices.npz")
 SR = 48000
 
-VERSION = 7   # bump when the engine changes so cached lines are rebuilt
+VERSION = 8   # bump when the engine changes so cached lines are rebuilt
 
 # One distinct Kokoro voice per character (single voices keep their natural intonation; blends flatten it).
 # `shift` = whole-voice pitch change in semitones with formants moved too, so the speaker sounds like a different person.
@@ -263,20 +263,38 @@ def speak(char, text, emo="neutral", speed=None, pitch=None, gain=None):
                 bumps.append(((ca + cb) / 2, (cb - ca) / 2 + 0.05, min(2.2, e["stress"] * strength)))
     rise = 2.5 if units and units[-1][1] == "?" else 0.0
     a = shape_line(a, sr, e, (pitch or 0) + rnd.uniform(-0.2, 0.2), bumps, rise)
-    chunks = split_chunks(a, sr) or [(0, len(a))]
-    toks = [p for _, p in units]
+    # cut the line at every punctuation boundary: at the voice's own silence if there is one, else at the quietest point nearby
+    nat = split_chunks(a, sr) or [(0, len(a))]
+    gaps = [(nat[q][1], nat[q + 1][0]) for q in range(len(nat) - 1)]
+    sp0, sp1 = nat[0][0], nat[-1][1]
+    tot_ch = sum(len(w.replace("*", "")) + 1 for w, _ in units)
+    k5 = int(0.012 * sr)
+    env = np.convolve(np.abs(a), np.ones(k5) / k5, mode="same")
+    cuts, used, acc = [], set(), 0
+    for bi in range(len(units) - 1):
+        acc += len(units[bi][0].replace("*", "")) + 1
+        te = sp0 + (acc / tot_ch) * (sp1 - sp0)
+        best = min(((abs((g0 + g1) / 2 - te), gi) for gi, (g0, g1) in enumerate(gaps) if gi not in used), default=None)
+        if best and best[0] < 0.28 * sr:
+            used.add(best[1]); cuts.append(((gaps[best[1]][0], gaps[best[1]][1]), units[bi][1]))
+        else:
+            lo, hi = int(max(sp0, te - 0.12 * sr)), int(min(sp1, te + 0.12 * sr))
+            m = lo + int(np.argmin(env[lo:hi])) if hi > lo else int(te)
+            cuts.append(((m, m), units[bi][1]))
+    cuts.sort(key=lambda c: c[0][0])
     out = []
     if len(units) >= 4 or emo in ("sad", "scared", "worried", "relieved"):
         out.append(breath(sr, level=0.03 if emo not in ("scared", "sad") else 0.05))
-    for i, (s_, e_) in enumerate(chunks):
-        seg = a[max(0, s_ - int(0.012 * sr)): min(len(a), e_ + int(0.02 * sr))].copy()
+    start = sp0
+    for (g0, g1), tok in cuts + [((sp1, sp1), None)]:
+        seg = a[max(0, start - int(0.012 * sr)): min(len(a), g0 + int(0.02 * sr))].copy()
         f_in, f_out = int(0.006 * sr), int(0.01 * sr)
-        seg[:f_in] *= np.linspace(0, 1, min(f_in, len(seg)))[: len(seg[:f_in])]
-        seg[-f_out:] *= np.linspace(1, 0, min(f_out, len(seg)))[: len(seg[-f_out:])]
+        if len(seg) > f_in + f_out:
+            seg[:f_in] *= np.linspace(0, 1, f_in); seg[-f_out:] *= np.linspace(1, 0, f_out)
         out.append(seg)
-        if i < len(chunks) - 1:
-            tok = toks[min(i, len(toks) - 1)]
+        if tok is not None:
             out.append(np.zeros(int(PAUSE[tok] * e["pace"] * (1 + rnd.uniform(-0.12, 0.12)) * sr), dtype=np.float32))
+        start = g1
     audio = apply_dsp(np.concatenate(out), sr, e)
     audio = char_shift(audio, sr, c["shift"])
     audio = resample_poly(audio, SR, sr).astype(np.float32)
