@@ -1,6 +1,7 @@
 import React from "react";
 import { W, H, clamp, ramp, kf, hash, easeOut } from "./util";
 import { Pole, quad, wireY, Stars, ClockFace, WindowFrame } from "./props";
+import { BookRack, Pinboard, Calendar, SwitchBoard, Almirah, Rug, Backpack, Bin, DeskItems, WaterTank, Clothesline, PlantPot, Antenna, StairRoom, Stool, Tree, Scooter, LampPost, Hedge } from "./decor";
 
 /** Reusable sets (backgrounds). Sizes are screen pixels at camera zoom 1: 1080 x 1920. */
 
@@ -21,6 +22,13 @@ export const RoomBack: React.FC<{ t: number }> = ({ t }) => {
       <rect x="-200" y="-100" width="1500" height="1700" fill="url(#wallG)" />
       <rect x="-200" y={FLOOR_ROOM} width="1500" height="500" fill="url(#floorG)" />
       <rect x="-200" y={FLOOR_ROOM - 22} width="1500" height="22" fill="#F2E7CC" />
+      <rect x="-200" y={FLOOR_ROOM - 22} width="1500" height="8" fill="#000" opacity="0.1" />
+      {/* subtle wall texture + soft light falloff */}
+      {Array.from({ length: 24 }).map((_, i) => <rect key={i} x={-200 + i * 64} y="-100" width="3" height="1660" fill="#fff" opacity="0.07" />)}
+      <rect x="-200" y="-100" width="1500" height="260" fill="#000" opacity="0.08" />
+      <g transform={`translate(760 ${FLOOR_ROOM + 120})`}><Rug w={470} /></g>
+      {/* tube light (off) */}
+      <g transform="translate(300 52)"><rect width="360" height="22" rx="8" fill="#E9ECEF" stroke="#9AA3B3" strokeWidth="3" /><rect x="14" y="5" width="332" height="12" rx="6" fill="#F7F9FB" /></g>
       {Array.from({ length: 6 }).map((_, i) => <path key={i} d={`M${-200 + i * 330} ${FLOOR_ROOM} L${-380 + i * 440} 1960`} stroke="#4C2F1C" strokeWidth="4" opacity="0.5" />)}
       {/* ceiling fan */}
       <g transform="translate(540 120)">
@@ -39,16 +47,20 @@ export const RoomBack: React.FC<{ t: number }> = ({ t }) => {
       </g>
       {/* wall clock + poster + shelf */}
       <g transform="translate(450 270)"><ClockFace r={52} /></g>
-      <g transform="translate(120 330)">
+      <g transform="translate(60 150) scale(0.86)">
         <rect width="230" height="300" rx="6" fill="#F4F1E8" stroke="#BFB59A" strokeWidth="4" />
         <path d="M30 70 H90 V110 H150 M30 150 H80 V200 H120 M150 150 V240 H200" fill="none" stroke="#2F6FD6" strokeWidth="5" />
         {[[90, 70], [150, 110], [120, 200], [200, 240]].map(([x, y], i) => <circle key={i} cx={x} cy={y} r="9" fill="#D93A3A" />)}
         <text x="115" y="285" textAnchor="middle" fontFamily="Nunito" fontWeight="700" fontSize="18" fill="#6B6358">CIRCUIT NOTES</text>
       </g>
-      <g transform="translate(380 760)">
-        <rect width="300" height="14" fill="#8A5A32" />
-        {[0, 1, 2, 3, 4, 5, 6].map((i) => <rect key={i} x={12 + i * 38} y={-70 - (i % 3) * 8} width="30" height={70 + (i % 3) * 8} fill={["#B3402F", "#2F6FD6", "#E8B33E", "#3F8F6A", "#7C4A9C", "#D2762C", "#3A5F8F"][i]} />)}
-      </g>
+      <g transform="translate(372 520)"><BookRack /></g>
+      <g transform="translate(548 300)"><Calendar /></g>
+      <g transform="translate(1000 330)"><Pinboard /></g>
+      <g transform="translate(372 960)"><SwitchBoard /></g>
+      <g transform="translate(1010 760)"><Almirah /></g>
+      <g transform="translate(1185 1585)"><Bin /></g>
+      {/* mosquito racket on a hook + wall socket cable */}
+      <g transform="translate(700 720)"><circle cx="0" cy="0" r="5" fill="#6B6358" /><path d="M0 4 V30" stroke="#6B6358" strokeWidth="4" /><ellipse cx="0" cy="62" rx="26" ry="32" fill="none" stroke="#2A2E3A" strokeWidth="5" /><path d="M-18 48 H18 M-22 62 H22 M-18 76 H18 M-8 34 V90 M8 34 V90" stroke="#8D95A6" strokeWidth="1.6" /></g>
       {/* door frame (hallway side) */}
       <g>
         <rect x="-10" y="520" width="360" height="1060" fill="#5E3C25" />
@@ -59,10 +71,13 @@ export const RoomBack: React.FC<{ t: number }> = ({ t }) => {
 };
 
 /** Hallway light that spills through the door while Dad / Mom stand there. a = intensity. */
-export const HallLight: React.FC<{ a: number }> = ({ a }) => (
+export const HallLight: React.FC<{ a: number; t?: number }> = ({ a, t = 0 }) => (
   <g opacity={a}>
     <rect x="26" y="556" width="290" height="1004" fill="#FFE7B0" />
     <path d="M316 556 L700 760 L700 1560 L316 1560 Z" fill="#FFE7B0" opacity="0.22" />
+    {Array.from({ length: 22 }).map((_, i) => (
+      <circle key={i} cx={340 + hash(i * 2.1) * 330 + 14 * Math.sin(t * 0.6 + i)} cy={720 + hash(i * 5.3) * 800 + 20 * Math.sin(t * 0.4 + i * 2)} r={2 + hash(i) * 2.4} fill="#FFF7D6" opacity={0.35 + 0.3 * hash(i * 9)} />
+    ))}
   </g>
 );
 
@@ -92,7 +107,8 @@ export const RoomDesk: React.FC<{ t: number }> = ({ t }) => (
       <path d="M50 -30 C70 -64 110 -50 120 -4" fill="none" stroke="#F0C03C" strokeWidth="5" strokeLinecap="round" />
     </g>
     {/* mug + books */}
-    <g transform="translate(1000 1318)"><rect x="-26" y="-48" width="52" height="48" rx="8" fill="#F4F1E8" stroke="#BFB59A" strokeWidth="3" /><path d="M26 -34 C44 -36 44 -12 24 -12" fill="none" stroke="#BFB59A" strokeWidth="6" /></g>
+    <g transform="translate(470 1318)"><DeskItems show={["multimeter"]} /></g>
+    <g transform="translate(640 1318)"><DeskItems show={["cup", "lamp", "bottle"]} /></g>
     <rect x="880" y="1280" width="90" height="38" fill="#2F6FD6" /><rect x="886" y="1252" width="80" height="28" fill="#E8B33E" />
   </g>
 );
@@ -132,6 +148,8 @@ export const birdWireY = () => wireY(INS[1], WIRE_Y0, -140, WIRE_Y0 + 70, 60, BI
 export const TerraceBack: React.FC<{ t: number; lit?: number }> = ({ t, lit = 0 }) => (
   <g>
     <defs>
+      <linearGradient id="floorT" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#4A5070" /><stop offset="1" stopColor="#2A2F4C" /></linearGradient>
+      <linearGradient id="parG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#58627C" /><stop offset="1" stopColor="#2E3550" /></linearGradient>
       <linearGradient id="nightG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#070C1F" /><stop offset="0.55" stopColor="#14214A" /><stop offset="1" stopColor="#3A3F78" /></linearGradient>
     </defs>
     <rect x="-300" y="-200" width="1700" height="2300" fill="url(#nightG)" />
@@ -160,20 +178,27 @@ export const TerraceBack: React.FC<{ t: number; lit?: number }> = ({ t, lit = 0 
         <path d={quad(ix, WIRE_Y0, 1220, WIRE_Y0 + 60 + i * 22, 60)} stroke="#4A5A85" strokeWidth="1.6" fill="none" opacity="0.8" />
       </g>
     ))}
-    {/* water tank on the next roof */}
-    <g transform="translate(150 1240)"><rect x="-50" y="-60" width="100" height="90" rx="26" fill="#0A1030" /><rect x="-4" y="-96" width="8" height="40" fill="#0A1030" /></g>
+    {/* our terrace: stair room, water tank, clothesline, plants, antenna, parapet wall and floor (everything behind the actors) */}
+    <g transform="translate(-150 1580)"><StairRoom /></g>
+    <g transform="translate(60 1200)"><Antenna /></g>
+    <g transform="translate(90 1190)"><Clothesline t={t} w={460} /></g>
+    <rect x="-300" y="1400" width="1700" height="200" fill="url(#parG)" />
+    <rect x="-300" y="1380" width="1700" height="30" fill="#7C86A2" /><rect x="-300" y="1410" width="1700" height="8" fill="#000" opacity="0.22" />
+    {[0, 1, 2, 3, 4, 5, 6].map((i) => <path key={i} d={`M${-40 + i * 200} 1418 V1590`} stroke="#252B44" strokeWidth="3" opacity="0.5" />)}
+    {[[190, 0.8], [440, 0.9], [980, 0.85]].map(([x, sc]) => <g key={x} transform={`translate(${x} 1382)`}><PlantPot s={sc} /></g>)}
+    <rect x="-300" y="1590" width="1700" height="520" fill="url(#floorT)" />
+    <rect x="-300" y="1590" width="1700" height="10" fill="#000" opacity="0.3" />
+    {Array.from({ length: 9 }).map((_, i) => <path key={i} d={`M${-300 + i * 220} 1600 L${-420 + i * 260} 2000`} stroke="#1D2240" strokeWidth="3" opacity="0.5" />)}
+    <g transform="translate(840 1790)"><WaterTank /></g>
+    <g transform="translate(560 1810)"><Stool /></g>
+    <g transform="translate(560 1748)">
+      <rect x="-64" y="-14" width="128" height="14" rx="5" fill="#B7BFCE" stroke="#7B869B" strokeWidth="3" /><rect x="-60" y="-14" width="120" height="5" rx="2" fill="#fff" opacity="0.35" />
+      <rect x="-44" y="-18" width="88" height="5" rx="2" fill="#8892A6" />
+    </g>
   </g>
 );
 
-export const TerraceParapet: React.FC = () => (
-  <g>
-    <defs><linearGradient id="parG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#58627C" /><stop offset="1" stopColor="#2E3550" /></linearGradient></defs>
-    <rect x="-300" y="1500" width="1700" height="520" fill="url(#parG)" />
-    <rect x="-300" y="1480" width="1700" height="34" fill="#7C86A2" />
-    <rect x="-300" y="1514" width="1700" height="8" fill="#000" opacity="0.2" />
-    {[0, 1, 2, 3, 4].map((i) => <path key={i} d={`M${100 + i * 240} 1540 V1920`} stroke="#252B44" strokeWidth="4" opacity="0.7" />)}
-  </g>
-);
+export const TerraceParapet: React.FC = () => null;
 
 /* ===================================================================== */
 /*  STREET IN THE MORNING                                                 */
@@ -222,6 +247,13 @@ export const StreetBack: React.FC<{ t: number; lit: number }> = ({ t, lit }) => 
     <rect x="-300" y="1620" width="1700" height="400" fill="url(#roadG)" />
     <rect x="-300" y="1620" width="1700" height="26" fill="#B6B2A6" />
     {[0, 1, 2, 3].map((i) => <rect key={i} x={40 + i * 280} y="1810" width="150" height="14" rx="6" fill="#E8E2CE" />)}
+    {/* lane dressing */}
+    <g transform="translate(1180 1630)"><Tree s={1.05} t={t} /></g>
+    <g transform="translate(-30 1640)"><Hedge w={300} /></g>
+    <g transform="translate(980 1690)"><Scooter /></g>
+    <g transform="translate(760 1640)"><PlantPot s={0.8} /></g>
+    <g transform="translate(850 1640)"><PlantPot s={0.7} /></g>
+    <g transform="translate(-10 1620)"><LampPost /></g>
     {/* street pole between the houses with a line across */}
     <g transform="translate(655 700)"><Pole h={940} /></g>
     {[0, 1].map((i) => <path key={i} d={quad(655, 750 + i * 22, -200, 780 + i * 22, 40)} stroke="#2A2F3A" strokeWidth="5" fill="none" />)}

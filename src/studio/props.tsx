@@ -17,8 +17,8 @@ export const LaptopClosed: React.FC<{ rot?: number }> = ({ rot = 0 }) => (
 );
 
 /** Open laptop seen from behind (lid back toward camera) with a glow on the user. Origin: bottom centre of the base. */
-export const LaptopBack: React.FC<{ w?: number; on?: number }> = ({ w = 300, on = 1 }) => {
-  const h = w * 0.62;
+export const LaptopBack: React.FC<{ w?: number; on?: number; open?: number }> = ({ w = 300, on = 1, open = 1 }) => {
+  const h = w * 0.62 * (0.12 + 0.88 * open);
   return (
     <g>
       <defs><linearGradient id="lapB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#E7EBF2" /><stop offset="1" stopColor="#A2ACBE" /></linearGradient></defs>

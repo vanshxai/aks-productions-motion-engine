@@ -354,3 +354,177 @@ def mumble(text, base=120.0, syll=0.15, seed=0, question=None):
 
 def to_stereo(x):
     return np.stack([x, x], axis=1) if x.ndim == 1 else x
+
+
+# ================================================================ v2: warmer, grown-up instruments and real-world effects
+def felt_piano(f, dur=2.0, vel=0.6):
+    """Soft felt-damped piano: rounder than piano(), good for sad / tender lines."""
+    y = piano(f, dur, vel)
+    return (lp(y, 1900, 2) * 1.15).astype(np.float32)
+
+
+def ep(f, dur=1.6, vel=0.5):
+    """Warm electric piano (FM tine)."""
+    t = t_of(dur)
+    idx = 1.6 * np.exp(-t * 5)
+    y = np.sin(2 * np.pi * f * t + idx * np.sin(2 * np.pi * f * t))
+    y += 0.25 * np.sin(2 * np.pi * f * 2 * t) * np.exp(-t * 4)
+    y *= np.exp(-t * 1.8) * (1 - np.exp(-t * 400))
+    y *= 1 + 0.08 * np.sin(2 * np.pi * 4.8 * t)
+    return (y * vel * 0.45).astype(np.float32)
+
+
+def flute(f, dur=1.5, vel=0.5, vib=5.2):
+    """Breathy wooden flute for nostalgic melody lines."""
+    t = t_of(dur)
+    ff = f * (1 + 0.006 * np.sin(2 * np.pi * vib * t) * np.minimum(1, t / 0.5))
+    ph = np.cumsum(ff) / SR
+    y = np.sin(2 * np.pi * ph) + 0.18 * np.sin(4 * np.pi * ph) + 0.06 * np.sin(6 * np.pi * ph)
+    breath = bp(rng.standard_normal(len(t)), f * 1.5, f * 6) * 0.1
+    y = (y + breath) * env_adsr(len(t), 0.09, 0.15, 0.85, 0.3)
+    return (y * vel * 0.4).astype(np.float32)
+
+
+def guitar(f, dur=1.2, vel=0.6):
+    """Nylon-string guitar (Karplus-Strong)."""
+    n = int(dur * SR)
+    N = int(SR / f)
+    x = np.zeros(n)
+    x[:N] = rng.uniform(-1, 1, N)
+    x[:N] = lp(x[:N], 5500, 1)
+    a = np.zeros(N + 2)
+    a[0] = 1.0
+    a[N] = -0.4985
+    a[N + 1] = -0.4985
+    y = lfilter([1.0], a, x)
+    y = lp(y, 4200, 1)
+    return (y * vel * 0.9 / (np.abs(y).max() + 1e-9) * 0.5).astype(np.float32)
+
+
+def cello(f, dur=3.0, vel=0.5, a=0.35, r=0.8):
+    t = t_of(dur)
+    ff = f * (1 + 0.004 * np.sin(2 * np.pi * 4.6 * t) * np.minimum(1, t / 0.7))
+    ph = np.cumsum(ff) / SR % 1.0
+    y = (2 * ph - 1)
+    y = lp(y, 1400, 2) + 0.4 * np.sin(2 * np.pi * np.cumsum(ff) / SR)
+    return (y * env_adsr(len(t), a, 0.2, 0.9, r) * vel * 0.3).astype(np.float32)
+
+
+def upright(f, dur=0.6, vel=0.7):
+    t = t_of(dur)
+    y = np.sin(2 * np.pi * f * t) + 0.5 * np.sin(2 * np.pi * 2 * f * t) * np.exp(-t * 8) + 0.2 * np.sin(2 * np.pi * 3 * f * t) * np.exp(-t * 14)
+    y *= np.exp(-t * 5.5) * (1 - np.exp(-t * 300))
+    return (y * vel * 0.55).astype(np.float32)
+
+
+def conga(vel=0.5, f=190):
+    t = t_of(0.28)
+    fr = f * (1 + 0.5 * np.exp(-t * 40))
+    y = np.sin(2 * np.pi * np.cumsum(fr) / SR) * np.exp(-t * 16) + lp(rng.standard_normal(len(t)), 3000) * np.exp(-t * 90) * 0.3
+    return (y * vel * 0.5).astype(np.float32)
+
+
+def brush(dur=0.18, vel=0.4):
+    t = t_of(dur)
+    return (bp(rng.standard_normal(len(t)), 3000, 9000) * np.exp(-t * 18) * vel * 0.2).astype(np.float32)
+
+
+def tick(vel=0.4, f=2200):
+    t = t_of(0.05)
+    y = np.sin(2 * np.pi * f * t) * np.exp(-t * 120) + bp(rng.standard_normal(len(t)), 1500, 6000) * np.exp(-t * 200) * 0.5
+    return (y * vel * 0.5).astype(np.float32)
+
+
+def key_tap(vel=0.4):
+    t = t_of(0.06)
+    y = bp(rng.standard_normal(len(t)), 1800, 5200) * np.exp(-t * 110) + np.sin(2 * np.pi * 320 * t) * np.exp(-t * 90) * 0.4
+    return (y * vel * 0.4).astype(np.float32)
+
+
+def heartbeat(vel=0.5):
+    t = t_of(0.5)
+    def thump(t0, g):
+        tt = t - t0
+        m = tt > 0
+        f = 62 * np.exp(-np.clip(tt, 0, None) * 12) + 40
+        y = np.sin(2 * np.pi * np.cumsum(np.where(m, f, 0)) / SR) * np.exp(-np.clip(tt, 0, None) * 16) * m
+        return y * g
+    return ((thump(0.0, 1.0) + thump(0.17, 0.7)) * vel * 0.7).astype(np.float32)
+
+
+def thud(vel=0.6):
+    """Hand on a wooden desk."""
+    t = t_of(0.3)
+    y = np.sin(2 * np.pi * (95 * np.exp(-t * 18) + 55) * t) * np.exp(-t * 20) + lp(rng.standard_normal(len(t)), 900) * np.exp(-t * 60) * 0.7
+    return (y * vel * 0.8).astype(np.float32)
+
+
+def cloth(dur=0.5, vel=0.3):
+    t = t_of(dur)
+    env = np.sin(np.pi * t / dur) ** 2
+    return (bp(rng.standard_normal(len(t)), 800, 4500) * env * vel * 0.25).astype(np.float32)
+
+
+def door_close(vel=0.6):
+    t = t_of(0.6)
+    y = np.sin(2 * np.pi * (80 * np.exp(-t * 12) + 45) * t) * np.exp(-t * 9) + lp(rng.standard_normal(len(t)), 1500) * np.exp(-t * 40) * 0.6
+    y += 0.15 * bp(rng.standard_normal(len(t)), 400, 1200) * np.exp(-np.clip(t - 0.08, 0, None) * 18) * (t > 0.08)
+    return (y * vel * 0.8).astype(np.float32)
+
+
+def low_battery(vel=0.3):
+    """Two soft descending device tones."""
+    t = t_of(0.6)
+    y = np.zeros_like(t)
+    for t0, f in ((0.0, 523.0), (0.22, 392.0)):
+        m = (t >= t0)
+        tt = np.clip(t - t0, 0, None)
+        y += np.sin(2 * np.pi * f * tt) * np.exp(-tt * 9) * m * (1 - np.exp(-tt * 300))
+    return (lp(y, 2500) * vel * 0.4).astype(np.float32)
+
+
+def relay_clack(vel=0.5):
+    t = t_of(0.25)
+    y = bp(rng.standard_normal(len(t)), 600, 3500) * np.exp(-t * 110) + np.sin(2 * np.pi * 180 * t) * np.exp(-t * 40) * 0.5
+    y += 0.6 * (bp(rng.standard_normal(len(t)), 800, 4000) * np.exp(-np.clip(t - 0.09, 0, None) * 120) * (t > 0.09))
+    return (y * vel * 0.5).astype(np.float32)
+
+
+def fluoro(dur=1.0, vel=0.3):
+    """Tube light flicker + hum coming on."""
+    t = t_of(dur)
+    gate = ((np.sin(2 * np.pi * 11 * t) > 0.1) | (t > 0.55)).astype(float)
+    y = (np.sin(2 * np.pi * 100 * t) + 0.5 * np.sin(2 * np.pi * 200 * t)) * lp(gate, 400, 1) * np.minimum(1, t / 0.6)
+    y += bp(rng.standard_normal(len(t)), 2000, 6000) * np.exp(-t * 20) * 0.3
+    return (y * vel * 0.4).astype(np.float32)
+
+
+def mosquito(dur, vel=0.05):
+    t = t_of(dur)
+    f = 520 + 40 * np.sin(2 * np.pi * 0.6 * t) + 14 * np.sin(2 * np.pi * 3.1 * t)
+    y = np.sin(2 * np.pi * np.cumsum(f) / SR) * (0.5 + 0.5 * np.sin(2 * np.pi * 0.23 * t)) ** 2
+    return (y * vel).astype(np.float32)
+
+
+def room_tone(dur, vel=0.12):
+    t = t_of(dur)
+    y = lp(rng.standard_normal(len(t)), 220, 2) * 1.4 + lp(rng.standard_normal(len(t)), 900, 1) * 0.15
+    return (y * vel).astype(np.float32)
+
+
+def street_bed(dur, vel=0.15):
+    """Distant traffic murmur."""
+    t = t_of(dur)
+    y = lp(rng.standard_normal(len(t)), 500, 2) * (0.7 + 0.3 * np.sin(2 * np.pi * 0.11 * t))
+    return (y * vel).astype(np.float32)
+
+
+def stab_low(dur=2.5, vel=0.4):
+    """Dark low cluster for anger / tension."""
+    return strings([hz("A1"), hz("E2"), hz("F2"), hz("A2")], dur, vel, a=0.6, r=1.2, vib=4.0)
+
+
+def pan(x, p):
+    """Mono -> stereo with constant-power pan, p in [-1, 1]."""
+    a = (p + 1) * np.pi / 4
+    return np.stack([x * np.cos(a), x * np.sin(a)], axis=1).astype(np.float32)

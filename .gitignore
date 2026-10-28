@@ -8,3 +8,4 @@ film3d/screens/node_modules/
 film3d/screens/public/film/
 __pycache__/
 *.blend1
+models/kimu_voice/*.onnx
