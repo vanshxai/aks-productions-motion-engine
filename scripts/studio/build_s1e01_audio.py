@@ -171,7 +171,6 @@ def sfx(L, T):
     place(bed, kenney("ambience", 0.35)[: int(14 * SR)], 46.0)
     # ---- v4 environment: things that move and glow around the scene
     place_st(st, fan_bed(19, 1.7, 0.10), 0.0, 0.55)                         # ceiling fan, right
-    place_st(st, hum(19, 120, 0.05), 0.0, -0.6)                              # desk lamp buzz, left
     place_st(st, plug_in(0.45), 0.6, -0.4)                                    # charger clicked in
     place_st(st, dog(0.16), 6.4, 0.85); place_st(st, dog(0.12), 12.3, 0.9)   # distant dog through the window
     place_st(st, horn(0.5, 0.09), 9.2, 0.8)
@@ -187,11 +186,9 @@ def sfx(L, T):
     place_st(st, dog(0.14), 24.3, 0.9)
     place_st(st, gurgle(1.0, 0.08), 21.8, 0.7)                               # water tank drip
     # lesson (S3): hum of the live wire, water finding its level, wing flaps
-    place_st(st, wire_hum(4.4, 0.10), 28.2, 0.35)
     place_st(st, flutter(0.35), 28.4, 0.5)
+    place_st(st, crackle(0.25, 0.07), 30.4, 0.35); place_st(st, crackle(0.2, 0.06), 38.6, 0.35)   # the odd tick of a live line, never a hum
     place_st(st, gurgle(3.2, 0.2), L["n4"]["t"] + 0.2, 0.0)
-    place_st(st, wire_hum(4.2, 0.07), 37.4, 0.35)
-    place_st(st, wire_hum(3.6, 0.14), 41.8, 0.0)
     place_st(st, crackle(0.9, 0.3), T(42.6), 0.0)
     # morning street (S4)
     for k_ in range(10):
@@ -200,7 +197,6 @@ def sfx(L, T):
     place_st(st, horn(0.45, 0.08), 51.6, -0.7)
     place_st(st, flutter(0.3), 52.0, 0.6)
     place_st(st, crackle(1.3, 0.45), T(51.0), 0.2)                           # the short circuit
-    place_st(st, wire_hum(3.5, 0.08), 49.4, 0.0)
     # ---- S1 room
     for t in np.arange(0.05, 0.78, 0.11):             # typing
         place(x, key_tap(0.35 + 0.2 * rng.random()), t)
