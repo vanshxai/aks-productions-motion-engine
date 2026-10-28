@@ -28,10 +28,10 @@ VERSION = 3   # bump when the engine changes so cached lines are rebuilt
 # One distinct Kokoro voice per character (single voices keep their natural intonation; blends flatten it).
 # `shift` = whole-voice pitch change in semitones with formants moved too, so the speaker sounds like a different person.
 CAST = {
-    "kimu":     {"mix": {"am_eric": 1.0},   "lang": "en-us", "speed": 1.02, "shift": 0.0,  "note": "early 20s, light and quick, trails off, stammers when nervous"},
+    "kimu":     {"mix": {"am_eric": 1.0},   "lang": "en-us", "speed": 1.02, "shift": 1.5,  "note": "early 20s, light and quick, trails off, stammers when nervous"},
     "dad":      {"mix": {"am_onyx": 1.0},   "lang": "en-us", "speed": 0.95, "shift": 0.0,  "note": "50s, deep and gravelly, few words, long pauses, a bark when angry"},
     "mom":      {"mix": {"af_heart": 1.0},  "lang": "en-us", "speed": 0.98, "shift": 0.0,  "note": "40s, warm and soft, falls gently at line ends, quick when worried"},
-    "uncle":    {"mix": {"am_fenrir": 1.0}, "lang": "en-us", "speed": 0.97, "shift": -1.8, "note": "60s, big warm neighbour, loud and rounded, laughs while talking"},
+    "uncle":    {"mix": {"am_fenrir": 1.0}, "lang": "en-us", "speed": 0.97, "shift": -3.0, "note": "60s, big warm neighbour, loud and rounded, laughs while talking"},
     "narrator": {"mix": {"bm_fable": 1.0},  "lang": "en-gb", "speed": 0.97, "shift": 0.0,  "note": "calm storyteller, British, dry and close, never echoes"},
 }
 

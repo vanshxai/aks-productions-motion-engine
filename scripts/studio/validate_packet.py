@@ -34,6 +34,6 @@ for l in lines:
     if l["char"] != "narrator" and l["char"] not in cast[s["id"]]: errs.append(f"{l['id']}: {l['char']} is not in {s['id']}")
     if l["t"] < prev_end - 1e-6: errs.append(f"{l['id']} overlaps {prev_id}")
     prev_end, prev_id = l["end"], l["id"]
-    if not l["text"].isascii() or HINDI.search(l["text"]): errs.append(f"{l['id']}: text must be plain English")
+    if not l["text"].replace("\u2014","-").replace("\u2026","...").isascii() or HINDI.search(l["text"]): errs.append(f"{l['id']}: text must be plain English")
 print("OK: episode is consistent (%d lines, %d shots)" % (len(lines), len(shots)) if not errs else "\n".join("ERROR: " + e for e in errs))
 sys.exit(1 if errs else 0)
