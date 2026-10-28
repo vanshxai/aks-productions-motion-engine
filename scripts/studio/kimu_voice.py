@@ -23,7 +23,7 @@ MODEL = os.path.join(ROOT, "models", "kimu_voice", "kokoro-v1.0.int8.onnx")
 VOICES = os.path.join(ROOT, "models", "kimu_voice", "voices.npz")
 SR = 48000
 
-VERSION = 4   # bump when the engine changes so cached lines are rebuilt
+VERSION = 5   # bump when the engine changes so cached lines are rebuilt
 
 # One distinct Kokoro voice per character (single voices keep their natural intonation; blends flatten it).
 # `shift` = whole-voice pitch change in semitones with formants moved too, so the speaker sounds like a different person.
@@ -94,6 +94,37 @@ def parse(text):
 
 
 def reshape_pitch(x, sr, off, rng, tilt, bumps=(), vib=0.0):
+    """Re-draw the pitch of one phrase with Praat PSOLA (keeps the natural waveform, so no vocoder buzz):
+    scale its natural movement, shift it, add a tilt (fall / rise / declination), word stress and a shake."""
+    try:
+        import parselmouth
+        from parselmouth.praat import call
+        snd = parselmouth.Sound(x.astype(np.float64), sr)
+        man = call(snd, "To Manipulation", 0.005, 60, 500)
+        pt = call(man, "Extract pitch tier")
+        n = call(pt, "Get number of points")
+        if n < 8:
+            return x
+        ts = np.array([call(pt, "Get time from index", i + 1) for i in range(n)])
+        fs = np.array([call(pt, "Get value at index", i + 1) for i in range(n)])
+        med = np.median(fs)
+        u = np.clip((ts - ts[0]) / max(1e-3, ts[-1] - ts[0]), 0, 1)
+        new = 12 * np.log2(fs / med) * rng + off + tilt(u)
+        for c, w, a_ in bumps:
+            new = new + a_ * np.exp(-(((u - c) / max(w, 0.05)) ** 2))
+        if vib:
+            new = new + vib * np.sin(2 * np.pi * 5.5 * ts) * np.clip(u * 3, 0, 1)
+        nt = call("Create PitchTier", "p", 0, snd.duration)
+        for tt, ff in zip(ts, med * 2 ** (new / 12)):
+            call(nt, "Add point", float(tt), float(ff))
+        call([nt, man], "Replace pitch tier")
+        y = call(man, "Get resynthesis (overlap-add)").values[0].astype(np.float32)
+        return np.pad(y, (0, max(0, len(x) - len(y))))[: len(x)]
+    except Exception as ex:      # fall back to WORLD
+        return reshape_pitch_world(x, sr, off, rng, tilt, bumps, vib)
+
+
+def reshape_pitch_world(x, sr, off, rng, tilt, bumps=(), vib=0.0):
     """Re-draw the pitch of one phrase with WORLD: scale its natural movement, shift it, and add a tilt (fall / rise / declination)."""
     import pyworld as pw
     x64 = x.astype(np.float64)
@@ -142,8 +173,20 @@ def apply_dsp(x, sr, e):
         x = sosfilt(butter(2, 5200 / (sr / 2), btype="low", output="sos"), x)
     # crisp, dry, close-mic: low cut + gentle presence lift. No reverb anywhere.
     x = sosfilt(butter(2, 85 / (sr / 2), btype="high", output="sos"), x)
-    pres = sosfilt(butter(2, [2200 / (sr / 2), 4800 / (sr / 2)], btype="band", output="sos"), x)
-    return (x + 0.22 * pres).astype(np.float32)
+    return deess(x, sr).astype(np.float32)
+
+
+def deess(x, sr):
+    """Tame Kokoro's harsh, hissy s/sh/t sounds: duck the 5-11 kHz band only while it spikes, then roll off the very top."""
+    x = x.astype(np.float64)
+    hf = sosfilt(butter(4, [5000 / (sr / 2), min(0.98, 11000 / (sr / 2))], btype="band", output="sos"), x)
+    k = max(1, int(0.004 * sr))
+    env = np.sqrt(np.convolve(hf ** 2, np.ones(k) / k, mode="same")) + 1e-9
+    ref = np.percentile(env[env > env.max() * 0.02], 55) if (env > env.max() * 0.02).any() else env.max()
+    g = np.clip(ref * 1.1 / env, 0.28, 1.0)
+    g = np.convolve(g, np.ones(k) / k, mode="same")
+    y = x - hf + hf * g
+    return sosfilt(butter(2, 9500 / (sr / 2), btype="low", output="sos"), y)
 
 
 def char_shift(x, sr, semis):
@@ -237,7 +280,7 @@ def speak(char, text, emo="neutral", speed=None, pitch=None, gain=None):
         audio = audio[max(0, idx[0] - int(0.03 * SR)): idx[-1] + int(0.10 * SR)]
     g = 10 ** (((gain or 0) + e["gain"]) / 20)
     audio = audio / (np.abs(audio).max() + 1e-9) * 0.7 * g
-    meta = {"char": char, "emo": emo, "text": text.replace("*", ""), "dur": round(len(audio) / SR, 3), "env": mouth_envelope(audio, SR), "f0_std_st": pitch_spread(audio, SR)}
+    meta = {"char": char, "emo": emo, "text": text.replace("*", "").replace("\u2014", "...").replace("\u2013", "..."), "dur": round(len(audio) / SR, 3), "env": mouth_envelope(audio, SR), "f0_std_st": pitch_spread(audio, SR)}
     return audio, SR, meta
 
 
