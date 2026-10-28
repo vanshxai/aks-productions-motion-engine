@@ -23,7 +23,7 @@ MODEL = os.path.join(ROOT, "models", "kimu_voice", "kokoro-v1.0.int8.onnx")
 VOICES = os.path.join(ROOT, "models", "kimu_voice", "voices.npz")
 SR = 48000
 
-VERSION = 5   # bump when the engine changes so cached lines are rebuilt
+VERSION = 6   # bump when the engine changes so cached lines are rebuilt
 
 # One distinct Kokoro voice per character (single voices keep their natural intonation; blends flatten it).
 # `shift` = whole-voice pitch change in semitones with formants moved too, so the speaker sounds like a different person.
@@ -260,7 +260,7 @@ def speak(char, text, emo="neutral", speed=None, pitch=None, gain=None):
         if cut:                                                      # interrupted: clip the tail fast
             keep = int(len(a) * 0.9)
             a = a[:keep] * np.linspace(1, 0.0, keep) ** 0.5
-        idx = np.where(np.abs(a) > 0.008)[0]
+        idx = np.where(np.abs(a) > max(0.008, 0.03 * np.abs(a).max()))[0]
         if len(idx):
             a = a[max(0, idx[0] - int(0.01 * sr)): idx[-1] + int(0.02 * sr)]
         pieces.append((a, sr, p, last))
