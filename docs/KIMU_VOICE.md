@@ -37,3 +37,10 @@ neutral, calm, warm, sad, worried, scared, annoyed, angry, shout, joy, relieved,
 
 ## Honest limits
 Voices are good, not human-actor level: strong emotions (crying, shouting) are suggested by pitch/speed/DSP, not acted. Audio was verified numerically (pitch per character, loudness, no clipping, line timings) but has not been judged by ear.
+
+
+## v3 (voice direction update)
+- One distinct pure Kokoro voice per character (blends flatten intonation): Kimu am_eric, Dad am_onyx, Mom af_heart, Uncle am_fenrir (formants lowered 1.8 st), Narrator bm_fable (British).
+- Speech is built phrase by phrase: pitch is redrawn per phrase with WORLD (rise on `?`, landing fall on `.`, held on `,`, cut off on an em dash), real pauses by punctuation and emotion, a small breath before longer lines.
+- No reverb on voices. Dry, close-mic sound (low cut + gentle presence).
+- Dialogue craft and per-character fingerprints live in `.claude/skills/kimu-dialogue/SKILL.md`. Read it before writing any line.

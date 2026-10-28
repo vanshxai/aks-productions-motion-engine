@@ -3,7 +3,7 @@
 
 Model : Kokoro-82M, int8 ONNX (92 MB, Apache-2.0), run on CPU with onnxruntime. No network, no cost.
 Voices: Kokoro style vectors, blended per character (see CAST). Trimmed to models/kimu_voice/voices.npz.
-Emotion: text shaping (pauses, emphasis) + speed + pitch + loudness + light DSP (see EMOTIONS).
+Speech : spoken phrase by phrase, pitch re-drawn per phrase (WORLD), real pauses + breaths, dry close-mic sound (no reverb).
 Output: 48 kHz mono wav + a JSON sidecar with duration and a 30 fps mouth envelope for lip-sync.
 
 CLI
@@ -13,7 +13,7 @@ CLI
 Python
   from kimu_voice import speak;  audio, sr, meta = speak("kimu", "I know, Dad.", "sad")
 """
-import argparse, json, os, sys
+import argparse, hashlib, json, os, re, sys
 import numpy as np, soundfile as sf
 from scipy.signal import resample_poly, butter, sosfilt
 
@@ -23,31 +23,38 @@ MODEL = os.path.join(ROOT, "models", "kimu_voice", "kokoro-v1.0.int8.onnx")
 VOICES = os.path.join(ROOT, "models", "kimu_voice", "voices.npz")
 SR = 48000
 
-# character -> blend of Kokoro voices (weights sum to 1), base speed, pitch shift in semitones
+VERSION = 3   # bump when the engine changes so cached lines are rebuilt
+
+# One distinct Kokoro voice per character (single voices keep their natural intonation; blends flatten it).
+# `shift` = whole-voice pitch change in semitones with formants moved too, so the speaker sounds like a different person.
 CAST = {
-    "kimu":     {"mix": {"am_liam": 0.6, "am_adam": 0.4}, "speed": 1.0, "pitch": 0.0, "note": "young adult, warm, a little unsure"},
-    "dad":      {"mix": {"am_michael": 0.5, "bm_george": 0.5}, "speed": 0.95, "pitch": -1.5, "note": "middle-aged father, deep, tired, loving but stern"},
-    "mom":      {"mix": {"af_heart": 0.6, "af_nicole": 0.4}, "speed": 0.97, "pitch": 0.0, "note": "gentle, warm, modern metro mother"},
-    "uncle":    {"mix": {"bm_lewis": 0.6, "am_michael": 0.4}, "speed": 0.98, "pitch": -0.5, "note": "friendly neighbour, relieved and cheerful"},
-    "narrator": {"mix": {"am_liam": 0.5, "bm_daniel": 0.5}, "speed": 0.98, "pitch": -0.5, "note": "Kimu's inner voice, calm and close"},
+    "kimu":     {"mix": {"am_eric": 1.0},   "lang": "en-us", "speed": 1.02, "shift": 0.0,  "note": "early 20s, light and quick, trails off, stammers when nervous"},
+    "dad":      {"mix": {"am_onyx": 1.0},   "lang": "en-us", "speed": 0.95, "shift": 0.0,  "note": "50s, deep and gravelly, few words, long pauses, a bark when angry"},
+    "mom":      {"mix": {"af_heart": 1.0},  "lang": "en-us", "speed": 0.98, "shift": 0.0,  "note": "40s, warm and soft, falls gently at line ends, quick when worried"},
+    "uncle":    {"mix": {"am_fenrir": 1.0}, "lang": "en-us", "speed": 0.97, "shift": -1.8, "note": "60s, big warm neighbour, loud and rounded, laughs while talking"},
+    "narrator": {"mix": {"bm_fable": 1.0},  "lang": "en-gb", "speed": 0.97, "shift": 0.0,  "note": "calm storyteller, British, dry and close, never echoes"},
 }
 
-# emotion -> speed multiplier, pitch (semitones), gain (dB), text mode, dsp flags
+# emotion -> speed, pause scale, pitch range (1 = natural), base pitch offset (st), final fall (st), declination (st/line),
+#            accent (extra st on first phrase), gain (dB), dsp flags
 EMOTIONS = {
-    "neutral": dict(speed=1.00, pitch=0.0, gain=0.0),
-    "calm":    dict(speed=0.94, pitch=-0.3, gain=-1.5),
-    "warm":    dict(speed=0.96, pitch=0.3, gain=0.0),
-    "sad":     dict(speed=0.86, pitch=-0.9, gain=-3.0, soften=True),
-    "worried": dict(speed=1.06, pitch=0.6, gain=-1.0, tremble=0.25),
-    "scared":  dict(speed=1.12, pitch=1.3, gain=-0.5, tremble=0.5, breathy=True),
-    "annoyed": dict(speed=1.04, pitch=-0.6, gain=0.5),
-    "angry":   dict(speed=1.07, pitch=-0.8, gain=2.5, drive=0.35),
-    "shout":   dict(speed=1.10, pitch=0.2, gain=4.0, drive=0.6),
-    "joy":     dict(speed=1.07, pitch=0.9, gain=1.0),
-    "relieved": dict(speed=0.98, pitch=0.5, gain=0.0, breathy=True),
-    "whisper": dict(speed=0.92, pitch=0.0, gain=-5.0, breathy=True),
-    "inner":   dict(speed=0.96, pitch=-0.4, gain=-1.0, inner=True),
+    "neutral":  dict(speed=1.00, pace=1.0,  rng=1.20, off=0.0,  fall=1.5, decl=0.8, accent=0.6, gain=0.0),
+    "calm":     dict(speed=0.94, pace=1.15, rng=1.05, off=-0.3, fall=1.5, decl=0.6, accent=0.3, gain=-1.5),
+    "warm":     dict(speed=0.96, pace=1.0,  rng=1.30, off=0.4,  fall=1.2, decl=0.6, accent=0.8, gain=0.0),
+    "stern":    dict(speed=0.95, pace=1.2,  rng=0.85, off=-0.8, fall=2.6, decl=0.4, accent=0.0, gain=0.5),
+    "sad":      dict(speed=0.90, pace=1.25, rng=0.85, off=-1.2, fall=2.4, decl=1.0, accent=0.0, gain=-3.0, soften=True),
+    "worried":  dict(speed=1.05, pace=0.85, rng=1.30, off=0.8,  fall=0.4, decl=0.3, accent=1.0, gain=-1.0, tremble=0.25),
+    "scared":   dict(speed=1.10, pace=0.70, rng=1.40, off=1.8,  fall=0.0, decl=0.0, accent=1.2, gain=-0.5, tremble=0.5, breathy=True),
+    "annoyed":  dict(speed=1.00, pace=1.0,  rng=1.20, off=-0.5, fall=2.2, decl=0.6, accent=0.6, gain=0.5),
+    "angry":    dict(speed=1.05, pace=0.80, rng=1.45, off=0.3,  fall=1.2, decl=0.2, accent=1.6, gain=2.5, drive=0.35),
+    "shout":    dict(speed=1.08, pace=0.70, rng=1.55, off=1.5,  fall=0.8, decl=0.0, accent=1.5, gain=4.0, drive=0.6),
+    "joy":      dict(speed=1.05, pace=0.90, rng=1.55, off=1.0,  fall=0.6, decl=0.2, accent=1.4, gain=1.0),
+    "relieved": dict(speed=0.96, pace=1.30, rng=1.25, off=0.3,  fall=1.8, decl=0.8, accent=0.4, gain=0.0, breathy=True),
+    "whisper":  dict(speed=0.90, pace=1.20, rng=0.80, off=0.0,  fall=1.0, decl=0.5, accent=0.0, gain=-5.0, breathy=True),
+    "narrate":  dict(speed=1.04, pace=0.80, rng=0.95, off=0.0,  fall=1.8, decl=0.5, accent=0.3, gain=0.0),
+    "inner":    dict(speed=0.97, pace=1.15, rng=1.0,  off=-0.2, fall=1.5, decl=0.6, accent=0.3, gain=-0.5),
 }
+PAUSE = {",": 0.17, ";": 0.25, ":": 0.25, ".": 0.36, "!": 0.30, "?": 0.38, "...": 0.62, "—": 0.10}
 
 
 # ----------------------------------------------------------------------------------------------
@@ -64,65 +71,86 @@ def _model():
 
 def voice_vector(char):
     d = np.load(VOICES)
-    mix = CAST[char]["mix"]
-    v = sum(w * d[name] for name, w in mix.items())
+    v = sum(w * d[name] for name, w in CAST[char]["mix"].items())
     return v.astype(np.float32)
 
 
-def shape_text(text, emo):
-    """Light prosody hints Kokoro responds to: punctuation, ellipses, commas."""
-    t = text.strip()
-    if emo in ("sad", "worried", "scared", "whisper", "inner"):
-        t = t.replace(". ", "... ").replace(", ", ", ")
-    if emo in ("angry", "shout", "annoyed"):
-        t = t.replace(". ", "! ") if emo != "annoyed" else t
-    return t
+UNIT = re.compile(r"\s*([^,.;:!?\u2026\u2014\u2013]+?)\s*(\.{2,}|[,.;:!?\u2026]+|[\u2014\u2013]+|$)")
 
 
-def pitch_shift(x, sr, semis):
+def parse(text):
+    """'No, no, no\u2014not now.' -> [(phrase, punct)]  (\u2014 = cut off mid-thought)"""
+    out = []
+    for m in UNIT.finditer(text.strip()):
+        w, p = m.group(1).strip(), m.group(2)
+        if not w:
+            continue
+        if p.startswith("..") or p.startswith("\u2026"): p = "..."
+        elif p[:1] in "\u2014\u2013": p = "\u2014"
+        elif p == "": p = "."
+        else: p = p[0]
+        out.append((w, p))
+    return out
+
+
+def reshape_pitch(x, sr, off, rng, tilt):
+    """Re-draw the pitch of one phrase with WORLD: scale its natural movement, shift it, and add a tilt (fall / rise / declination)."""
+    import pyworld as pw
+    x64 = x.astype(np.float64)
+    f0, t = pw.harvest(x64, sr, f0_floor=60, f0_ceil=500, frame_period=5.0)
+    v = f0 > 0
+    if v.sum() < 6:
+        return x
+    sp, ap = pw.cheaptrick(x64, f0, t, sr), pw.d4c(x64, f0, t, sr)
+    med = np.median(f0[v])
+    idx = np.where(v)[0]
+    u = np.clip((np.arange(len(f0)) - idx[0]) / max(1, idx[-1] - idx[0]), 0, 1)
+    st = 12 * np.log2(f0[v] / med)
+    new = st * rng + off + tilt(u[v])
+    f0n = f0.copy()
+    f0n[v] = med * 2 ** (new / 12)
+    y = pw.synthesize(f0n, sp, ap, sr, frame_period=5.0).astype(np.float32)
+    return np.pad(y, (0, max(0, len(x) - len(y))))[: len(x)]
+
+
+def breath(sr, dur=0.16, level=0.035, seed=5):
+    rng = np.random.default_rng(seed)
+    n = int(dur * sr)
+    y = sosfilt(butter(2, [400 / (sr / 2), 4500 / (sr / 2)], btype="band", output="sos"), rng.standard_normal(n)).astype(np.float32)
+    return y * np.hanning(n).astype(np.float32) * level
+
+
+def apply_dsp(x, sr, e):
+    if e.get("tremble"):
+        t = np.arange(len(x)) / sr
+        x = x * (1 + e["tremble"] * 0.12 * np.sin(2 * np.pi * 6.0 * t)).astype(np.float32)
+    if e.get("breathy"):
+        rng = np.random.default_rng(3)
+        noise = rng.standard_normal(len(x)).astype(np.float32)
+        sos = butter(2, [2500 / (sr / 2), 7500 / (sr / 2)], btype="band", output="sos")
+        env = np.convolve(np.abs(x), np.ones(int(0.02 * sr)) / int(0.02 * sr), mode="same")
+        x = x + 0.30 * sosfilt(sos, noise) * env
+    if e.get("drive"):
+        d = 1 + 4 * e["drive"]
+        x = np.tanh(x * d) / np.tanh(d) * 0.9
+    if e.get("soften"):
+        x = sosfilt(butter(2, 5200 / (sr / 2), btype="low", output="sos"), x)
+    # crisp, dry, close-mic: low cut + gentle presence lift. No reverb anywhere.
+    x = sosfilt(butter(2, 85 / (sr / 2), btype="high", output="sos"), x)
+    pres = sosfilt(butter(2, [2200 / (sr / 2), 4800 / (sr / 2)], btype="band", output="sos"), x)
+    return (x + 0.22 * pres).astype(np.float32)
+
+
+def char_shift(x, sr, semis):
+    """Whole-voice pitch change with formants moved too (a different-sized speaker)."""
     if abs(semis) < 0.05:
         return x
     import subprocess, tempfile
     with tempfile.TemporaryDirectory() as d:
         a, b = os.path.join(d, "a.wav"), os.path.join(d, "b.wav")
         sf.write(a, x.astype(np.float32), sr)
-        r = 2 ** (semis / 12)
-        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", a, "-af", f"rubberband=pitch={r:.5f}:formant=preserved:pitchq=quality", b], check=True)
-        y, _ = sf.read(b)
-        return y.astype(np.float32)
-
-
-def apply_dsp(x, sr, e):
-    if e.get("tremble"):
-        n = len(x)
-        t = np.arange(n) / sr
-        x = x * (1 + e["tremble"] * 0.12 * np.sin(2 * np.pi * 6.0 * t)).astype(np.float32)
-    if e.get("breathy"):
-        rng = np.random.default_rng(3)
-        noise = rng.standard_normal(len(x)).astype(np.float32)
-        sos = butter(2, [2500 / (sr / 2), 7500 / (sr / 2)], btype="band", output="sos")
-        env = np.abs(x)
-        env = np.convolve(env, np.ones(int(0.02 * sr)) / int(0.02 * sr), mode="same")
-        x = x + 0.35 * sosfilt(sos, noise) * env
-    if e.get("drive"):
-        d = 1 + 4 * e["drive"]
-        x = np.tanh(x * d) / np.tanh(d) * 0.9
-    if e.get("soften"):
-        sos = butter(2, 5200 / (sr / 2), btype="low", output="sos")
-        x = sosfilt(sos, x)
-    if e.get("inner"):
-        sos = butter(2, [140 / (sr / 2), 6500 / (sr / 2)], btype="band", output="sos")
-        x = sosfilt(sos, x)
-        ir_n = int(0.9 * sr)
-        rng = np.random.default_rng(7)
-        ir = rng.standard_normal(ir_n) * np.exp(-np.arange(ir_n) / (0.22 * sr))
-        ir[:int(0.012 * sr)] = 0
-        from scipy.signal import fftconvolve
-        wet = fftconvolve(x, ir)[: len(x) + ir_n] * 0.04
-        x = np.concatenate([x, np.zeros(ir_n)])
-        wet = np.pad(wet, (0, max(0, len(x) - len(wet))))[: len(x)]
-        x = x + wet
-    return x.astype(np.float32)
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", a, "-af", f"rubberband=pitch={2 ** (semis / 12):.5f}:formant=shifted:pitchq=quality", b], check=True)
+        return sf.read(b)[0].astype(np.float32)
 
 
 def mouth_envelope(x, sr, fps=30):
@@ -142,24 +170,66 @@ def mouth_envelope(x, sr, fps=30):
 
 
 def speak(char, text, emo="neutral", speed=None, pitch=None, gain=None):
-    c = CAST[char]
-    e = dict(EMOTIONS[emo])
+    """text -> natural speech. The line is spoken phrase by phrase (so each phrase gets its own intonation),
+    pitch is re-drawn per phrase (rise on questions, fall on statements, restart after each pause),
+    and real pauses and a small breath are placed between phrases."""
+    c, e = CAST[char], dict(EMOTIONS[emo])
+    k, vec = _model(), voice_vector(char)
+    units = parse(text)
+    rnd = np.random.default_rng(int(hashlib.md5((char + text).encode()).hexdigest()[:8], 16))
     spd = (speed or 1.0) * c["speed"] * e["speed"]
-    st = c["pitch"] + e["pitch"] + (pitch or 0)
-    k = _model()
-    audio, sr = k.create(shape_text(text, emo), voice=voice_vector(char), speed=float(np.clip(spd, 0.6, 1.5)), lang="en-us")
-    audio = audio.astype(np.float32)
-    audio = pitch_shift(audio, sr, st)
-    audio = apply_dsp(audio, sr, e)
+    pieces, f0_all = [], []
+    n = len(units)
+    for i, (w, p) in enumerate(units):
+        cut = p == "\u2014"
+        kt = w + {",": ",", ";": ",", ":": ",", ".": ".", "!": "!", "?": "?", "...": "...", "\u2014": ","}[p]
+        a, sr = k.create(kt, voice=vec, speed=float(np.clip(spd * (1 + rnd.uniform(-0.03, 0.03)), 0.6, 1.5)), lang=c["lang"])
+        a = a.astype(np.float32)
+        last = i == n - 1
+        def tilt(u, p=p, last=last, i=i):
+            t = -e["decl"] * u                                     # drifts down across the phrase
+            if p == "?":   t = t + 3.2 * np.clip((u - 0.55) / 0.45, 0, 1) ** 2        # question rises
+            elif p in ",;:" : t = t + 0.9 * np.clip((u - 0.6) / 0.4, 0, 1)            # more to come
+            elif p == "\u2014": t = t + 0.0                          # cut off, no landing
+            elif p == "!": t = t - 0.6 * np.clip((u - 0.7) / 0.3, 0, 1)
+            else:          t = t - e["fall"] * (1.0 if last else 0.55) * np.clip((u - 0.55) / 0.45, 0, 1) ** 1.5   # statement lands
+            return t
+        off = e["off"] + (pitch or 0) + (e["accent"] if i == 0 else 0) + rnd.uniform(-0.45, 0.45) - 0.35 * min(i, 3)
+        if p == "!": off += 1.0
+        a = reshape_pitch(a, sr, off, e["rng"], tilt)
+        if cut:                                                      # interrupted: clip the tail fast
+            keep = int(len(a) * 0.9)
+            a = a[:keep] * np.linspace(1, 0.0, keep) ** 0.5
+        idx = np.where(np.abs(a) > 0.008)[0]
+        if len(idx):
+            a = a[max(0, idx[0] - int(0.01 * sr)): idx[-1] + int(0.02 * sr)]
+        pieces.append((a, sr, p, last))
+    sr = pieces[0][1]
+    out = []
+    if n >= 4 or emo in ("sad", "scared", "worried", "relieved"):
+        out.append(breath(sr, level=0.03 if emo not in ("scared", "sad") else 0.05))
+    for a, _, p, last in pieces:
+        out.append(a)
+        if not last:
+            out.append(np.zeros(int(PAUSE[p] * e["pace"] * (1 + rnd.uniform(-0.12, 0.12)) * sr), dtype=np.float32))
+    audio = apply_dsp(np.concatenate(out), sr, e)
+    audio = char_shift(audio, sr, c["shift"])
     audio = resample_poly(audio, SR, sr).astype(np.float32)
-    # trim leading/trailing silence, keep a small tail
     idx = np.where(np.abs(audio) > 0.01)[0]
     if len(idx):
-        audio = audio[max(0, idx[0] - int(0.03 * SR)): idx[-1] + int(0.12 * SR)]
+        audio = audio[max(0, idx[0] - int(0.03 * SR)): idx[-1] + int(0.10 * SR)]
     g = 10 ** (((gain or 0) + e["gain"]) / 20)
     audio = audio / (np.abs(audio).max() + 1e-9) * 0.7 * g
-    meta = {"char": char, "emo": emo, "text": text, "dur": round(len(audio) / SR, 3), "env": mouth_envelope(audio, SR)}
+    meta = {"char": char, "emo": emo, "text": text, "dur": round(len(audio) / SR, 3), "env": mouth_envelope(audio, SR), "f0_std_st": pitch_spread(audio, SR)}
     return audio, SR, meta
+
+
+def pitch_spread(x, sr):
+    """Standard deviation of pitch in semitones across the line (monotone ~1-2, lively 3-5)."""
+    import pyworld as pw
+    f0, _ = pw.harvest(x.astype(np.float64), sr, f0_floor=60, f0_ceil=500, frame_period=10.0)
+    f = f0[f0 > 0]
+    return round(float((12 * np.log2(f / np.median(f))).std()), 2) if len(f) > 5 else 0.0
 
 
 # ----------------------------------------------------------------------------------------------

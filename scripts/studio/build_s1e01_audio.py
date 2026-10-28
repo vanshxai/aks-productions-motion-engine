@@ -39,7 +39,7 @@ def build_voices():
     os.makedirs(f"{OUT}/voice", exist_ok=True)
     lines, prev = {}, None
     for ln in sc["lines"]:
-        key = hashlib.md5(json.dumps([ln["char"], ln.get("emo"), ln["text"], kv.CAST[ln["char"]], kv.EMOTIONS[ln.get("emo", "neutral")]], sort_keys=True).encode()).hexdigest()[:10]
+        key = hashlib.md5(json.dumps([kv.VERSION, ln["char"], ln.get("emo"), ln["text"], kv.CAST[ln["char"]], kv.EMOTIONS[ln.get("emo", "neutral")]], sort_keys=True).encode()).hexdigest()[:10]
         wav, js = f"{OUT}/voice/{ln['id']}.wav", f"{OUT}/voice/{ln['id']}.{key}.json"
         if os.path.exists(js) and os.path.exists(wav):
             m = json.load(open(js))
@@ -250,7 +250,7 @@ def main():
     for l in lines.values():
         y, sr = sf.read(f"{OUT}/voice/{l['id']}.wav")
         y = y.astype(np.float32)
-        wet = reverb(y, wet=0.09 if l["char"] != "narrator" else 0.0, rt=0.5)
+        wet = reverb(y, wet=0.03 if l["char"] != "narrator" else 0.0, rt=0.4)
         st = pan(y, PAN[l["char"]]) * 0.0 + wet * np.array([[np.cos((PAN[l['char']] + 1) * np.pi / 4) * 1.4, np.sin((PAN[l['char']] + 1) * np.pi / 4) * 1.4]])
         i = int(l["t"] * SR)
         n = min(len(st), N - i)

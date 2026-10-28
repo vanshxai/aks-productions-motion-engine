@@ -36,118 +36,118 @@
    "id": "k0",
    "char": "kimu",
    "emo": "worried",
-   "text": "No, no, no. Not now.",
-   "t": 1.3
+   "text": "No, no, no\u2014 not now.",
+   "t": 1.0
   },
   {
    "id": "d1",
    "char": "dad",
-   "emo": "annoyed",
-   "text": "Kimu? Why are you awake?",
-   "t": 3.25
+   "emo": "stern",
+   "text": "Kimu.",
+   "t": 3.2
   },
   {
    "id": "k1",
    "char": "kimu",
    "emo": "scared",
-   "text": "N-nothing. Just charging my phone.",
-   "gap": 0.15
+   "text": "I\u2014 I'm just charging my phone.",
+   "gap": 0.6
   },
   {
    "id": "d2",
    "char": "dad",
    "emo": "annoyed",
-   "text": "Those wires again?",
-   "gap": 0.25
+   "text": "Those wires. Again.",
+   "gap": 0.35
   },
   {
    "id": "d3",
    "char": "dad",
    "emo": "angry",
-   "text": "Study first. Then a job. Then the startup.",
+   "text": "Focus on engineering. That's it.",
    "gap": 0.15
   },
   {
    "id": "m1",
    "char": "mom",
    "emo": "worried",
-   "text": "Please. He's tired.",
+   "text": "Easy. He's tired.",
    "gap": 0.2
   },
   {
    "id": "d4",
    "char": "dad",
    "emo": "sad",
-   "text": "I'm just afraid for you.",
-   "gap": 0.2
+   "text": "Go to sleep, Kimu.",
+   "gap": 0.35
   },
   {
    "id": "k2",
    "char": "kimu",
    "emo": "sad",
-   "text": "I know, Dad. Sorry.",
-   "gap": 0.2
+   "text": "Sorry, Dad.",
+   "gap": 0.3
   },
   {
    "id": "n2",
-   "char": "narrator",
-   "emo": "inner",
-   "text": "Please. Show me where to start.",
+   "char": "kimu",
+   "emo": "whisper",
+   "text": "Please... show me where to start.",
    "t": 21.2
   },
   {
    "id": "n3",
    "char": "narrator",
-   "emo": "inner",
-   "text": "A bird on a wire. Thousands of volts. And it's fine.",
+   "emo": "narrate",
+   "text": "A bird on a wire. Thousands of volts... and it's fine.",
    "t": 28.3
   },
   {
    "id": "n4",
    "char": "narrator",
-   "emo": "inner",
-   "text": "Current flows only when there's a voltage difference.",
+   "emo": "narrate",
+   "text": "Like water, current only flows where there's a difference in level.",
    "t": 32.8
   },
   {
    "id": "n5",
    "char": "narrator",
-   "emo": "inner",
+   "emo": "narrate",
    "text": "One wire. Same voltage on both feet. No current.",
    "t": 37.4
   },
   {
    "id": "n6",
    "char": "narrator",
-   "emo": "inner",
-   "text": "Touch two wires, or the ground, and it's a different story.",
+   "emo": "narrate",
+   "text": "Touch a second wire, or the ground... and it's a different story.",
    "t": 41.7
   },
   {
    "id": "n7",
    "char": "narrator",
-   "emo": "inner",
-   "text": "Morning. Uncle's power keeps tripping.",
-   "t": 46.4
+   "emo": "narrate",
+   "text": "Next morning. Uncle's power keeps tripping.",
+   "t": 46.1
   },
   {
    "id": "n8",
    "char": "narrator",
-   "emo": "inner",
-   "text": "Two bare wires touching. The one thing the bird avoids.",
+   "emo": "narrate",
+   "text": "Two bare wires, touching. Exactly what the bird avoids.",
    "t": 49.4
   },
   {
    "id": "u1",
    "char": "uncle",
    "emo": "joy",
-   "text": "Well done, kid! You saved my evening.",
+   "text": "Ha! Well done, kid. You saved my evening.",
    "t": 54.9
   },
   {
    "id": "n9",
    "char": "narrator",
-   "emo": "inner",
+   "emo": "narrate",
    "text": "Small proof. Big start.",
    "t": 57.55
   }
