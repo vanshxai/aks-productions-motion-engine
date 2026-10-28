@@ -289,9 +289,10 @@ def main():
     duck = np.convolve(duck, np.ones(int(0.3 * SR)) / int(0.3 * SR), mode="same")
     music_g = (1 - 0.72 * duck)[:, None]
     sfx_g = (1 - 0.5 * duck)
-    mix = mus * music_g * 0.62
-    mono = fx * sfx_g * 0.95 + bed * sfx_g * 0.9
-    mix = mix + np.stack([mono, mono], axis=1) + env * sfx_g[:, None] * 1.0 + voc * 1.3
+    BG = 0.35                                          # background (music, room/street beds, environment) at 35% so voices stay clear
+    mix = mus * music_g * 0.62 * BG
+    mono = fx * sfx_g * 0.95 + bed * sfx_g * 0.9 * BG
+    mix = mix + np.stack([mono, mono], axis=1) + env * sfx_g[:, None] * BG + voc * 1.3
     sf.write(f"{OUT}/music.wav", mus, SR)
     sf.write(f"{OUT}/sfx.wav", np.stack([fx + bed] * 2, 1), SR)
     rms = np.sqrt((mix ** 2).mean())
