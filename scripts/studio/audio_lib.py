@@ -528,3 +528,115 @@ def pan(x, p):
     """Mono -> stereo with constant-power pan, p in [-1, 1]."""
     a = (p + 1) * np.pi / 4
     return np.stack([x * np.cos(a), x * np.sin(a)], axis=1).astype(np.float32)
+
+
+# ---------------------------------------------------------------- v4 environment sounds
+def _n(dur): return int(dur * SR)
+
+
+def fan_bed(dur, rate=1.7, vel=0.12):
+    """Ceiling fan: soft air with a slow blade-pass pulse."""
+    n = _n(dur); t = np.arange(n) / SR
+    nz = bp(rng.standard_normal(n), 180, 2200)
+    return (nz * (0.5 + 0.5 * np.sin(2 * np.pi * rate * t) ** 2) * vel).astype(np.float32)
+
+
+def flap(dur=0.4, vel=0.3):
+    """Clothes on a line catching the wind: a quick cloth snap with flutter."""
+    n = _n(dur); t = np.arange(n) / SR
+    nz = bp(rng.standard_normal(n), 250, 3800)
+    return (nz * np.exp(-t / 0.07) * (1 + 0.7 * np.sin(2 * np.pi * 16 * t)) * vel).astype(np.float32)
+
+
+def dog(vel=0.2):
+    """Two distant barks."""
+    out = np.zeros(_n(0.9), dtype=np.float32)
+    for k, t0 in enumerate((0.0, 0.34)):
+        n = _n(0.16); t = np.arange(n) / SR
+        f = 430 - 120 * t / 0.16
+        w = np.sign(np.sin(2 * np.pi * np.cumsum(f) / SR)) * 0.5 + rng.standard_normal(n) * 0.25
+        w = bp(w, 400, 1800) * np.exp(-t / 0.07)
+        out[_n(t0):_n(t0) + n] += w.astype(np.float32)
+    return lp(out, 2600) * vel
+
+
+def horn(dur=0.55, vel=0.12):
+    """A far-off car horn, two tones."""
+    n = _n(dur); t = np.arange(n) / SR
+    y = (np.sin(2 * np.pi * 410 * t) + 0.7 * np.sin(2 * np.pi * 520 * t) + 0.3 * np.sin(2 * np.pi * 820 * t))
+    e = np.clip(t / 0.03, 0, 1) * np.clip((dur - t) / 0.08, 0, 1)
+    return (lp(y, 2200) * e * vel).astype(np.float32)
+
+
+def gurgle(dur=2.5, vel=0.25):
+    """Water finding its level: bubbling and a soft pour."""
+    n = _n(dur); t = np.arange(n) / SR
+    y = bp(rng.standard_normal(n), 300, 1600) * 0.35 * np.clip(t / 0.3, 0, 1) * np.clip((dur - t) / 0.5, 0, 1)
+    for _ in range(int(dur * 11)):
+        t0 = rng.random() * (dur - 0.15); f0 = 350 + rng.random() * 500
+        m = _n(0.07); tt = np.arange(m) / SR
+        b = np.sin(2 * np.pi * (f0 + 2600 * tt) * tt) * np.exp(-tt / 0.02)
+        y[_n(t0):_n(t0) + m] += b * 0.4
+    return (y * vel).astype(np.float32)
+
+
+def wire_hum(dur=3.0, vel=0.12):
+    """Mains hum on a live line: 50 Hz and harmonics, slightly unsteady."""
+    n = _n(dur); t = np.arange(n) / SR
+    y = sum(a * np.sin(2 * np.pi * f * t + rng.random() * 6) for f, a in ((50, 0.6), (100, 1.0), (150, 0.5), (200, 0.25), (300, 0.12)))
+    y = y * (1 + 0.08 * np.sin(2 * np.pi * 0.7 * t)) + bp(rng.standard_normal(n), 2500, 6000) * 0.04
+    return (y * np.clip(t / 0.4, 0, 1) * np.clip((dur - t) / 0.4, 0, 1) * vel).astype(np.float32)
+
+
+def crackle(dur=0.8, vel=0.3):
+    """Sparking contacts: sparse sharp pops, decaying."""
+    n = _n(dur); y = np.zeros(n, dtype=np.float32)
+    for _ in range(int(dur * 28)):
+        t0 = (rng.random() ** 1.7) * dur
+        m = _n(0.012); tt = np.arange(m) / SR
+        y[_n(t0):_n(t0) + m] += (rng.standard_normal(m) * np.exp(-tt / 0.003) * (0.4 + rng.random()))[: n - _n(t0)]
+    return hp(y, 1800) * vel * np.linspace(1, 0.2, n).astype(np.float32)
+
+
+def scooter(dur=3.0, vel=0.2):
+    """A scooter passing: engine note rising then falling (Doppler) and swelling."""
+    n = _n(dur); t = np.arange(n) / SR
+    f = 95 + 55 * np.exp(-((t - dur * 0.45) / (dur * 0.2)) ** 2) * np.tanh((dur * 0.5 - t) * 2.2) * -1 + 20
+    ph = 2 * np.pi * np.cumsum(f) / SR
+    y = sum(np.sin(ph * k) / k for k in (1, 2, 3, 4, 6)) * (1 + 0.3 * np.sin(2 * np.pi * 26 * t))
+    e = np.exp(-((t - dur * 0.5) / (dur * 0.28)) ** 2)
+    return (lp(y, 1800) * e * vel).astype(np.float32)
+
+
+def pen_tap(vel=0.3):
+    return (wood(vel, 1500) + tick(vel * 0.4, 2600)[: _n(0.06)].mean() * 0).astype(np.float32) if False else wood(vel, 1500)
+
+
+def plug_in(vel=0.4):
+    y = np.zeros(_n(0.2), dtype=np.float32)
+    a = thunk(vel * 0.5)[: _n(0.12)]; y[: len(a)] += a
+    b = tick(vel, 2800)[: _n(0.08)]; y[_n(0.05):_n(0.05) + len(b)] += b
+    return y
+
+
+def meter_click(vel=0.3):
+    """Electricity-meter disc clicking."""
+    return tick(vel, 1600)
+
+
+def multimeter_beep(vel=0.25):
+    return beep(2200, 0.1, vel)
+
+
+def pan_stereo(x, p):
+    return pan(x, p)
+
+
+def place_st(buf2, x, t, p=0.0, gain=1.0):
+    """Add mono x to a stereo buffer at time t, panned to p in [-1, 1] (-1 left)."""
+    s = pan(x, p) * gain
+    i = int(t * SR)
+    if i >= len(buf2) or i + len(s) <= 0:
+        return
+    a = max(0, -i); n = min(len(s) - a, len(buf2) - max(i, 0))
+    buf2[max(i, 0):max(i, 0) + n] += s[a:a + n]

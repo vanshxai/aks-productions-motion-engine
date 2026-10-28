@@ -403,11 +403,11 @@ const Overlay: React.FC<{ t: number }> = ({ t }) => {
       </g>
       <g opacity={chip} transform="translate(54 90)">
         <rect x="0" y="-30" width="560" height="60" rx="30" fill="#fff" fillOpacity="0.92" />
-        <text x="28" y="9" fontFamily="Fredoka" fontWeight="600" fontSize="28" fill="#1B2347" letterSpacing="1.5">THE ADVENTURES OF KIMU · S1 E1</text>
+        <text x="28" y="9" fontFamily="Fredoka" fontWeight="600" fontSize="28" fill="#1B2347" letterSpacing="1.5">THE ADVENTURES OF KIMU</text>
       </g>
       <g opacity={title} transform={`translate(540 ${430 + (1 - title) * 30})`}>
         <rect x="-420" y="-110" width="840" height="220" rx="44" fill="#0B1230" fillOpacity="0.88" />
-        <text x="0" y="-30" textAnchor="middle" fontFamily="Fredoka" fontWeight="500" fontSize="30" fill="#7FE3FF" letterSpacing="5">THE ADVENTURES OF KIMU · S1 E1</text>
+        <text x="0" y="-30" textAnchor="middle" fontFamily="Fredoka" fontWeight="500" fontSize="30" fill="#7FE3FF" letterSpacing="5">THE ADVENTURES OF KIMU</text>
         <text x="0" y="40" textAnchor="middle" fontFamily="Fredoka" fontWeight="600" fontSize="76" fill="#fff">The Bird on the Wire</text>
         <text x="0" y="86" textAnchor="middle" fontFamily="Fredoka" fontWeight="500" fontSize="22" fill="#AFC3EE" letterSpacing="8">AKS PRODUCTIONS</text>
       </g>

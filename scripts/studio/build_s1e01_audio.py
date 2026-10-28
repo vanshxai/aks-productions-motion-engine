@@ -158,6 +158,7 @@ def music(L, T):
 def sfx(L, T):
     x = np.zeros(N, dtype=np.float32)
     bed = np.zeros(N, dtype=np.float32)
+    st = np.zeros((N, 2), dtype=np.float32)          # spatial environment sounds (panned left/right)
     d1, d3, d4, k2, m1 = L["d1"], L["d3"], L["d4"], L["k2"], L["m1"]
     # ---- ambience: room tone, fan, crickets, a mosquito (very much a real night)
     place(bed, room_tone(19, 0.5), 0.0)
@@ -168,6 +169,38 @@ def sfx(L, T):
     place(bed, crickets(9, 0.1), T(12.6))
     place(bed, street_bed(14, 0.35), 46.0)
     place(bed, kenney("ambience", 0.35)[: int(14 * SR)], 46.0)
+    # ---- v4 environment: things that move and glow around the scene
+    place_st(st, fan_bed(19, 1.7, 0.10), 0.0, 0.55)                         # ceiling fan, right
+    place_st(st, hum(19, 120, 0.05), 0.0, -0.6)                              # desk lamp buzz, left
+    place_st(st, plug_in(0.45), 0.6, -0.4)                                    # charger clicked in
+    place_st(st, dog(0.16), 6.4, 0.85); place_st(st, dog(0.12), 12.3, 0.9)   # distant dog through the window
+    place_st(st, horn(0.5, 0.09), 9.2, 0.8)
+    place_st(st, crackle(0.55, 0.28), L["d2"]["t"] + 0.05, -0.25)             # torch finds the live wires: contacts spit
+    place_st(st, multimeter_beep(0.22), L["d2"]["t"] + 0.4, -0.15)
+    place_st(st, crackle(0.35, 0.22), L["d3"]["t"] + 0.8, -0.25)
+    place_st(st, pen_tap(0.25), 1.9, 0.2)
+    # terrace (S2)
+    place_st(st, wind(9.5, 0.12), T(12.6), -0.3)
+    for k_, tt_ in enumerate(np.arange(T(13.0), T(23.0), 0.9)):
+        place_st(st, flap(0.4, 0.22 + 0.1 * rng.random()), float(tt_) + rng.random() * 0.3, -0.7 if k_ % 2 else -0.5)   # washing on the line
+    place_st(st, street_bed(9, 0.12), 19.0, 0.0)
+    place_st(st, dog(0.14), 24.3, 0.9)
+    place_st(st, gurgle(1.0, 0.08), 21.8, 0.7)                               # water tank drip
+    # lesson (S3): hum of the live wire, water finding its level, wing flaps
+    place_st(st, wire_hum(4.4, 0.10), 28.2, 0.35)
+    place_st(st, flutter(0.35), 28.4, 0.5)
+    place_st(st, gurgle(3.2, 0.2), L["n4"]["t"] + 0.2, 0.0)
+    place_st(st, wire_hum(4.2, 0.07), 37.4, 0.35)
+    place_st(st, wire_hum(3.6, 0.14), 41.8, 0.0)
+    place_st(st, crackle(0.9, 0.3), T(42.6), 0.0)
+    # morning street (S4)
+    for k_ in range(10):
+        place_st(st, meter_click(0.22), 46.9 + k_ * 0.6, 0.45)                # electricity meter ticking
+    place_st(st, scooter(3.2, 0.2), 47.6, -0.8)                              # passes from left
+    place_st(st, horn(0.45, 0.08), 51.6, -0.7)
+    place_st(st, flutter(0.3), 52.0, 0.6)
+    place_st(st, crackle(1.3, 0.45), T(51.0), 0.2)                           # the short circuit
+    place_st(st, wire_hum(3.5, 0.08), 49.4, 0.0)
     # ---- S1 room
     for t in np.arange(0.05, 0.78, 0.11):             # typing
         place(x, key_tap(0.35 + 0.2 * rng.random()), t)
@@ -225,7 +258,7 @@ def sfx(L, T):
     place(x, powerup(0.9, 0.2), T(54.62))
     place(x, kenney("coin", 1.2), T(56.1))
     place(x, clink(0.3), T(57.6))
-    return x, bed
+    return x, bed, st
 
 
 def tt_lt(a, b):
@@ -244,7 +277,7 @@ def main():
     lines, shots = build_voices()
     T = make_T(shots)
     mus = music(lines, T)
-    fx, bed = sfx(lines, T)
+    fx, bed, env = sfx(lines, T)
     voc = np.zeros((N, 2), dtype=np.float32)
     dmono = np.zeros(N, dtype=np.float32)
     for l in lines.values():
@@ -262,7 +295,7 @@ def main():
     sfx_g = (1 - 0.5 * duck)
     mix = mus * music_g * 0.62
     mono = fx * sfx_g * 0.95 + bed * sfx_g * 0.9
-    mix = mix + np.stack([mono, mono], axis=1) + voc * 1.3
+    mix = mix + np.stack([mono, mono], axis=1) + env * sfx_g[:, None] * 1.0 + voc * 1.3
     sf.write(f"{OUT}/music.wav", mus, SR)
     sf.write(f"{OUT}/sfx.wav", np.stack([fx + bed] * 2, 1), SR)
     rms = np.sqrt((mix ** 2).mean())

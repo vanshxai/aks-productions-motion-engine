@@ -23,13 +23,13 @@ MODEL = os.path.join(ROOT, "models", "kimu_voice", "kokoro-v1.0.int8.onnx")
 VOICES = os.path.join(ROOT, "models", "kimu_voice", "voices.npz")
 SR = 48000
 
-VERSION = 3   # bump when the engine changes so cached lines are rebuilt
+VERSION = 4   # bump when the engine changes so cached lines are rebuilt
 
 # One distinct Kokoro voice per character (single voices keep their natural intonation; blends flatten it).
 # `shift` = whole-voice pitch change in semitones with formants moved too, so the speaker sounds like a different person.
 CAST = {
     "kimu":     {"mix": {"am_eric": 1.0},   "lang": "en-us", "speed": 1.02, "shift": 1.5,  "note": "early 20s, light and quick, trails off, stammers when nervous"},
-    "dad":      {"mix": {"am_onyx": 1.0},   "lang": "en-us", "speed": 0.95, "shift": 0.0,  "note": "50s, deep and gravelly, few words, long pauses, a bark when angry"},
+    "dad":      {"mix": {"am_onyx": 1.0},   "lang": "en-us", "speed": 0.95, "shift": 2.0,  "note": "50s, deep and gravelly, few words, long pauses, a bark when angry"},
     "mom":      {"mix": {"af_heart": 1.0},  "lang": "en-us", "speed": 0.98, "shift": 0.0,  "note": "40s, warm and soft, falls gently at line ends, quick when worried"},
     "uncle":    {"mix": {"am_fenrir": 1.0}, "lang": "en-us", "speed": 0.97, "shift": -3.0, "note": "60s, big warm neighbour, loud and rounded, laughs while talking"},
     "narrator": {"mix": {"bm_fable": 1.0},  "lang": "en-gb", "speed": 0.97, "shift": 0.0,  "note": "calm storyteller, British, dry and close, never echoes"},
@@ -38,21 +38,21 @@ CAST = {
 # emotion -> speed, pause scale, pitch range (1 = natural), base pitch offset (st), final fall (st), declination (st/line),
 #            accent (extra st on first phrase), gain (dB), dsp flags
 EMOTIONS = {
-    "neutral":  dict(speed=1.00, pace=1.0,  rng=1.20, off=0.0,  fall=1.5, decl=0.8, accent=0.6, gain=0.0),
-    "calm":     dict(speed=0.94, pace=1.15, rng=1.05, off=-0.3, fall=1.5, decl=0.6, accent=0.3, gain=-1.5),
-    "warm":     dict(speed=0.96, pace=1.0,  rng=1.30, off=0.4,  fall=1.2, decl=0.6, accent=0.8, gain=0.0),
-    "stern":    dict(speed=0.95, pace=1.2,  rng=0.85, off=-0.8, fall=2.6, decl=0.4, accent=0.0, gain=0.5),
-    "sad":      dict(speed=0.90, pace=1.25, rng=0.85, off=-1.2, fall=2.4, decl=1.0, accent=0.0, gain=-3.0, soften=True),
-    "worried":  dict(speed=1.05, pace=0.85, rng=1.30, off=0.8,  fall=0.4, decl=0.3, accent=1.0, gain=-1.0, tremble=0.25),
-    "scared":   dict(speed=1.10, pace=0.70, rng=1.40, off=1.8,  fall=0.0, decl=0.0, accent=1.2, gain=-0.5, tremble=0.5, breathy=True),
-    "annoyed":  dict(speed=1.00, pace=1.0,  rng=1.20, off=-0.5, fall=2.2, decl=0.6, accent=0.6, gain=0.5),
-    "angry":    dict(speed=1.05, pace=0.80, rng=1.45, off=0.3,  fall=1.2, decl=0.2, accent=1.6, gain=2.5, drive=0.35),
-    "shout":    dict(speed=1.08, pace=0.70, rng=1.55, off=1.5,  fall=0.8, decl=0.0, accent=1.5, gain=4.0, drive=0.6),
-    "joy":      dict(speed=1.05, pace=0.90, rng=1.55, off=1.0,  fall=0.6, decl=0.2, accent=1.4, gain=1.0),
-    "relieved": dict(speed=0.96, pace=1.30, rng=1.25, off=0.3,  fall=1.8, decl=0.8, accent=0.4, gain=0.0, breathy=True),
-    "whisper":  dict(speed=0.90, pace=1.20, rng=0.80, off=0.0,  fall=1.0, decl=0.5, accent=0.0, gain=-5.0, breathy=True),
-    "narrate":  dict(speed=1.04, pace=0.80, rng=0.95, off=0.0,  fall=1.8, decl=0.5, accent=0.3, gain=0.0),
-    "inner":    dict(speed=0.97, pace=1.15, rng=1.0,  off=-0.2, fall=1.5, decl=0.6, accent=0.3, gain=-0.5),
+    "neutral":  dict(stress=2.0, vib=0, speed=1.00, pace=1.0,  rng=1.20, off=0.0,  fall=1.5, decl=0.8, accent=0.6, gain=0.0),
+    "calm":     dict(stress=1.2, vib=0, speed=0.94, pace=1.15, rng=1.05, off=-0.3, fall=1.5, decl=0.6, accent=0.3, gain=-1.5),
+    "warm":     dict(stress=2.4, vib=0, speed=0.96, pace=1.0,  rng=1.30, off=0.4,  fall=1.2, decl=0.6, accent=0.8, gain=0.0),
+    "stern":    dict(stress=2.0, vib=0, speed=0.95, pace=1.2,  rng=0.85, off=-0.8, fall=2.6, decl=0.4, accent=0.0, gain=0.5),
+    "sad":      dict(stress=1.0, vib=0.25, speed=0.90, pace=1.25, rng=0.85, off=-1.2, fall=2.4, decl=1.0, accent=0.0, gain=-3.0, soften=True),
+    "worried":  dict(stress=2.4, vib=0.35, speed=1.05, pace=0.85, rng=1.30, off=0.8,  fall=0.4, decl=0.3, accent=1.0, gain=-1.0, tremble=0.25),
+    "scared":   dict(stress=2.8, vib=0.6, speed=1.10, pace=0.70, rng=1.40, off=1.8,  fall=0.0, decl=0.0, accent=1.2, gain=-0.5, tremble=0.5, breathy=True),
+    "annoyed":  dict(stress=2.2, vib=0, speed=1.00, pace=1.0,  rng=1.20, off=-0.5, fall=2.2, decl=0.6, accent=0.6, gain=0.5),
+    "angry":    dict(stress=3.6, vib=0.15, speed=1.05, pace=0.80, rng=1.45, off=0.3,  fall=1.2, decl=0.2, accent=1.6, gain=2.5, drive=0.35),
+    "shout":    dict(stress=3.8, vib=0.2, speed=1.08, pace=0.70, rng=1.55, off=1.5,  fall=0.8, decl=0.0, accent=1.5, gain=4.0, drive=0.6),
+    "joy":      dict(stress=3.0, vib=0, speed=1.05, pace=0.90, rng=1.55, off=1.0,  fall=0.6, decl=0.2, accent=1.4, gain=1.0),
+    "relieved": dict(stress=1.6, vib=0, speed=0.96, pace=1.30, rng=1.25, off=0.3,  fall=1.8, decl=0.8, accent=0.4, gain=0.0, breathy=True),
+    "whisper":  dict(stress=0.8, vib=0, speed=0.90, pace=1.20, rng=0.80, off=0.0,  fall=1.0, decl=0.5, accent=0.0, gain=-5.0, breathy=True),
+    "narrate":  dict(stress=1.8, vib=0, speed=1.04, pace=0.80, rng=0.95, off=0.0,  fall=1.8, decl=0.5, accent=0.3, gain=0.0),
+    "inner":    dict(stress=1.2, vib=0, speed=0.97, pace=1.15, rng=1.0,  off=-0.2, fall=1.5, decl=0.6, accent=0.3, gain=-0.5),
 }
 PAUSE = {",": 0.17, ";": 0.25, ":": 0.25, ".": 0.36, "!": 0.30, "?": 0.38, "...": 0.62, "—": 0.10}
 
@@ -93,7 +93,7 @@ def parse(text):
     return out
 
 
-def reshape_pitch(x, sr, off, rng, tilt):
+def reshape_pitch(x, sr, off, rng, tilt, bumps=(), vib=0.0):
     """Re-draw the pitch of one phrase with WORLD: scale its natural movement, shift it, and add a tilt (fall / rise / declination)."""
     import pyworld as pw
     x64 = x.astype(np.float64)
@@ -107,6 +107,11 @@ def reshape_pitch(x, sr, off, rng, tilt):
     u = np.clip((np.arange(len(f0)) - idx[0]) / max(1, idx[-1] - idx[0]), 0, 1)
     st = 12 * np.log2(f0[v] / med)
     new = st * rng + off + tilt(u[v])
+    uv = u[v]
+    for c, w, a in bumps:                       # word-level stress: a pitch peak on the important word
+        new = new + a * np.exp(-(((uv - c) / max(w, 0.05)) ** 2))
+    if vib:                                     # shaky voice (fear, worry, sadness)
+        new = new + vib * np.sin(2 * np.pi * 5.5 * t[v]) * np.clip(uv * 3, 0, 1)
     f0n = f0.copy()
     f0n[v] = med * 2 ** (new / 12)
     y = pw.synthesize(f0n, sp, ap, sr, frame_period=5.0).astype(np.float32)
@@ -181,6 +186,18 @@ def speak(char, text, emo="neutral", speed=None, pitch=None, gain=None):
     pieces, f0_all = [], []
     n = len(units)
     for i, (w, p) in enumerate(units):
+        words = w.split()
+        marked = [wd.startswith("*") for wd in words]
+        words = [wd.strip("*") for wd in words]
+        w = " ".join(words)
+        tot = max(1, sum(len(x) + 1 for x in words))
+        bumps, pos = [], 0
+        for j, wd in enumerate(words):
+            a, b = pos / tot, (pos + len(wd)) / tot
+            pos += len(wd) + 1
+            strength = 1.0 if marked[j] else (0.35 if (j == len(words) - 1 and len(words) > 1 and len(wd) > 3) else 0)
+            if strength:
+                bumps.append(((a + b) / 2, (b - a) / 2 + 0.05, e["stress"] * strength))
         cut = p == "\u2014"
         kt = w + {",": ",", ";": ",", ":": ",", ".": ".", "!": "!", "?": "?", "...": "...", "\u2014": ","}[p]
         a, sr = k.create(kt, voice=vec, speed=float(np.clip(spd * (1 + rnd.uniform(-0.03, 0.03)), 0.6, 1.5)), lang=c["lang"])
@@ -196,7 +213,7 @@ def speak(char, text, emo="neutral", speed=None, pitch=None, gain=None):
             return t
         off = e["off"] + (pitch or 0) + (e["accent"] if i == 0 else 0) + rnd.uniform(-0.45, 0.45) - 0.35 * min(i, 3)
         if p == "!": off += 1.0
-        a = reshape_pitch(a, sr, off, e["rng"], tilt)
+        a = reshape_pitch(a, sr, off, e["rng"], tilt, bumps, e.get("vib", 0))
         if cut:                                                      # interrupted: clip the tail fast
             keep = int(len(a) * 0.9)
             a = a[:keep] * np.linspace(1, 0.0, keep) ** 0.5
@@ -220,7 +237,7 @@ def speak(char, text, emo="neutral", speed=None, pitch=None, gain=None):
         audio = audio[max(0, idx[0] - int(0.03 * SR)): idx[-1] + int(0.10 * SR)]
     g = 10 ** (((gain or 0) + e["gain"]) / 20)
     audio = audio / (np.abs(audio).max() + 1e-9) * 0.7 * g
-    meta = {"char": char, "emo": emo, "text": text, "dur": round(len(audio) / SR, 3), "env": mouth_envelope(audio, SR), "f0_std_st": pitch_spread(audio, SR)}
+    meta = {"char": char, "emo": emo, "text": text.replace("*", ""), "dur": round(len(audio) / SR, 3), "env": mouth_envelope(audio, SR), "f0_std_st": pitch_spread(audio, SR)}
     return audio, SR, meta
 
 
