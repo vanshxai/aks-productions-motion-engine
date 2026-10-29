@@ -48,7 +48,7 @@ def build_voices():
             sf.write(wav, y, sr)
             json.dump(m, open(js, "w"))
         t = ln["t"] if "t" in ln else prev + ln["gap"]
-        m = dict(m, id=ln["id"], t=round(t, 3), end=round(t + m["dur"], 3))
+        m = dict(m, id=ln["id"], t=round(t, 3), end=round(t + m["dur"], 3), silent=bool(ln.get("silent")), show=bool(ln.get("show")))
         m["env"] = [[round(t + e[0], 3), e[1]] for e in m["env"]]
         prev = m["end"]
         lines[ln["id"]] = m
@@ -277,6 +277,8 @@ def main():
     voc = np.zeros((N, 2), dtype=np.float32)
     dmono = np.zeros(N, dtype=np.float32)
     for l in lines.values():
+        if l.get("silent"):
+            continue
         y, sr = sf.read(f"{OUT}/voice/{l['id']}.wav")
         y = y.astype(np.float32)
         wet = reverb(y, wet=0.03 if l["char"] != "narrator" else 0.0, rt=0.4)

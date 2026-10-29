@@ -19,10 +19,10 @@ const FONT_CSS = `
 export const TOTAL = packet.duration_s * FPS;
 
 /* ---------------- timeline + voice lines (written by scripts/studio/build_s1e01_audio.py) ---------------- */
-type Line = { id: string; char: string; emo: string; text: string; t: number; end: number; dur: number; env: [number, number][] };
+type Line = { silent?: boolean; show?: boolean; id: string; char: string; emo: string; text: string; t: number; end: number; dur: number; env: [number, number][] };
 const LINES = tl.lines as unknown as Line[];
 const L = (id: string) => LINES.find((l) => l.id === id)!;
-const talk = (id: string, t: number) => envAt(L(id).env, t);
+const talk = (id: string, t: number) => (L(id).silent ? 0 : envAt(L(id).env, t));
 const SHOT = Object.fromEntries(tl.shots.map((s) => [s.id, s])) as Record<string, { t0: number; t1: number; src0: number; k: number }>;
 /** real time -> the scene's own (source) time, so S2-S4 keep their original choreography at a new pace */
 const local = (id: string, t: number) => SHOT[id].src0 + (t - SHOT[id].t0) * SHOT[id].k;
@@ -367,7 +367,7 @@ const talkLocal = (tSrc: number) => {
 /* ====================================================================== */
 const NAMES: Record<string, string> = { kimu: "KIMU", dad: "DAD", mom: "MOM", uncle: "UNCLE" };
 const Subtitles: React.FC<{ t: number }> = ({ t }) => {
-  const ln = LINES.find((l) => t >= l.t - 0.05 && t <= l.end + 0.2);
+  const ln = LINES.find((l) => (l.char === "narrator" || l.show) && t >= l.t - 0.05 && t <= l.end + (l.show ? 0.9 : 0.2));
   if (!ln) return null;
   const text = ln.text;
   let lines = [text];
@@ -380,7 +380,7 @@ const Subtitles: React.FC<{ t: number }> = ({ t }) => {
   const narr = ln.char === "narrator";
   const wMax = Math.max(...lines.map((l) => l.length)) * 21 + 72;
   const hh = 40 + lines.length * 52;
-  const a = clamp((t - ln.t + 0.05) / 0.15) * clamp((ln.end + 0.2 - t) / 0.2);
+  const a = clamp((t - ln.t + 0.05) / 0.15) * clamp((ln.end + (ln.show ? 0.9 : 0.2) - t) / 0.2);
   return (
     <g transform={`translate(540 ${1800 - (lines.length - 1) * 26})`} opacity={a}>
       <rect x={-wMax / 2} y={-hh / 2} width={wMax} height={hh} rx="38" fill="#0B1230" fillOpacity={narr ? 0.7 : 0.86} stroke={narr ? "#7FE3FF" : "none"} strokeOpacity="0.4" strokeWidth="2" />

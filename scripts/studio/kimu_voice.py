@@ -51,6 +51,7 @@ EMOTIONS = {
     "joy":      dict(speed=1.05, pace=0.90, rng=1.00, off=0.9,  fall=0.6, decl=0.2, stress=1.8, lim=4.5, vib=0,    gain=1.0),
     "relieved": dict(speed=0.97, pace=1.2,  rng=0.85, off=0.3,  fall=1.5, decl=0.8, stress=1.0, lim=3.5, vib=0,    gain=0.0, breathy=True),
     "whisper":  dict(speed=0.90, pace=1.2,  rng=0.70, off=0.0,  fall=1.0, decl=0.5, stress=0.5, lim=3.0, vib=0,    gain=-5.0, breathy=True),
+    "dash":     dict(speed=1.08, pace=0.8, rng=1.1, off=0.4, fall=2.0, decl=0.6, stress=1.5, lim=3.8, vib=0, gain=0.0),
     "narrate":  dict(speed=1.04, pace=0.85, rng=0.75, off=0.0,  fall=1.5, decl=0.5, stress=1.0, lim=3.0, vib=0,    gain=0.0),
     "inner":    dict(speed=0.97, pace=1.1,  rng=0.80, off=-0.2, fall=1.2, decl=0.6, stress=0.8, lim=3.0, vib=0,    gain=-0.5),
 }

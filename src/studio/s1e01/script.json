@@ -36,104 +36,114 @@
    "id": "k0",
    "char": "kimu",
    "emo": "worried",
-   "text": "No, no\u2014 not *now*.",
-   "t": 1.0
+   "text": "No, no— not *now*.",
+   "t": 1.0,
+   "silent": true
   },
   {
    "id": "d1",
    "char": "dad",
    "emo": "stern",
    "text": "Kimu.",
-   "t": 3.2
+   "t": 3.2,
+   "silent": true
   },
   {
    "id": "k1",
    "char": "kimu",
    "emo": "scared",
-   "text": "I\u2014 I'm just *charging* my phone.",
-   "gap": 0.6
+   "text": "I— I'm just *charging* my phone.",
+   "gap": 0.6,
+   "silent": true
   },
   {
    "id": "d2",
    "char": "dad",
    "emo": "annoyed",
    "text": "Those *wires*. Again.",
-   "gap": 0.35
+   "gap": 0.35,
+   "silent": true
   },
   {
    "id": "d3",
    "char": "dad",
    "emo": "angry",
    "text": "Focus on *engineering*. That's it.",
-   "gap": 0.15
+   "gap": 0.15,
+   "silent": true,
+   "show": true
   },
   {
    "id": "m1",
    "char": "mom",
    "emo": "worried",
    "text": "Easy. He's *tired*.",
-   "gap": 0.2
+   "gap": 0.2,
+   "silent": true
   },
   {
    "id": "d4",
    "char": "dad",
    "emo": "sad",
    "text": "Go to *sleep*, Kimu.",
-   "gap": 0.35
+   "gap": 0.35,
+   "silent": true
   },
   {
    "id": "k2",
    "char": "kimu",
    "emo": "sad",
    "text": "*Sorry*, Dad.",
-   "gap": 0.3
+   "gap": 0.3,
+   "silent": true
   },
   {
    "id": "n2",
    "char": "kimu",
    "emo": "whisper",
    "text": "Please... show me where to start.",
-   "t": 21.2
+   "t": 21.2,
+   "silent": true
   },
   {
    "id": "n3",
    "char": "narrator",
-   "emo": "narrate",
+   "emo": "dash",
    "text": "A bird on a wire. *Thousands* of volts... and it's fine.",
    "t": 28.3
   },
   {
    "id": "n4",
    "char": "narrator",
-   "emo": "narrate",
+   "emo": "dash",
    "text": "Like water, current only flows where there's a difference in level.",
    "t": 32.8
   },
   {
    "id": "n5",
    "char": "narrator",
-   "emo": "narrate",
+   "emo": "dash",
    "text": "One wire. *Same* voltage on both feet. *No* current.",
    "t": 37.4
   },
   {
    "id": "n6",
    "char": "narrator",
-   "emo": "narrate",
+   "emo": "dash",
    "text": "Touch a second wire, or the ground... and it's a *different* story.",
    "t": 41.7
   },
   {
    "id": "n7",
    "char": "narrator",
-   "emo": "narrate",
+   "emo": "dash",
    "text": "Next morning. Uncle's power keeps tripping.",
    "t": 46.1
   },
   {
    "id": "n8",
    "char": "narrator",
-   "emo": "narrate",
+   "emo": "dash",
    "text": "Two bare wires, touching. Exactly what the bird avoids.",
    "t": 49.4
   },
@@ -142,14 +152,64 @@
    "char": "uncle",
    "emo": "joy",
    "text": "Ha! *Saved* my evening, kid!",
-   "t": 54.9
+   "t": 54.9,
+   "silent": true
   },
   {
    "id": "n9",
    "char": "narrator",
-   "emo": "narrate",
+   "emo": "dash",
    "text": "Small proof. Big start.",
    "t": 57.55
+  },
+  {
+   "id": "a1",
+   "char": "narrator",
+   "emo": "dash",
+   "text": "Kimu loves *wires*. Tonight, the power is out... and Dad is about to walk in.",
+   "t": 0.6
+  },
+  {
+   "id": "a2",
+   "char": "narrator",
+   "emo": "dash",
+   "text": "Dad has one rule. *No* wires. Not one.",
+   "t": 5.7
+  },
+  {
+   "id": "a3",
+   "char": "narrator",
+   "emo": "dash",
+   "text": "Mom steps in. Dad goes quiet. And Kimu goes to bed... with a heavy heart.",
+   "t": 11.2
+  },
+  {
+   "id": "a4",
+   "char": "narrator",
+   "emo": "dash",
+   "text": "But before he sleeps... he does *one* thing.",
+   "t": 16.5
+  },
+  {
+   "id": "a5",
+   "char": "narrator",
+   "emo": "dash",
+   "text": "He folds his hands. *Please*... show me where to start.",
+   "t": 20.1
+  },
+  {
+   "id": "a5b",
+   "char": "narrator",
+   "emo": "dash",
+   "text": "And the answer lands... on a *wire*.",
+   "t": 24.4
+  },
+  {
+   "id": "a6",
+   "char": "narrator",
+   "emo": "dash",
+   "text": "The wires are fixed. And Uncle can't stop *laughing*.",
+   "t": 54.0
   }
  ]
 }
