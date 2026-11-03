@@ -1,0 +1,23 @@
+name: video-transcribe
+on:
+  push:
+    branches: [video-edit]
+    paths: ['video-job/transcribe.py', 'video-job/input/**', '.github/workflows/video-transcribe.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  transcribe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update -y && sudo apt-get install -y ffmpeg
+      - run: pip install faster-whisper
+      - run: |
+          ffmpeg -y -i video-job/input/source.mp4 -vn -ac 1 -ar 16000 video-job/audio.wav
+          mkdir -p video-job/out
+          python video-job/transcribe.py video-job/audio.wav video-job/out/transcript.json | tee video-job/out/transcript.txt
+      - run: |
+          git config user.name "video-bot"; git config user.email "bot@users.noreply.github.com"
+          git add video-job/out
+          git commit -m "transcript" && git pull --rebase origin video-edit && git push origin HEAD:video-edit
